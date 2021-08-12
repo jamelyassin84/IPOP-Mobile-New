@@ -1,7 +1,7 @@
 
 import React, { FC } from 'react';
-import { BaseService } from '../../api/base.service';
-import { ArticleFilter_API, Home_API } from '../../api/Enums';
+import { BaseService } from '../../environments/base.service';
+import { ArticleFilter_API, Home_API } from '../../environments/Enums';
 import HomeHeader from '../../components/headers/Home';
 import ArticleDatePicker from '../../components/home/ArticleDatePicker';
 import WithRefreshComponent from '../../components/WithRefreshComponent';
