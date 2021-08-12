@@ -19,12 +19,9 @@ const CommonHeader: FC<Props> = ( props ) => {
 
     return (
         <View style={[ style.header, { backgroundColor: props.backgroundColor } ]}>
-
-
             <TouchableOpacity onPress={() => navigation.goBack()}>
                 <Ionicons style={style.icon} name="chevron-back" size={24} color={Colors[ colorScheme ].text} />
             </TouchableOpacity>
-
             <Text style={[ style.text, { color: Colors[ colorScheme ].text } ]}>{props.title}</Text>
         </View>
     );
