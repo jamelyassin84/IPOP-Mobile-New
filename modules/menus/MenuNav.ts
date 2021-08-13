@@ -32,7 +32,7 @@ export const MenuNavs: menuNavigation[] = [
 				color: '#23BEDD',
 			},
 			{
-				route: 'Marriages',
+				route: 'Marraiges',
 				name: 'Marriages',
 				icon: 'heart',
 				color: 'red',
