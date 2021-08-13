@@ -14,20 +14,16 @@ import PageTitle from '../../components/utils/PageTitle';
 type Props = {};
 
 const MenuScreen: FC<Props> = ( props ) => {
-
-
     const colorScheme = useColorScheme();
     const navigation = useNavigation();
-
     const navs = MenuNavs
-
     return (
         <Container>
             <PageTitle title="Menu" />
             <WithRefreshComponent loading={false} onRefresh={() => { void 0 }}>
                 {
-                    navs.map( ( nav: menuNavigation, i: number ) => (
-                        <View key={i}>
+                    navs.map( ( nav: menuNavigation, index: number ) => (
+                        <View key={index}>
                             <Text style={[ menu.title, { color: Colors[ colorScheme ].text } ]}>{nav.title}</Text>
                             {
                                 nav.children.map( ( child: Children, index: number ) => (
@@ -45,7 +41,6 @@ const MenuScreen: FC<Props> = ( props ) => {
                                 ) )
                             }
                         </View>
-
                     ) )
                 }
             </WithRefreshComponent>
