@@ -9,6 +9,7 @@ import { useNavigation } from '@react-navigation/native';
 import { AntDesign } from '@expo/vector-icons';
 import Colors from '../../constants/Colors';
 import { FontAwesome } from '@expo/vector-icons';
+import PageTitle from '../../components/PageTitle';
 
 type Props = {};
 
@@ -22,7 +23,7 @@ const MenuScreen: FC<Props> = ( props ) => {
 
     return (
         <Container>
-            <Text style={{ fontSize: 30, padding: 15, fontWeight: 'bold' }}>Menu</Text>
+            <PageTitle title="Menu" />
             <WithRefreshComponent loading={false} onRefresh={() => { void 0 }}>
                 {
                     navs.map( ( nav: menuNavigation, i: number ) => (
