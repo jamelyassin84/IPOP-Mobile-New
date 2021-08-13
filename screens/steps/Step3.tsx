@@ -12,21 +12,16 @@ import ActiveDot from '../../components/steps/ActiveDot';
 type Props = {};
 
 const Step3: FC<Props> = ( props ) => {
-
     const navigation = useNavigation();
-
     return (
         <StepContainer callback={() => {
             navigation.navigate( 'Step4' )
         }}>
-
             <MaterialCommunityIcons name="trophy-award"
                 style={style.icon}
                 size={170}
             />
-
             <StepDescription text="view latest awards, services, and all data related to Iloilo Population Office"></StepDescription>
-
             <View style={style.tab}>
                 <Dot></Dot>
                 <Dot></Dot>

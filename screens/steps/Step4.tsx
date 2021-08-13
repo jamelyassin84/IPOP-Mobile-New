@@ -12,21 +12,16 @@ import ActiveDot from '../../components/steps/ActiveDot';
 type Props = {};
 
 const Step4: FC<Props> = ( props ) => {
-
     const navigation = useNavigation();
-
     return (
         <StepContainer callback={() => {
             navigation.navigate( 'Step5' )
         }}>
-
             <FontAwesome5 name="users"
                 style={style.icon}
                 size={170}
             />
-
             <StepDescription text="be Updated on the latest population data like brths, deaths, migrations and marriages"></StepDescription>
-
             <View style={style.tab}>
                 <Dot></Dot>
                 <Dot></Dot>

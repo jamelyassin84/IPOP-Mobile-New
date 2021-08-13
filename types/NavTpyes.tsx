@@ -1,5 +1,5 @@
 
-export type RootStackParamList = {
+export type NavParamList = {
     home: undefined;
     Step1: undefined;
     Step2: undefined;

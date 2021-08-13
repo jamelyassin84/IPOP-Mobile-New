@@ -7,13 +7,11 @@ import style from '../../styles/steps/step.style'
 import { Image, Text, View } from 'react-native';
 import ActiveDot from '../../components/steps/ActiveDot';
 import Dot from '../../components/steps/Dot';
-import Colors from '../../constants/Colors';
 
 type Props = {};
 
 const Step1: FC<Props> = ( props ) => {
     const navigation = useNavigation();
-
     return (
         <StepContainer callback={() => {
             navigation.navigate( 'Step2' )

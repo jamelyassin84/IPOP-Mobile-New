@@ -6,7 +6,7 @@ import {
 } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { ColorSchemeName } from 'react-native';
-import { RootStackParamList } from '../types';
+import { NavParamList } from '../types/NavTpyes';
 import BottomTabNavigator from './bottom-navigations/BottomTabNavigator';
 import LinkingConfiguration from './bottom-navigations/LinkingConfiguration';
 
@@ -48,8 +48,8 @@ export default function Navigation( { colorScheme }: { colorScheme: ColorSchemeN
     );
 }
 
-const Stack = createStackNavigator<RootStackParamList>();
-function RootNavigator() {
+const Stack = createStackNavigator<NavParamList>();
+const RootNavigator = () => {
     return (
         <Stack.Navigator screenOptions={{ headerShown: false }}>
             <Stack.Screen name="Step1" component={Step1} />

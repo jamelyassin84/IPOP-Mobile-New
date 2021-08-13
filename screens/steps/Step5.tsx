@@ -11,21 +11,16 @@ import ActiveDot from '../../components/steps/ActiveDot';
 type Props = {};
 
 const Step5: FC<Props> = ( props ) => {
-
     const navigation = useNavigation();
-
     return (
         <StepContainer callback={() => {
             navigation.navigate( 'home' )
         }}>
-
             <Fontisto name="genderless"
                 style={style.icon}
                 size={170}
             />
-
             <StepDescription text="view all particulars related to AHYD and RPFP "></StepDescription>
-
             <View style={style.tab}>
                 <Dot></Dot>
                 <Dot></Dot>

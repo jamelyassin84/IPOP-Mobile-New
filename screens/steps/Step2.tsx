@@ -12,9 +12,7 @@ import style from '../../styles/steps/step.style'
 type Props = {};
 
 const Step2: FC<Props> = ( props ) => {
-
     const navigation = useNavigation();
-
     return (
         <StepContainer callback={() => {
             navigation.navigate( 'Step3' )
@@ -23,9 +21,7 @@ const Step2: FC<Props> = ( props ) => {
                 style={style.icon}
                 size={170}
             />
-
             <StepDescription text="be updated on IPOP's latest news and featured articles"></StepDescription>
-
             <View style={style.tab}>
                 <Dot></Dot>
                 <ActiveDot></ActiveDot>
