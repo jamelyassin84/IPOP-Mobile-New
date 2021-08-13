@@ -22,13 +22,15 @@ axios.interceptors.response.use(
 )
 
 const handleError = (error: any) => {
-	const { status, data, config } = error.response
+	const { status } = error.response
 	if (status === 404) {
+		alert('There was a problem resolving the network. Check your internet and try again.')
 	}
 	if (status === 401) {
+		alert('You are unauthorized to perform this operation')
 	}
-
 	if (status === 500) {
+		alert('Internal Server Error. Contact Adminstrator')
 	}
 
 	return Promise.reject(error)
