@@ -14,7 +14,7 @@ export class BaseService<T> {
 	}
 
 	async fetchOne(id: number, params?: string) {
-		const { data } = await axios.get<T[]>(`${environment.api}${this.url}/${id}`)
+		const { data } = await axios.get<T[]>(`${environment.api}${this.url}/${id}?${params}`)
 		return data
 	}
 
