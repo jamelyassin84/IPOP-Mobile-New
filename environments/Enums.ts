@@ -81,8 +81,8 @@ export enum PMOC_API {
 }
 
 export enum Services_API {
-	Services = 's',
-	Offered = '-offers',
+	Services = 'services',
+	Offered = 'services-offers',
 }
 
 export enum Location_API {
