@@ -13,7 +13,7 @@ const StepDescription: FC<Props> = ( props ) => {
     return ( <>
         <Text
             style={{
-                color: Colors[ colorScheme ].text,
+                color: 'white',
                 zIndex: 9,
                 alignSelf: 'center', position: 'absolute',
                 top: '50%',

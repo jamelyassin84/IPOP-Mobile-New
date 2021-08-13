@@ -21,7 +21,7 @@ const Step2: FC<Props> = ( props ) => {
         }}>
             <MaterialIcons name="update"
                 style={style.icon}
-                size={170} color="#07B1E8"
+                size={170}
             />
 
             <StepDescription text="be updated on IPOP's latest news and featured articles"></StepDescription>

@@ -21,7 +21,7 @@ const Step5: FC<Props> = ( props ) => {
 
             <Fontisto name="genderless"
                 style={style.icon}
-                size={170} color="#07B1E8"
+                size={170}
             />
 
             <StepDescription text="view all particulars related to AHYD and RPFP "></StepDescription>

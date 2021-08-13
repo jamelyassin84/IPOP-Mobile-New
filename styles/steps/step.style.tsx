@@ -3,6 +3,7 @@ export default StyleSheet.create( {
     container: {
         flex: 1, position: 'relative',
         zIndex: 99,
+        backgroundColor: '#07B1E8'
     },
     dot: {
         width: 10,
@@ -10,14 +11,14 @@ export default StyleSheet.create( {
         borderRadius: 50,
         margin: 5,
         opacity: .5,
-        backgroundColor: '#07B1E8'
+        backgroundColor: 'white'
     },
     active: {
         width: 10,
         height: 10,
         borderRadius: 50,
         margin: 5,
-        backgroundColor: '#07B1E8'
+        backgroundColor: 'white'
     },
     tab: {
         width: '100%',
@@ -33,5 +34,6 @@ export default StyleSheet.create( {
         top: '25%',
         alignSelf: 'center',
         position: 'absolute',
+        color: 'white'
     }
 } )

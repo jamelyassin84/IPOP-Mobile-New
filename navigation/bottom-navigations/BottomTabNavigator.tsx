@@ -14,9 +14,9 @@ import ProgramAreaScreen from "../../modules/programs/ProgramArea";
 import ServicesScreen from "../../modules/services/Services";
 
 import { AntDesign } from '@expo/vector-icons';
-import { MaterialIcons } from '@expo/vector-icons';
 import { SimpleLineIcons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -26,40 +26,47 @@ export default function BottomTabNavigator() {
     return (
         <BottomTab.Navigator
             initialRouteName="Home"
-            tabBarOptions={{ activeTintColor: Colors[ colorScheme ].tint }}>
+            lazy={true}
+            tabBarOptions={{
+                activeTintColor: Colors[ colorScheme ].tint,
+                style: {
+                    backgroundColor: 'black',
+                },
+
+            }}>
             <BottomTab.Screen
                 name="Home"
                 component={HomeNavigator}
                 options={{
-                    tabBarIcon: ( { color } ) => <AntDesign name="home" size={24} color={color} />,
+                    tabBarIcon: ( { color } ) => <AntDesign name="home" size={26} color={color} />,
                 }}
             />
             <BottomTab.Screen
                 name="About Us"
                 component={AboutNavigator}
                 options={{
-                    tabBarIcon: ( { color } ) => <Ionicons name="people-circle-outline" size={24} color={color} />,
+                    tabBarIcon: ( { color } ) => <Feather name="users" size={26} color={color} />,
                 }}
             />
             <BottomTab.Screen
                 name="Program Areas"
                 component={ProgramAreaNavigator}
                 options={{
-                    tabBarIcon: ( { color } ) => <MaterialCommunityIcons name="radar" size={24} color={color} />,
+                    tabBarIcon: ( { color } ) => <MaterialCommunityIcons name="radar" size={26} color={color} />,
                 }}
             />
             <BottomTab.Screen
                 name="Services"
                 component={ServicesNavigator}
                 options={{
-                    tabBarIcon: ( { color } ) => <MaterialIcons name="miscellaneous-services" size={24} color={color} />,
+                    tabBarIcon: ( { color } ) => <SimpleLineIcons name="notebook" size={26} color={color} />,
                 }}
             />
             <BottomTab.Screen
                 name="More"
                 component={MenuNavigator}
                 options={{
-                    tabBarIcon: ( { color } ) => <SimpleLineIcons name="menu" size={24} color={color} />,
+                    tabBarIcon: ( { color } ) => <SimpleLineIcons name="menu" size={26} color={color} />,
                 }}
             />
         </BottomTab.Navigator>

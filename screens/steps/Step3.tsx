@@ -22,7 +22,7 @@ const Step3: FC<Props> = ( props ) => {
 
             <MaterialCommunityIcons name="trophy-award"
                 style={style.icon}
-                size={170} color="#07B1E8"
+                size={170}
             />
 
             <StepDescription text="view latest awards, services, and all data related to Iloilo Population Office"></StepDescription>

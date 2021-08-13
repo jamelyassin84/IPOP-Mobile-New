@@ -22,7 +22,7 @@ const Step4: FC<Props> = ( props ) => {
 
             <FontAwesome5 name="users"
                 style={style.icon}
-                size={170} color="#07B1E8"
+                size={170}
             />
 
             <StepDescription text="be Updated on the latest population data like brths, deaths, migrations and marriages"></StepDescription>

@@ -13,7 +13,6 @@ type Props = {};
 
 const Step1: FC<Props> = ( props ) => {
     const navigation = useNavigation();
-    const colorScheme = useColorScheme();
 
     return (
         <StepContainer callback={() => {
@@ -21,7 +20,7 @@ const Step1: FC<Props> = ( props ) => {
         }}>
             <Text
                 style={{
-                    color: Colors[ colorScheme ].text,
+                    color: 'white',
                     zIndex: 9,
                     alignSelf: 'center', position: 'absolute',
                     top: '45%',
@@ -32,7 +31,7 @@ const Step1: FC<Props> = ( props ) => {
             </Text>
             <Text
                 style={{
-                    color: Colors[ colorScheme ].text,
+                    color: 'white',
                     zIndex: 9,
                     alignSelf: 'center', position: 'absolute',
                     top: '48%',

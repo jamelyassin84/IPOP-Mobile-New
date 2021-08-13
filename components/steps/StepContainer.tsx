@@ -14,9 +14,7 @@ const StepContainer: FC<Props> = ( props ) => {
 
     return (
         <TouchableOpacity
-            style={[ style.container, {
-                backgroundColor: Colors[ colorScheme ].background
-            } ]}
+            style={[ style.container ]}
             onPress={() => props.callback()}>
             {props.children}
         </TouchableOpacity>
