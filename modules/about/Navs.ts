@@ -30,7 +30,7 @@ export const AboutNavs: AboutNavType[] = [
 		color: '#FE6017',
 	},
 	{
-		title: 'Directory',
+		title: 'Personnel Directory',
 		route: 'Directory',
 		icon: 'account-group-outline',
 		color: '#23BEDD',
