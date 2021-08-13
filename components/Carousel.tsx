@@ -12,7 +12,7 @@ type Props = {
 
 const Carousel: FC<Props> = ( props ) => {
     return (
-        <View>
+        <View style={props.images.length === 0 ? { position: 'absolute', left: -500 } : {}}>
             <ScrollView
                 showsHorizontalScrollIndicator={false}
                 horizontal={true}

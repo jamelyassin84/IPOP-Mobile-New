@@ -36,6 +36,7 @@ import KeyFiles from '../modules/others/KeyFiles';
 import PopulationData from '../modules/population/PopulationData';
 import MPFCFDC from '../modules/rpfp/MPFCFDC';
 import PMOC from '../modules/rpfp/PMOC';
+import Activities from '../modules/programs/Activities';
 
 export default function Navigation( { colorScheme }: { colorScheme: ColorSchemeName } ) {
     return (
@@ -79,6 +80,7 @@ function RootNavigator() {
             <Stack.Screen name="MPFCFDC" component={MPFCFDC} />
             <Stack.Screen name="PMOC" component={PMOC} />
 
+            <Stack.Screen name="Activities" component={Activities} />
         </Stack.Navigator>
     );
 }

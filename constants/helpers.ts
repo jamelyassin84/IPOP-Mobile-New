@@ -80,3 +80,10 @@ export function groupBy(data: Array<any>, property: string) {
 export function where(data: Array<any>, key: string, value: any) {
 	return data.filter((item) => item[key] === value)
 }
+
+export function stringtoArray(text: string | any) {
+	if (text === null) {
+		return []
+	}
+	return text.split(', ')
+}

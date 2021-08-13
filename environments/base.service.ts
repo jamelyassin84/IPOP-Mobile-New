@@ -13,6 +13,11 @@ export class BaseService<T> {
 		return data
 	}
 
+	async fetchOne(id: number, params?: string) {
+		const { data } = await axios.get<T[]>(`${environment.api}${this.url}/${id}`)
+		return data
+	}
+
 	protected resolveURL(params?: string) {
 		return `${environment.api}${this.url}?${params}`
 	}

@@ -1,6 +1,6 @@
 
 import React, { FC } from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { Dimensions, Text, TouchableOpacity, View } from 'react-native';
 import style from '../../styles/header/featured-article.header.style'
 import { Ionicons } from '@expo/vector-icons';
 import useColorScheme from '../../hooks/useColorScheme';
@@ -22,7 +22,7 @@ const CommonHeader: FC<Props> = ( props ) => {
             <TouchableOpacity onPress={() => navigation.goBack()}>
                 <Ionicons style={style.icon} name="chevron-back" size={24} color={Colors[ colorScheme ].text} />
             </TouchableOpacity>
-            <Text style={[ style.text, { color: Colors[ colorScheme ].text } ]}>{props.title}</Text>
+            <Text style={[ style.text, { color: Colors[ colorScheme ].text, width: Dimensions.get( 'screen' ).width - 50 } ]}>{props.title}</Text>
         </View>
     );
 };

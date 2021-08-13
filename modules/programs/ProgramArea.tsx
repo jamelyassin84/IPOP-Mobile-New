@@ -44,7 +44,7 @@ const ProgramAreaScreen: FC<Props> = ( props ) => {
                 {
                     programs.map( ( program: ProgramArea, index: number ) => (
                         <TouchableOpacity key={index} style={style.container}
-                            onPress={() => navigation.navigate( program.id )}>
+                            onPress={() => navigation.navigate( 'Activities', program )}>
                             <MaterialCommunityIcons name="radar" size={35} color='#0D47A1' />
                             <View style={{ paddingRight: 10, flex: 1 }}>
                                 <Text style={[ style.title, { color: Colors[ colorScheme ].text } ]}>{program.title}</Text>
@@ -53,26 +53,28 @@ const ProgramAreaScreen: FC<Props> = ( props ) => {
                             <AntDesign name="right" size={24} color="#ccc" />
                         </TouchableOpacity>
                     ) )
-
                 }
             </WithRefreshComponent>
         </Container>
     );
 };
 
-interface ProgramArea {
-    id: string
+export interface ProgramArea {
+    id: number
     title: string
     description: string
-    activities: Activities
+    activities: ProgramActivities[]
 }
 
-interface Activities {
+export interface ProgramActivities {
     files: any
     program_area_id: number
     title: number
     description: string
     created_at: any
+    id: number
+    RA_links?: string,
+    MC_links?: string,
 }
 
 

@@ -28,6 +28,7 @@ export type RootStackParamList = {
     MPFCFDC: undefined;
     PMOC: undefined;
 
+    Activities: undefined
 };
 
 export type BottomTabParamList = {
