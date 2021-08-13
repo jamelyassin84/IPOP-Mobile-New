@@ -13,7 +13,7 @@ const CardWithImage: FC<Props> = ( props ) => {
             <View style={{ alignItems: 'center' }}>
                 <Image style={{ height: 100, resizeMode: 'contain', marginBottom: 16 }} source={props.image} />
             </View>
-            <Text>{props.text}</Text>
+            <Text style={{ color: 'gray', lineHeight: 30 }}>{props.text}</Text>
         </View>
     );
 };
