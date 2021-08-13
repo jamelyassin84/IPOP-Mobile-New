@@ -6,8 +6,8 @@ export const AboutNavs: AboutNavType[] = [
 		color: '#F1CCB0',
 	},
 	{
-		title: 'Mission/Vision',
-		route: 'MissionVIsion',
+		title: 'Mission & Vision',
+		route: 'VMG',
 		icon: 'clock-check',
 		color: '#02ADA3',
 	},
@@ -24,7 +24,7 @@ export const AboutNavs: AboutNavType[] = [
 		color: '#3AC48C',
 	},
 	{
-		title: 'Org-Structure',
+		title: 'Organizational Structure',
 		route: 'OrgStructure',
 		icon: 'account-network',
 		color: '#FE6017',
@@ -34,12 +34,6 @@ export const AboutNavs: AboutNavType[] = [
 		route: 'Directory',
 		icon: 'account-group-outline',
 		color: '#23BEDD',
-	},
-	{
-		title: 'Services',
-		route: 'Services',
-		icon: 'room-service',
-		color: '#AF2B1E',
 	},
 	{
 		title: 'Awards',

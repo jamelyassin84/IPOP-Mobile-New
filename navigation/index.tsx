@@ -2,12 +2,23 @@ import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
 import { ColorSchemeName } from 'react-native';
-import ShowArticle from '../modules/home/ShowArticle';
+
 import Step1 from '../screens/steps/Step1';
 import Step2 from '../screens/steps/Step2';
 import Step3 from '../screens/steps/Step3';
 import Step4 from '../screens/steps/Step4';
 import Step5 from '../screens/steps/Step5';
+
+import Awards from '../modules/about/Awards';
+import ContactUs from '../modules/about/ContactUs';
+import CoreValues from '../modules/about/CoreValues';
+import Directory from '../modules/about/Directory';
+import Goals from '../modules/about/Goals';
+import Mandate from '../modules/about/Mandate';
+import OrgStructure from '../modules/about/OrgStructure';
+import VMG from '../modules/about/VMG';
+import ShowArticle from '../modules/home/ShowArticle';
+
 
 import { RootStackParamList } from '../types';
 import BottomTabNavigator from './bottom-navigations/BottomTabNavigator';
@@ -34,6 +45,16 @@ function RootNavigator() {
             <Stack.Screen name="Step5" component={Step5} />
             <Stack.Screen name="ShowArticle" component={ShowArticle} />
             <Stack.Screen name="home" component={BottomTabNavigator} />
+
+            <Stack.Screen name="Mandate" component={Mandate} />
+            <Stack.Screen name="VMG" component={VMG} />
+            <Stack.Screen name="CoreValues" component={CoreValues} />
+            <Stack.Screen name="Goals" component={Goals} />
+            <Stack.Screen name="OrgStructure" component={OrgStructure} />
+            <Stack.Screen name="Directory" component={Directory} />
+            <Stack.Screen name="Awards" component={Awards} />
+            <Stack.Screen name="ContactUs" component={ContactUs} />
+
         </Stack.Navigator>
     );
 }

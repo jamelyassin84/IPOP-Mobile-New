@@ -7,6 +7,15 @@ export type RootStackParamList = {
     Step4: undefined;
     Step5: undefined;
     ShowArticle: undefined;
+
+    Mandate: undefined;
+    VMG: undefined;
+    CoreValues: undefined;
+    Goals: undefined;
+    OrgStructure: undefined;
+    Directory: undefined;
+    Awards: undefined;
+    ContactUs: undefined;
 };
 
 export type BottomTabParamList = {
