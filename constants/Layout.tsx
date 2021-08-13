@@ -12,7 +12,6 @@ const Container: FC<Props> = ( props ) => {
             height: Dimensions.get( 'screen' ).height,
             width: Dimensions.get( 'screen' ).width,
             paddingTop: 20,
-
             backgroundColor: Colors[ colorScheme ].background,
         }}>
             {props.children}

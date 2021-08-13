@@ -16,6 +16,18 @@ export type RootStackParamList = {
     Directory: undefined;
     Awards: undefined;
     ContactUs: undefined;
+
+    IssuesAndConcerns: undefined;
+    TeenCenter: undefined;
+    Births: undefined;
+    Deaths: undefined;
+    Marraiges: undefined;
+    Migrations: undefined;
+    KeyFiles: undefined;
+    PopulationData: undefined;
+    MPFCFDC: undefined;
+    PMOC: undefined;
+
 };
 
 export type BottomTabParamList = {

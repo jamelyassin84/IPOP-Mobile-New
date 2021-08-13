@@ -1,7 +1,14 @@
-import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
+import {
+    NavigationContainer,
+    DefaultTheme,
+    DarkTheme
+} from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import { ColorSchemeName } from 'react-native';
+import { RootStackParamList } from '../types';
+import BottomTabNavigator from './bottom-navigations/BottomTabNavigator';
+import LinkingConfiguration from './bottom-navigations/LinkingConfiguration';
 
 import Step1 from '../screens/steps/Step1';
 import Step2 from '../screens/steps/Step2';
@@ -19,10 +26,16 @@ import OrgStructure from '../modules/about/OrgStructure';
 import VMG from '../modules/about/VMG';
 import ShowArticle from '../modules/home/ShowArticle';
 
-
-import { RootStackParamList } from '../types';
-import BottomTabNavigator from './bottom-navigations/BottomTabNavigator';
-import LinkingConfiguration from './bottom-navigations/LinkingConfiguration';
+import IssuesAndConcerns from '../modules/ahyd/IssuesAndConcerns';
+import TeenCenter from '../modules/ahyd/TeenCenter';
+import Births from '../modules/demographics/births/Births';
+import Deaths from '../modules/demographics/deaths/Deaths';
+import Marraiges from '../modules/demographics/marriages/Marraiges';
+import Migrations from '../modules/demographics/migrations/Migrations';
+import KeyFiles from '../modules/others/KeyFiles';
+import PopulationData from '../modules/population/PopulationData';
+import MPFCFDC from '../modules/rpfp/MPFCFDC';
+import PMOC from '../modules/rpfp/PMOC';
 
 export default function Navigation( { colorScheme }: { colorScheme: ColorSchemeName } ) {
     return (
@@ -54,6 +67,17 @@ function RootNavigator() {
             <Stack.Screen name="Directory" component={Directory} />
             <Stack.Screen name="Awards" component={Awards} />
             <Stack.Screen name="ContactUs" component={ContactUs} />
+
+            <Stack.Screen name="IssuesAndConcerns" component={IssuesAndConcerns} />
+            <Stack.Screen name="TeenCenter" component={TeenCenter} />
+            <Stack.Screen name="Births" component={Births} />
+            <Stack.Screen name="Deaths" component={Deaths} />
+            <Stack.Screen name="Marraiges" component={Marraiges} />
+            <Stack.Screen name="Migrations" component={Migrations} />
+            <Stack.Screen name="KeyFiles" component={KeyFiles} />
+            <Stack.Screen name="PopulationData" component={PopulationData} />
+            <Stack.Screen name="MPFCFDC" component={MPFCFDC} />
+            <Stack.Screen name="PMOC" component={PMOC} />
 
         </Stack.Navigator>
     );

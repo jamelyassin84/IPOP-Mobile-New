@@ -31,7 +31,7 @@ const MenuScreen: FC<Props> = ( props ) => {
                             {
                                 nav.children.map( ( child: Children, index: number ) => (
                                     <TouchableOpacity key={index} style={style.container}
-                                        onPress={() => navigation.navigate( '' )}>
+                                        onPress={() => navigation.navigate( child.route )}>
                                         <FontAwesome
                                             name={child.icon}
                                             size={20}
