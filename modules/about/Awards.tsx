@@ -2,7 +2,7 @@
 import React, { FC } from 'react';
 import AwardComponent, { AwardType } from '../../components/about/AwardComponent';
 import CommonHeader from '../../components/headers/CommonHeader';
-import WithRefreshComponent from '../../components/WithRefreshComponent';
+import WithRefreshComponent from '../../components/utils/WithRefreshComponent';
 import Colors from '../../constants/Colors';
 import Container from '../../constants/Layout';
 import { BaseService } from '../../environments/base.service';

@@ -4,7 +4,7 @@ import { Dimensions } from 'react-native';
 import { Text, StyleSheet } from 'react-native';
 import CardWithImage from '../../components/about/CardWithImage';
 import CommonHeader from '../../components/headers/CommonHeader';
-import WithRefreshComponent from '../../components/WithRefreshComponent';
+import WithRefreshComponent from '../../components/utils/WithRefreshComponent';
 import Colors from '../../constants/Colors';
 import Container from '../../constants/Layout';
 import useColorScheme from '../../hooks/useColorScheme';

@@ -1,8 +1,8 @@
 
 import React, { FC } from 'react';
 import { Text } from 'react-native';
-import Colors from '../constants/Colors';
-import useColorScheme from '../hooks/useColorScheme';
+import Colors from '../../constants/Colors';
+import useColorScheme from '../../hooks/useColorScheme';
 
 type Props = {
     title: string

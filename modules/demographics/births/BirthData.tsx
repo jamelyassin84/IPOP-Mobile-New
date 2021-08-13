@@ -1,17 +1,16 @@
 
 import React, { FC } from 'react';
 import { Text } from 'react-native';
-import Container from '../constants/Layout';
-
+import Container from '../../../constants/Layout';
 
 type Props = {};
 
-const Nodata: FC<Props> = ( props ) => {
+const BirthData: FC<Props> = ( props ) => {
     return (
         <Container>
-            <Text>Nodata</Text>
+            <Text>BirthData</Text>
         </Container>
     );
 };
 
-export default Nodata;
+export default BirthData;

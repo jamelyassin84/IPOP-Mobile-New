@@ -3,10 +3,10 @@ import { SimpleLineIcons } from '@expo/vector-icons';
 import { View } from 'react-native';
 import { BaseService } from '../../environments/base.service';
 import { Services_API } from '../../environments/Enums';
-import WithRefreshComponent from '../../components/WithRefreshComponent';
+import WithRefreshComponent from '../../components/utils/WithRefreshComponent';
 import Colors from '../../constants/Colors';
 import Container from '../../constants/Layout';
-import PageTitle from '../../components/PageTitle';
+import PageTitle from '../../components/utils/PageTitle';
 import useColorScheme from '../../hooks/useColorScheme';
 import style from '../../styles/app/about/about.index.style'
 

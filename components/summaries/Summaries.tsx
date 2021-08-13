@@ -1,16 +1,16 @@
 
 import React, { FC } from 'react';
 import { Text } from 'react-native';
-import Container from '../constants/Layout';
+import Container from '../../constants/Layout';
 
 type Props = {};
 
-const ImageViewer: FC<Props> = ( props ) => {
+const Summaries: FC<Props> = ( props ) => {
     return (
         <Container>
-            <Text>ImageViewer</Text>
+            <Text>Summaries</Text>
         </Container>
     );
 };
 
-export default ImageViewer;
+export default Summaries;

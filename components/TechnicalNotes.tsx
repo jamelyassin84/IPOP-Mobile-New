@@ -5,12 +5,12 @@ import Container from '../constants/Layout';
 
 type Props = {};
 
-const AddressPicker: FC<Props> = ( props ) => {
+const TechnicalNotes: FC<Props> = ( props ) => {
     return (
         <Container>
-            <Text>AddressPicker</Text>
+            <Text>TechnicalNotes</Text>
         </Container>
     );
 };
 
-export default AddressPicker;
+export default TechnicalNotes;

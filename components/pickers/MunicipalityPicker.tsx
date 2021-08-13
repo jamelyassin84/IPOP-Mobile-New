@@ -2,16 +2,15 @@
 import React, { FC } from 'react';
 import { Text } from 'react-native';
 import Container from '../../constants/Layout';
- 
+
 type Props = {};
 
-const Component: FC<Props> = ( props ) => {
+const MunicipalityPicker: FC<Props> = ( props ) => {
     return (
         <Container>
-            <Text>Component</Text>
+            <Text>MunicipalityPicker</Text>
         </Container>
     );
 };
- 
-export default Component;
- 
+
+export default MunicipalityPicker;

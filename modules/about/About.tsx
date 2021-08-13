@@ -5,7 +5,7 @@ import Container from '../../constants/Layout';
 import { AboutNavs, AboutNavType } from './Navs';
 import { AntDesign, MaterialCommunityIcons } from '@expo/vector-icons';
 import style from '../../styles/app/about/about.index.style'
-import WithRefreshComponent from '../../components/WithRefreshComponent';
+import WithRefreshComponent from '../../components/utils/WithRefreshComponent';
 import useColorScheme from '../../hooks/useColorScheme';
 import Colors from '../../constants/Colors';
 import { useNavigation } from '@react-navigation/native';

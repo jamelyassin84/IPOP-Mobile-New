@@ -4,7 +4,7 @@ import { Text, View, Image } from 'react-native';
 import Colors from '../../constants/Colors';
 import useColorScheme from '../../hooks/useColorScheme';
 import style from '../../styles/header/header.style'
-import ProgressBar from '../ProgressBar';
+import ProgressBar from '../utils/ProgressBar';
 
 type Props = {
     backgroundColor: string

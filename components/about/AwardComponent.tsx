@@ -4,7 +4,7 @@ import { Text, TouchableOpacity, View, StyleSheet, Image } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import toDate from '../../constants/helpers';
 import useColorScheme from '../../hooks/useColorScheme';
-import Carousel from '../Carousel';
+import Carousel from '../utils/Carousel';
 import Colors from '../../constants/Colors';
 import * as Linking from 'expo-linking';
 

@@ -27,15 +27,15 @@ import VMG from '../modules/about/VMG';
 import ShowArticle from '../modules/home/ShowArticle';
 
 import IssuesAndConcerns from '../modules/ahyd/IssuesAndConcerns';
-import TeenCenter from '../modules/ahyd/TeenCenter';
+import TeenCenter from '../modules/ahyd/teen-centers/TeenCenter';
 import Births from '../modules/demographics/births/Births';
 import Deaths from '../modules/demographics/deaths/Deaths';
 import Marraiges from '../modules/demographics/marriages/Marraiges';
 import Migrations from '../modules/demographics/migrations/Migrations';
 import KeyFiles from '../modules/others/KeyFiles';
 import PopulationData from '../modules/population/PopulationData';
-import MPFCFDC from '../modules/rpfp/MPFCFDC';
-import PMOC from '../modules/rpfp/PMOC';
+import MPFCFDC from '../modules/rpfp/mpc-fdc/MPFCFDC';
+import PMOC from '../modules/rpfp/pmoc/PMOC';
 import Activities from '../modules/programs/Activities';
 
 export default function Navigation( { colorScheme }: { colorScheme: ColorSchemeName } ) {

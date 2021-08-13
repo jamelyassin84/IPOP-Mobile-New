@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { Text, View } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
-import Carousel from '../../components/Carousel'
+import Carousel from '../../components/utils/Carousel'
 import CommonHeader from '../../components/headers/CommonHeader'
 import Colors from '../../constants/Colors'
 import toDate from '../../constants/helpers'

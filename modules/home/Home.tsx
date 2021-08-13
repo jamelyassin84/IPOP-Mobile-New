@@ -4,7 +4,7 @@ import { BaseService } from '../../environments/base.service';
 import { ArticleFilter_API, Home_API } from '../../environments/Enums';
 import HomeHeader from '../../components/headers/Home';
 import ArticleDatePicker from '../../components/home/ArticleDatePicker';
-import WithRefreshComponent from '../../components/WithRefreshComponent';
+import WithRefreshComponent from '../../components/utils/WithRefreshComponent';
 import Colors from '../../constants/Colors';
 import Container from '../../constants/Layout';
 import useColorScheme from '../../hooks/useColorScheme';

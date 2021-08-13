@@ -4,7 +4,7 @@ import { AntDesign, Feather, FontAwesome5 } from '@expo/vector-icons';
 import React, { FC } from 'react';
 import { Text, View } from 'react-native';
 import CommonHeader from '../../components/headers/CommonHeader';
-import WithRefreshComponent from '../../components/WithRefreshComponent';
+import WithRefreshComponent from '../../components/utils/WithRefreshComponent';
 import Colors from '../../constants/Colors';
 import Container from '../../constants/Layout';
 import useColorScheme from '../../hooks/useColorScheme';

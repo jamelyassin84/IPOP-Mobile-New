@@ -5,7 +5,7 @@ import Colors from '../../constants/Colors';
 import { stringtoArray } from '../../constants/helpers';
 import useColorScheme from '../../hooks/useColorScheme';
 import { ProgramActivities } from '../../modules/programs/ProgramArea';
-import Carousel from '../Carousel';
+import Carousel from '../utils/Carousel';
 import * as Linking from 'expo-linking';
 
 

@@ -1,8 +1,8 @@
 
 import React, { FC } from 'react';
 import { Text } from 'react-native';
-import Container from '../../constants/Layout';
- 
+import Container from '../../../constants/Layout';
+
 type Props = {};
 
 const Component: FC<Props> = ( props ) => {
@@ -12,6 +12,5 @@ const Component: FC<Props> = ( props ) => {
         </Container>
     );
 };
- 
+
 export default Component;
- 

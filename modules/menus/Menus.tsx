@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Text, TouchableOpacity, View, StyleSheet, Dimensions } from 'react-native';
-import WithRefreshComponent from '../../components/WithRefreshComponent';
+import WithRefreshComponent from '../../components/utils/WithRefreshComponent';
 import Container from '../../constants/Layout';
 import { Children, menuNavigation, MenuNavs } from './MenuNav';
 import style from '../../styles/app/about/about.index.style'
@@ -9,7 +9,7 @@ import { useNavigation } from '@react-navigation/native';
 import { AntDesign } from '@expo/vector-icons';
 import Colors from '../../constants/Colors';
 import { FontAwesome } from '@expo/vector-icons';
-import PageTitle from '../../components/PageTitle';
+import PageTitle from '../../components/utils/PageTitle';
 
 type Props = {};
 
