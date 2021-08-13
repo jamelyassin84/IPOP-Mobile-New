@@ -22,8 +22,8 @@ const WithRefreshComponent: FC<Props> = ( props ) => {
                     tintColor='#07B1E8'
                     refreshing={props.loading}
                     onRefresh={props.onRefresh()}
-                />}
-        >
+                />
+            }>
             {props.children}
             <View style={{ height: 150 }}></View>
         </ScrollView>
