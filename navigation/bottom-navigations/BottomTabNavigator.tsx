@@ -1,11 +1,10 @@
 
-import { Ionicons } from '@expo/vector-icons';
+import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
-import * as React from 'react';
+import { BottomTabParamList } from '../../types';
 import Colors from '../../constants/Colors';
 import useColorScheme from '../../hooks/useColorScheme';
-import { BottomTabParamList } from '../../types';
 
 import AboutScreen from "../../modules/about/About";
 import HomeScreen from "../../modules/home/Home";
@@ -40,7 +39,6 @@ export default function BottomTabNavigator() {
                     tabBarIcon: ( { color } ) => <AntDesign name="home" size={26} color={color} />,
                 }}
             />
-
             <BottomTab.Screen
                 name="Program Areas"
                 component={ProgramAreaNavigator}
@@ -98,7 +96,6 @@ export function AboutNavigator() {
         </About.Navigator>
     );
 }
-
 
 const Program = createStackNavigator<any>();
 export function ProgramAreaNavigator() {
