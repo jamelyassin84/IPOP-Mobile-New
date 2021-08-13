@@ -2,6 +2,8 @@
 import React, { FC } from 'react';
 import { Text, View, StyleSheet, Dimensions } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
+import Colors from '../../constants/Colors';
+import useColorScheme from '../../hooks/useColorScheme';
 
 export type Personnel = {
     name: string,
@@ -14,14 +16,15 @@ type Props = {
     personnel: Personnel
 };
 const PersonnelDirectoryCard: FC<Props> = ( props ) => {
+    const colorScheme = useColorScheme()
     return (
         <View style={style.container}>
-            <AntDesign name="user" size={40} color="black" />
+            <AntDesign name="user" size={40} color={Colors[ colorScheme ].text} />
             <View style={style.center}>
-                <Text style={{ fontSize: 18, fontWeight: 'bold' }}>{props.personnel.name}</Text>
+                <Text style={{ fontSize: 18, fontWeight: 'bold', color: Colors[ colorScheme ].text }}>{props.personnel.name}</Text>
                 <Text style={{ color: '#1049A2' }}>{props.personnel.position}</Text>
-                <Text>{props.personnel.email}</Text>
-                <Text>{props.personnel.phone}</Text>
+                <Text style={{ color: Colors[ colorScheme ].text }}>{props.personnel.email}</Text>
+                <Text style={{ color: Colors[ colorScheme ].text }}>{props.personnel.phone}</Text>
             </View>
 
         </View>
