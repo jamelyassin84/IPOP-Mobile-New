@@ -1,14 +1,20 @@
 
 import React, { FC } from 'react';
-import { Text } from 'react-native';
+import CommonHeader from '../../../components/headers/CommonHeader';
+import Colors from '../../../constants/Colors';
 import Container from '../../../constants/Layout';
+import useColorScheme from '../../../hooks/useColorScheme';
 
 type Props = {};
 
 const Births: FC<Props> = ( props ) => {
+
+    const colorScheme = useColorScheme();
+
     return (
         <Container>
-            <Text>Births</Text>
+            <CommonHeader title="Births" backgroundColor={Colors[ colorScheme ].background} />
+
         </Container>
     );
 };

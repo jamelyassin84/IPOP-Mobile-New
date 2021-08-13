@@ -50,7 +50,7 @@ export const MenuNavs: menuNavigation[] = [
 			},
 			{
 				route: 'MPFCFDC',
-				name: 'Multi-Purpose Counseling and Family Development Center',
+				name: 'Multi-Purpose Counseling & Family Development Center',
 				icon: 'comment',
 				color: '#031D4F',
 			},

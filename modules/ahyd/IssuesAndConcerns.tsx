@@ -1,16 +1,22 @@
 
 import React, { FC } from 'react';
-import { Text } from 'react-native';
+import CommonHeader from '../../components/headers/CommonHeader';
+import Colors from '../../constants/Colors';
 import Container from '../../constants/Layout';
+import useColorScheme from '../../hooks/useColorScheme';
 
 type Props = {};
 
 const IssuesAndConcerns: FC<Props> = ( props ) => {
+    const colorScheme = useColorScheme();
+
+
     return (
         <Container>
-            <Text>IssuesAndConcerns</Text>
+            <CommonHeader title="Issues & Concerns" backgroundColor={Colors[ colorScheme ].background} />
+
         </Container>
-    );
+    )
 };
 
 export default IssuesAndConcerns;
