@@ -40,18 +40,19 @@ export default function BottomTabNavigator() {
                     tabBarIcon: ( { color } ) => <AntDesign name="home" size={26} color={color} />,
                 }}
             />
-            <BottomTab.Screen
-                name="About Us"
-                component={AboutNavigator}
-                options={{
-                    tabBarIcon: ( { color } ) => <Feather name="users" size={26} color={color} />,
-                }}
-            />
+
             <BottomTab.Screen
                 name="Program Areas"
                 component={ProgramAreaNavigator}
                 options={{
                     tabBarIcon: ( { color } ) => <MaterialCommunityIcons name="radar" size={26} color={color} />,
+                }}
+            />
+            <BottomTab.Screen
+                name="About Us"
+                component={AboutNavigator}
+                options={{
+                    tabBarIcon: ( { color } ) => <Feather name="users" size={26} color={color} />,
                 }}
             />
             <BottomTab.Screen
