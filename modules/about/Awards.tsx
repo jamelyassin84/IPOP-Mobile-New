@@ -12,9 +12,7 @@ import useColorScheme from '../../hooks/useColorScheme';
 type Props = {};
 
 const Awards: FC<Props> = ( props ) => {
-
     const colorScheme = useColorScheme();
-
     const [ awards, setAwards ] = React.useState( [] )
     const [ isLoading, setLoading ] = React.useState( false )
 

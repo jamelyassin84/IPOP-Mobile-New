@@ -11,9 +11,7 @@ import useColorScheme from '../../hooks/useColorScheme';
 type Props = {};
 
 const VMG: FC<Props> = ( props ) => {
-
     const colorScheme = useColorScheme();
-
     return (
         <Container>
             <CommonHeader title="Mission & Vision" backgroundColor={Colors[ colorScheme ].background} />
@@ -28,7 +26,6 @@ const VMG: FC<Props> = ( props ) => {
                 <CardWithImage image={require( '../../assets/app/vmg/2.png' )}
                     text="To provide technical assistance and information needs to the Local Government Units (LGUs), partner agencies and stakeholders in carrying out measures relative to the integration of population and development, through the generation and utilization of reliable and updated data, and implementation of population management programs and projects to uplift the quality of life of the Ilonggo population."
                 />
-
 
             </WithRefreshComponent>
         </Container>

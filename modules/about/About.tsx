@@ -13,10 +13,8 @@ import { useNavigation } from '@react-navigation/native';
 type Props = {};
 
 const AboutScreen: FC<Props> = ( props ) => {
-
     const colorScheme = useColorScheme();
     const navigation = useNavigation();
-
     return (
         <Container>
             <AboutHeader></AboutHeader>

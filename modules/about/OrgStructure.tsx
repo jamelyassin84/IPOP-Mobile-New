@@ -10,13 +10,10 @@ import useColorScheme from '../../hooks/useColorScheme';
 type Props = {};
 
 const OrgStructure: FC<Props> = ( props ) => {
-
     const colorScheme = useColorScheme();
-
     const [ image, setImage ]: any = React.useState( require( '../../assets/logo/ipo-logo.png' ) )
 
     React.useEffect( () => {
-
         new BaseService( About_API.OrganizationalChart ).fetch( '' ).then( ( data: any ) => {
             if ( data.photo !== undefined ) setImage( { uri: data.photo.uri } )
         } )
