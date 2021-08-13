@@ -9,7 +9,6 @@ import toDate from '../../constants/helpers';
 import useColorScheme from '../../hooks/useColorScheme';
 import style from '../../styles/app/home/article.style'
 
-
 type Props = {
     articles: Array<any>
 }

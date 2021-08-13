@@ -7,19 +7,17 @@ import useColorScheme from '../../hooks/useColorScheme';
 import { Ionicons } from '@expo/vector-icons';
 import * as Linking from 'expo-linking';
 
+type Link = {
+    title: string
+    url: string
+}
 
 type Props = {
     links: Link[]
 }
 
-type Link = {
-    title: string
-    url: string
-}
 const Quicklinks: FC<Props> = ( props ) => {
-
     const colorScheme = useColorScheme();
-
     return (
         <View style={style.view}>
             <Text style={{ color: Colors[ colorScheme ].text, marginLeft: 10, fontSize: 20, fontWeight: 'bold' }}>Links you may visit</Text>

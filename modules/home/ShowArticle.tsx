@@ -12,11 +12,8 @@ import style from '../../styles/app/home/show-article.style'
 type Props = {}
 
 const ShowArticle: FC<Props> = ( { route }: any ) => {
-
     const article = route.params.article
-
     const colorScheme = useColorScheme();
-
     const [ images, setImages ] = React.useState( [] )
 
     React.useEffect( () => {
@@ -25,7 +22,6 @@ const ShowArticle: FC<Props> = ( { route }: any ) => {
             temp.push( image.file.uri )
         }
         setImages( temp )
-
     }, [] )
 
     return (

@@ -17,7 +17,6 @@ type Props = {};
 const HomeScreen: FC<Props> = ( props ) => {
 
     const colorScheme = useColorScheme();
-
     const [ isLoading, setLoading ] = React.useState( false )
     const [ images, setImages ]: Array<any> = React.useState( [] )
     const [ articles, setArticles ]: Array<any> = React.useState( [] )
@@ -88,7 +87,6 @@ const HomeScreen: FC<Props> = ( props ) => {
             setArticles( data )
         } )
     }
-
 
     return (
         <Container>
