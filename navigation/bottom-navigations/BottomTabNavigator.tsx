@@ -26,7 +26,6 @@ export default function BottomTabNavigator() {
     return (
         <BottomTab.Navigator
             initialRouteName="Home"
-            lazy={true}
             tabBarOptions={{
                 activeTintColor: Colors[ colorScheme ].tint,
                 style: {

@@ -24,7 +24,7 @@ export default StyleSheet.create({
 		borderRadius: 20,
 	},
 	active: {
-		backgroundColor: '#07B1E8',
+		backgroundColor: '#1049A2',
 		transform: [{ scale: 1.1 }],
 		shadowColor: 'rgba(113,111,139,1)',
 		shadowOffset: {

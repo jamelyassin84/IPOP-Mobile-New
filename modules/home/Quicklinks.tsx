@@ -31,7 +31,7 @@ const Quicklinks: FC<Props> = ( props ) => {
                             onPress={() => {
                                 Linking.openURL( link.url )
                             }}>
-                            <Ionicons name="shuffle-outline" size={44} color="#07B1E8" />
+                            <Ionicons name="shuffle-outline" size={44} color="#1049A2" />
                             <Text style={{ color: Colors[ colorScheme ].text, textAlign: 'center', marginTop: 16 }}>{link.title}</Text>
                         </TouchableOpacity>
                     ) )

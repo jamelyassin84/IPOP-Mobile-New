@@ -25,6 +25,7 @@ const ShowArticle: FC<Props> = ( { route }: any ) => {
             temp.push( image.file.uri )
         }
         setImages( temp )
+
     }, [] )
 
     return (
@@ -33,7 +34,7 @@ const ShowArticle: FC<Props> = ( { route }: any ) => {
             <ScrollView showsVerticalScrollIndicator={false}>
                 <Text style={[ style.title, { color: Colors[ colorScheme ].text } ]}>{article.title} </Text>
                 <Carousel images={images} backgroundColor={Colors[ colorScheme ].background} />
-                <Text style={{ color: '#07B1E8', margin: 15 }}>Created at: {toDate( article.updated_at )}</Text>
+                <Text style={{ color: '#1049A2', margin: 15 }}>Created at: {toDate( article.updated_at )}</Text>
                 <Text style={style.body}>
                     {article.body}
                 </Text>

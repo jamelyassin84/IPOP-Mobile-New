@@ -16,7 +16,7 @@ const HomeHeader: FC<Props> = ( props ) => {
     return (
         <View>
             <View style={[ style.header, { backgroundColor: props.backgroundColor } ]}>
-                <Image style={style.image} source={require( '../../assets/logo/app.png' )} />
+                <Image style={style.image} source={require( '../../assets/logo/ipo-logo.png' )} />
                 <Text style={{ color: Colors[ colorScheme ].text, fontWeight: 'bold', fontSize: 17 }}>Iloilo Population Office</Text>
             </View>
             <ProgressBar />

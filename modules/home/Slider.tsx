@@ -1,6 +1,6 @@
 
 import React, { FC } from 'react';
-import { Image, View } from 'react-native';
+import { Dimensions, Image, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import style from '../../styles/app/home/slider.style'
 
@@ -16,7 +16,7 @@ const Slider: FC<Props> = ( props ) => {
                 showsHorizontalScrollIndicator={false}
                 horizontal={true}
                 decelerationRate={0}
-                snapToInterval={310 - ( 0 + 0 )}
+                snapToInterval={Dimensions.get( 'screen' ).width + 4}
                 snapToAlignment={"center"}
                 directionalLockEnabled={true}
                 bounces={false}

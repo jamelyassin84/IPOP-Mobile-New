@@ -3,7 +3,7 @@ export default StyleSheet.create( {
     container: {
         flex: 1, position: 'relative',
         zIndex: 99,
-        backgroundColor: '#07B1E8'
+        backgroundColor: '#1049A2'
     },
     dot: {
         width: 10,

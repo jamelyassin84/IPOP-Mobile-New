@@ -44,7 +44,7 @@ const Articles: FC<Props> = ( props ) => {
                             <Text style={[ style.title, { color: Colors[ colorScheme ].text } ]}>
                                 {article.title}
                             </Text>
-                            <Text style={{ color: '#07B1E8', marginTop: -10 }}>
+                            <Text style={{ color: '#1049A2', marginTop: -10 }}>
                                 Created at: {toDate( article.updated_at )}</Text>
                         </View>
 

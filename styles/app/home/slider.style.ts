@@ -1,13 +1,13 @@
-import { StyleSheet } from 'react-native';
-export default StyleSheet.create( {
-    scrollview: {
-        height: 210,
-        width: '100%',
-    },
-    image: {
-        height: '100%',
-        width: 300,
-        resizeMode: 'stretch',
-        borderRadius: 10,
-    },
-} );
+import { StyleSheet, Dimensions } from 'react-native'
+export default StyleSheet.create({
+	scrollview: {
+		height: 310,
+		width: '100%',
+	},
+	image: {
+		height: '100%',
+		width: Dimensions.get('screen').width,
+		resizeMode: 'stretch',
+		marginLeft: -5,
+	},
+})
