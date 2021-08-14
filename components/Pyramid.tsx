@@ -65,7 +65,6 @@ const Pyramid: FC<Props> = ( { route }: any ) => {
 
     return (
         <Container>
-
             <CommonHeader title={route.params.title} backgroundColor={Colors[ colorScheme ].background} />
             <LocationTitle location={data.location} />
             <WithRefreshComponent onRefresh={() => onRefresh} loading={isLoading} backgroundColor={Colors[ colorScheme ].background}>
