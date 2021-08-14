@@ -1,14 +1,34 @@
-
 import React, { FC } from 'react';
-import { Text } from 'react-native';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
+import CommonHeader from '../../../components/headers/CommonHeader';
+import WithRefreshComponent from '../../../components/utils/WithRefreshComponent';
 import Container from '../../../constants/Layout';
+import useColorScheme from '../../../hooks/useColorScheme';
+import { PMOCChart } from './ChartEnum';
+
 
 type Props = {};
 
 const FamilyPlanning: FC<Props> = ( props ) => {
+    const colorScheme = useColorScheme();
+
+    const [ isLoading, setLoading ] = React.useState( false )
+
+
+    React.useEffect( () => {
+
+    }, [] )
+
+    const onRefresh = () => {
+
+    };
+
     return (
         <Container>
-            <Text>FamilyPlanning</Text>
+            <CommonHeader title={PMOCChart.FamilyPlanning} backgroundColor={Colors[ colorScheme ].background} />
+            <WithRefreshComponent onRefresh={() => onRefresh} loading={isLoading} backgroundColor={Colors[ colorScheme ].background}>
+
+            </WithRefreshComponent>
         </Container>
     );
 };

@@ -59,6 +59,13 @@ import MarriageData from '../modules/demographics/marriages/MarriageData';
 import MigrationSummary from '../modules/demographics/migrations/MigrationSummary';
 import MigrationData from '../modules/demographics/migrations/MigrationData';
 import MigrationChart from '../modules/demographics/migrations/MigrationChart';
+import NumberOfCouples from '../modules/rpfp/pmoc/NumberOfCouples';
+import PMOCData from '../modules/rpfp/pmoc/PMOCData';
+import AgeGroup from '../modules/rpfp/pmoc/AgeGroup';
+import EmployemntStatus from '../modules/rpfp/pmoc/EmployemntStatus';
+import FamilyPlanning from '../modules/rpfp/pmoc/FamilyPlanning';
+import CivilStatus from '../modules/rpfp/pmoc/CivilStatus';
+import MonthlyIncome from '../modules/rpfp/pmoc/MonthlyIncome';
 
 export default function Navigation( { colorScheme }: { colorScheme: ColorSchemeName } ) {
     return (
@@ -131,6 +138,15 @@ const RootNavigator = () => {
             <Stack.Screen name="MigrationSummary" component={MigrationSummary} />
             <Stack.Screen name="MigrationData" component={MigrationData} />
             <Stack.Screen name="MigrationChart" component={MigrationChart} />
+
+
+            <Stack.Screen name="NumberOfCouples" component={NumberOfCouples} />
+            <Stack.Screen name="PMOCData" component={PMOCData} />
+            <Stack.Screen name="AgeGroup" component={AgeGroup} />
+            <Stack.Screen name="EmployemntStatus" component={EmployemntStatus} />
+            <Stack.Screen name="FamilyPlanning" component={FamilyPlanning} />
+            <Stack.Screen name="CivilStatus" component={CivilStatus} />
+            <Stack.Screen name="MonthlyIncome" component={MonthlyIncome} />
 
 
         </Stack.Navigator>

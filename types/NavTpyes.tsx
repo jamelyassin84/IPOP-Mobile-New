@@ -21,7 +21,6 @@ export type NavParamList = {
     TeenCenter: undefined;
     KeyFiles: undefined;
     MPFCFDC: undefined;
-    PMOC: undefined;
 
     Activities: undefined
 
@@ -57,6 +56,14 @@ export type NavParamList = {
     MigrationData: undefined;
     MigrationChart: undefined;
 
+    PMOC: undefined;
+    NumberOfCouples: undefined;
+    PMOCData: undefined;
+    AgeGroup: undefined;
+    EmployemntStatus: undefined;
+    FamilyPlanning: undefined;
+    CivilStatus: undefined;
+    MonthlyIncome: undefined;
 
 };
 
