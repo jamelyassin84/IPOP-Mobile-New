@@ -19,7 +19,6 @@ export type NavParamList = {
 
     IssuesAndConcerns: undefined;
     TeenCenter: undefined;
-    Migrations: undefined;
     KeyFiles: undefined;
     MPFCFDC: undefined;
     PMOC: undefined;
@@ -52,6 +51,11 @@ export type NavParamList = {
     MarriageSummary: undefined;
     MarriageData: undefined;
     TypeofWeddings: undefined;
+
+    Migrations: undefined;
+    MigrationSummary: undefined;
+    MigrationData: undefined;
+    MigrationChart: undefined;
 
 
 };

@@ -44,7 +44,6 @@ const Marraiges: FC<Props> = ( props ) => {
     );
 };
 
-
 const menus: string[] = [
     'Summary (Province of Iloilo)',
     'Marriage  Pyramid',

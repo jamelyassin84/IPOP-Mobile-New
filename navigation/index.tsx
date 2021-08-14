@@ -56,6 +56,9 @@ import DeathData from '../modules/demographics/deaths/DeathData';
 import TypeofWeddings from '../modules/demographics/marriages/TypeofWeddings';
 import MarriageSummary from '../modules/demographics/marriages/MarriageSummary';
 import MarriageData from '../modules/demographics/marriages/MarriageData';
+import MigrationSummary from '../modules/demographics/migrations/MigrationSummary';
+import MigrationData from '../modules/demographics/migrations/MigrationData';
+import MigrationChart from '../modules/demographics/migrations/MigrationChart';
 
 export default function Navigation( { colorScheme }: { colorScheme: ColorSchemeName } ) {
     return (
@@ -124,6 +127,10 @@ const RootNavigator = () => {
             <Stack.Screen name="MarriageSummary" component={MarriageSummary} />
             <Stack.Screen name="MarriageData" component={MarriageData} />
             <Stack.Screen name="TypeofWeddings" component={TypeofWeddings} />
+
+            <Stack.Screen name="MigrationSummary" component={MigrationSummary} />
+            <Stack.Screen name="MigrationData" component={MigrationData} />
+            <Stack.Screen name="MigrationChart" component={MigrationChart} />
 
 
         </Stack.Navigator>
