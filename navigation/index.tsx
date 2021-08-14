@@ -51,6 +51,8 @@ import Incidence from '../components/demographics/Incidence';
 import BirthData from '../modules/demographics/births/BirthData';
 import MonthChart from '../components/demographics/MonthChart';
 import BirthSummary from '../modules/demographics/births/BirthSummary';
+import DeathSummary from '../modules/demographics/deaths/DeathSummary';
+import DeathData from '../modules/demographics/deaths/DeathData';
 
 export default function Navigation( { colorScheme }: { colorScheme: ColorSchemeName } ) {
     return (
@@ -111,6 +113,9 @@ const RootNavigator = () => {
             <Stack.Screen name="BirthData" component={BirthData} />
             <Stack.Screen name="Incidence" component={Incidence} />
             <Stack.Screen name="ByMunicipalityTable" component={ByMunicipalityTable} />
+
+            <Stack.Screen name="DeathSummary" component={DeathSummary} />
+            <Stack.Screen name="DeathData" component={DeathData} />
 
         </Stack.Navigator>
     );

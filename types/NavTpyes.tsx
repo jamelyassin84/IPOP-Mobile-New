@@ -19,7 +19,6 @@ export type NavParamList = {
 
     IssuesAndConcerns: undefined;
     TeenCenter: undefined;
-    Deaths: undefined;
     Marraiges: undefined;
     Migrations: undefined;
     KeyFiles: undefined;
@@ -46,6 +45,9 @@ export type NavParamList = {
     Incidence: undefined;
     ByMunicipalityTable: undefined;
 
+    Deaths: undefined;
+    DeathSummary: undefined
+    DeathData: undefined
 
 
 };
