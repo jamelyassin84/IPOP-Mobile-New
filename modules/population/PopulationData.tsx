@@ -22,9 +22,9 @@ const PopulationData: FC<Props> = ( props ) => {
     return (
         <Container>
             <CommonHeader title="Population Data" backgroundColor={Colors[ colorScheme ].background} />
-            <AddressPicker></AddressPicker>
-            <Map />
-
+            <AddressPicker location={( location: any ) => {
+                alert( JSON.stringify( location ) )
+            }} />
         </Container>
     );
 };

@@ -11,28 +11,28 @@ import { AntDesign } from '@expo/vector-icons';
 
 type Props = {
     onSelect: Function
-    blur: Function
+    blur: Function,
+    code: number
 };
-
-const MunicipalityPicker: FC<Props> = ( props ) => {
+const BarangayPicker: FC<Props> = ( props ) => {
 
     const colorScheme = useColorScheme();
     const [ isLoading, setLoading ] = React.useState( false )
-    const [ municipalties, setMunicipalties ] = React.useState( [] )
+    const [ barangays, setBarangay ] = React.useState( [] )
 
     React.useEffect( () => {
-        getMunicipalities()
+        getBarangays()
     }, [] )
 
     const onRefresh = () => {
         setLoading( true );
-        getMunicipalities()
+        getBarangays()
     };
 
-    const getMunicipalities = () => {
-        setMunicipalties( [] )
-        new BaseService( Location_API.Municipalities ).fetch( '' ).then( ( municiaplities: any ) => {
-            setMunicipalties( municiaplities )
+    const getBarangays = () => {
+        setBarangay( [] )
+        new BaseService( Location_API.Baranangay ).fetchWithParams( `municipality_code=${ props.code }` ).then( ( barangays: any ) => {
+            setBarangay( barangays )
             setLoading( false );
         } )
     }
@@ -41,24 +41,24 @@ const MunicipalityPicker: FC<Props> = ( props ) => {
         <View style={[ style.bottomSheetContainer, { backgroundColor: Colors[ colorScheme ].background, } ]}>
             <View style={[ style.choicesContainer, { backgroundColor: Colors[ colorScheme ].background, } ]}>
                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                    <Text style={style.title}>Select a Municipality</Text>
+                    <Text style={style.title}>Select a Barangay</Text>
                     <TouchableOpacity onPress={() => props.blur()}>
                         <AntDesign style={{ marginRight: 6 }} name="close" size={24} color="black" />
                     </TouchableOpacity>
                 </View>
                 <WithRefreshComponent onRefresh={() => onRefresh} loading={isLoading} backgroundColor={Colors[ colorScheme ].background}>
                     {
-                        municipalties.map( ( muncipality: any, index: any ) => {
+                        barangays.map( ( barangay: any, index: any ) => {
                             return (
                                 <TouchableOpacity
                                     key={index}
                                     onPress={() => {
-                                        props.onSelect( muncipality )
+                                        props.onSelect( barangay.name )
                                     }}
                                     style={[ style.choicesButton, { borderTopColor: 'rgba(150,150,150,.3)', backgroundColor: Colors[ colorScheme ].background } ]}
                                 >
                                     <FontAwesome name="map-signs" size={24} color="#1049A2" />
-                                    <Text style={[ style.choicesText, { color: Colors[ colorScheme ].text } ]}>{muncipality.name}</Text>
+                                    <Text style={[ style.choicesText, { color: Colors[ colorScheme ].text } ]}>{barangay.name}</Text>
                                 </TouchableOpacity>
                             )
                         } )
@@ -69,7 +69,6 @@ const MunicipalityPicker: FC<Props> = ( props ) => {
         </View>
     );
 };
-
 
 const style = StyleSheet.create( {
     bottomSheetContainer: {
@@ -104,5 +103,4 @@ const style = StyleSheet.create( {
     }
 } )
 
-
-export default MunicipalityPicker;
+export default BarangayPicker;

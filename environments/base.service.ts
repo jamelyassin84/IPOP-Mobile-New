@@ -18,14 +18,13 @@ export class BaseService<T> {
 		return data
 	}
 
-	async fetchWidthParams(params?: string) {
+	async fetchWithParams(params: string) {
 		const { data } = await axios.get<T[]>(this.resolveURL(params))
 		return data
 	}
 
 	protected resolveURL(params?: string) {
-		console.log(params)
-		return `${environment.api}${this.url}?${params !== '' ? '?' + params : ''}`
+		return `${environment.api}${this.url}?${params}`
 	}
 }
 

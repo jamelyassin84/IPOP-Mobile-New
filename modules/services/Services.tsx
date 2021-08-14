@@ -30,7 +30,6 @@ const ServicesScreen: FC<Props> = ( props ) => {
     const getServices = () => {
         setLoading( true )
         new BaseService( Services_API.Services ).fetch( '' ).then( ( data: any[] ) => {
-            console.log( data )
             setServices( data )
             setLoading( false )
         } )

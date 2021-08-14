@@ -11,8 +11,16 @@ import { LocationChoices, years } from '../../../constants/AppConstants';
 import ScrollableMenu from '../../ScrollableMenu';
 import { FontAwesome } from '@expo/vector-icons';
 import MunicipalityPicker from '../MunicipalityPicker';
+import BarangayPicker from '../BarangayPicker';
 
-type Props = {};
+type Props = {
+    location: Function
+};
+
+type MunicpalityType = {
+    code: number,
+    name: string
+};
 
 const AddressPicker: FC<Props> = ( props ) => {
 
@@ -21,8 +29,9 @@ const AddressPicker: FC<Props> = ( props ) => {
     const [ choice, setCurrentChoice ] = React.useState( LocationChoices[ 0 ] )
 
     const [ year, setYear ] = React.useState( new Date( Date.now() ).getFullYear() )
-    const [ municpality, setMunicpality ] = React.useState( null )
-    const [ barangay, setBarangay ] = React.useState( null )
+    const [ code, setCode ]: any = React.useState( null )
+    const [ municpality, setMunicpality ]: any = React.useState( null )
+    const [ barangay, setBarangay ]: any = React.useState( null )
 
     const TabRef: any = React.useRef();
     const TabSheet = () => {
@@ -42,6 +51,10 @@ const AddressPicker: FC<Props> = ( props ) => {
     }
 
     const setChoice = ( choice: string ) => {
+        setYear( new Date( Date.now() ).getFullYear() )
+        setCode( null )
+        setMunicpality( null )
+        setBarangay( null )
         if ( choice === LocationChoices[ 0 ] ) {
             YearRef.current.open()
         }
@@ -49,7 +62,7 @@ const AddressPicker: FC<Props> = ( props ) => {
             MunicipalityRef.current.open()
         }
         if ( choice === LocationChoices[ 2 ] ) {
-            alert( 'Barangay' )
+            MunicipalityRef.current.open()
         }
     }
 
@@ -59,8 +72,14 @@ const AddressPicker: FC<Props> = ( props ) => {
             <ScrollableMenu
                 title="Year"
                 choices={years()}
-                calback={( choice: string ) => {
+                calback={( choice: number ) => {
+                    setYear( choice )
                     YearRef.current.close()
+                    props.location( {
+                        year: year,
+                        barangay: barangay,
+                        municpality: municpality
+                    } )
                 }}
                 blur={() => TabRef.current.close()}
                 icon={<AntDesign name="calendar" size={24} color="#1049A2" />}
@@ -72,19 +91,38 @@ const AddressPicker: FC<Props> = ( props ) => {
     const MunicipalitySheet = () => {
         return (
             <MunicipalityPicker
-                onSelect={( code: number ) => {
+                onSelect={( municipality: MunicpalityType ) => {
                     MunicipalityRef.current.close()
+                    setCode( municipality.code )
+                    setMunicpality( municipality.name )
                     setTimeout( () => {
                         if ( choice === LocationChoices[ 1 ] ) {
                             YearRef.current.open()
                         }
                         if ( choice === LocationChoices[ 2 ] ) {
-
+                            BarangayRef.current.open()
                         }
-                    }, 600 );
+                    }, 1000 );
 
                 }}
                 blur={() => MunicipalityRef.current.close()}
+            />
+        )
+    }
+
+    const BarangayRef: any = React.useRef();
+    const BarangaySheet = () => {
+        return (
+            <BarangayPicker
+                code={code}
+                onSelect={( name: number ) => {
+                    setBarangay( name )
+                    BarangayRef.current.close()
+                    setTimeout( () => {
+                        YearRef.current.open()
+                    }, 600 );
+                }}
+                blur={() => BarangayRef.current.close()}
             />
         )
     }
@@ -112,6 +150,11 @@ const AddressPicker: FC<Props> = ( props ) => {
             <BottomSheetScreen
                 ref={MunicipalityRef}
                 renderContent={MunicipalitySheet}
+                visibleHeight={Dimensions.get( 'window' ).height - 150}
+            />
+            <BottomSheetScreen
+                ref={BarangayRef}
+                renderContent={BarangaySheet}
                 visibleHeight={Dimensions.get( 'window' ).height - 150}
             />
         </View>
