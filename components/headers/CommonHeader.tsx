@@ -22,7 +22,7 @@ const CommonHeader: FC<Props> = ( props ) => {
             <TouchableOpacity onPress={() => navigation.goBack()}>
                 <Ionicons style={style.icon} name="chevron-back" size={24} color={Colors[ colorScheme ].text} />
             </TouchableOpacity>
-            <Text style={[ style.text, { color: Colors[ colorScheme ].text, width: Dimensions.get( 'screen' ).width - 50 } ]}>{props.title}</Text>
+            <Text style={[ style.text, { color: Colors[ colorScheme ].text, width: Dimensions.get( 'screen' ).width - 100 } ]}>{props.title}</Text>
         </View>
     );
 };
