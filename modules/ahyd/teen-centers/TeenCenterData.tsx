@@ -1,5 +1,3 @@
-
-
 import React, { FC } from 'react';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import CommonHeader from '../../../components/headers/CommonHeader';
@@ -9,7 +7,7 @@ import useColorScheme from '../../../hooks/useColorScheme';
 
 type Props = {};
 
-const AHYDTeam: FC<Props> = ( { route }: any ) => {
+const TeenCenterData: FC<Props> = ( { route }: any ) => {
     const colorScheme = useColorScheme();
 
     const [ isLoading, setLoading ] = React.useState( false )
@@ -33,4 +31,4 @@ const AHYDTeam: FC<Props> = ( { route }: any ) => {
     );
 };
 
-export default AHYDTeam;
+export default TeenCenterData;

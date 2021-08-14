@@ -18,7 +18,6 @@ export type NavParamList = {
     ContactUs: undefined;
 
     IssuesAndConcerns: undefined;
-    TeenCenter: undefined;
     KeyFiles: undefined;
 
     Activities: undefined
@@ -68,6 +67,11 @@ export type NavParamList = {
     MPCFDCData: undefined;
     MPCFDCTeam: undefined;
     MPCFDCPersonnelIncharge: undefined;
+
+    TeenCenter: undefined;
+    TeenCenterData: undefined;
+    TCFocalPerson: undefined;
+    AHYDTeam: undefined;
 
 
 };

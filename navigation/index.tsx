@@ -69,6 +69,9 @@ import MonthlyIncome from '../modules/rpfp/pmoc/MonthlyIncome';
 import MPCFDCData from '../modules/rpfp/mpc-fdc/MPCFDCData';
 import MPCFDCTeam from '../modules/rpfp/mpc-fdc/MPCFDCTeam';
 import MPCFDCPersonnelIncharge from '../modules/rpfp/mpc-fdc/MPCFDCPersonnelIncharge';
+import TeenCenterData from '../modules/ahyd/teen-centers/TeenCenterData';
+import TCFocalPerson from '../modules/ahyd/teen-centers/TCFocalPerson';
+import AHYDTeam from '../modules/ahyd/teen-centers/AHYDTeam';
 
 export default function Navigation( { colorScheme }: { colorScheme: ColorSchemeName } ) {
     return (
@@ -155,6 +158,9 @@ const RootNavigator = () => {
             <Stack.Screen name="MPCFDCTeam" component={MPCFDCTeam} />
             <Stack.Screen name="MPCFDCPersonnelIncharge" component={MPCFDCPersonnelIncharge} />
 
+            <Stack.Screen name="TeenCenterData" component={TeenCenterData} />
+            <Stack.Screen name="TCFocalPerson" component={TCFocalPerson} />
+            <Stack.Screen name="AHYDTeam" component={AHYDTeam} />
 
         </Stack.Navigator>
     );
