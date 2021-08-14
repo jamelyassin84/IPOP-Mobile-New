@@ -23,7 +23,7 @@ const BirthData: FC<Props> = ( props ) => {
 
     return (
         <Container>
-            <CommonHeader title="Local Birth Data" backgroundColor={Colors[ colorScheme ].background} />
+            <CommonHeader title="Local Births Data" backgroundColor={Colors[ colorScheme ].background} />
             <WithRefreshComponent onRefresh={() => onRefresh} loading={isLoading} backgroundColor={Colors[ colorScheme ].background}>
 
             </WithRefreshComponent>

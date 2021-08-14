@@ -7,7 +7,7 @@ import useColorScheme from '../../../hooks/useColorScheme';
 
 type Props = {};
 
-const DeathData: FC<Props> = ( props ) => {
+const MarriageSummary: FC<Props> = ( props ) => {
     const colorScheme = useColorScheme();
 
     const [ isLoading, setLoading ] = React.useState( false )
@@ -23,7 +23,7 @@ const DeathData: FC<Props> = ( props ) => {
 
     return (
         <Container>
-            <CommonHeader title="Local Deaths Data" backgroundColor={Colors[ colorScheme ].background} />
+            <CommonHeader title="Summary (Province of Iloilo)" backgroundColor={Colors[ colorScheme ].background} />
             <WithRefreshComponent onRefresh={() => onRefresh} loading={isLoading} backgroundColor={Colors[ colorScheme ].background}>
 
             </WithRefreshComponent>
@@ -31,4 +31,4 @@ const DeathData: FC<Props> = ( props ) => {
     );
 };
 
-export default DeathData;
+export default MarriageSummary;
