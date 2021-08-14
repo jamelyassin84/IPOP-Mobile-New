@@ -27,22 +27,18 @@ type MunicpalityType = {
 const AddressPicker: FC<Props> = ( props ) => {
 
     const MenuRef: any = React.useRef();
-    const MenuSheet = () => {
-        return (
-            <ScrollableMenu
-                title="what to view"
-                choices={props.menu}
-                calback={( choice: number ) => {
-                    props.choice( choice )
-                    MenuRef.current.close()
-                }}
-                blur={() => MenuRef.current.close()}
-                icon={<MaterialIcons name="menu-open" size={24} color="#ccc" />}
-            />
-        )
-    }
-
-
+    const MenuSheet = () => (
+        <ScrollableMenu
+            title="what to view"
+            choices={props.menu}
+            calback={( choice: number ) => {
+                props.choice( choice )
+                MenuRef.current.close()
+            }}
+            blur={() => MenuRef.current.close()}
+            icon={<MaterialIcons name="menu-open" size={24} color="#ccc" />}
+        />
+    )
 
     const colorScheme = useColorScheme();
 
@@ -54,21 +50,19 @@ const AddressPicker: FC<Props> = ( props ) => {
     const [ barangay, setBarangay ]: any = React.useState( null )
 
     const TabRef: any = React.useRef();
-    const TabSheet = () => {
-        return (
-            <Menu
-                choices={LocationChoices}
-                calback={( choice: string ) => {
-                    setCurrentChoice( choice )
-                    setTimeout( () => {
-                        setChoice( choice )
-                    }, 600 );
-                    TabRef.current.close()
-                }}
-                blur={() => TabRef.current.close()}
-            />
-        )
-    }
+    const TabSheet = () => (
+        <Menu
+            choices={LocationChoices}
+            calback={( choice: string ) => {
+                setCurrentChoice( choice )
+                setTimeout( () => {
+                    setChoice( choice )
+                }, 600 );
+                TabRef.current.close()
+            }}
+            blur={() => TabRef.current.close()}
+        />
+    )
 
     const setChoice = ( choice: string ) => {
         setYear( new Date( Date.now() ).getFullYear() )
@@ -87,65 +81,59 @@ const AddressPicker: FC<Props> = ( props ) => {
     }
 
     const YearRef: any = React.useRef();
-    const YearSheet = () => {
-        return (
-            <ScrollableMenu
-                title="Year"
-                choices={years()}
-                calback={( choice: number ) => {
-                    setYear( choice )
-                    YearRef.current.close()
-                    props.location( {
-                        year: year,
-                        barangay: barangay,
-                        municpality: municpality
-                    } )
-                }}
-                blur={() => TabRef.current.close()}
-                icon={<AntDesign name="calendar" size={24} color="#1049A2" />}
-            />
-        )
-    }
+    const YearSheet = () => (
+        <ScrollableMenu
+            title="Year"
+            choices={years()}
+            calback={( choice: number ) => {
+                setYear( choice )
+                YearRef.current.close()
+                props.location( {
+                    year: year,
+                    barangay: barangay,
+                    municpality: municpality
+                } )
+            }}
+            blur={() => TabRef.current.close()}
+            icon={<AntDesign name="calendar" size={24} color="#1049A2" />}
+        />
+    )
 
     const MunicipalityRef: any = React.useRef();
-    const MunicipalitySheet = () => {
-        return (
-            <MunicipalityPicker
-                onSelect={( municipality: MunicpalityType ) => {
-                    MunicipalityRef.current.close()
-                    setCode( municipality.code )
-                    setMunicpality( municipality.name )
-                    setTimeout( () => {
-                        if ( choice === LocationChoices[ 1 ] ) {
-                            YearRef.current.open()
-                        }
-                        if ( choice === LocationChoices[ 2 ] ) {
-                            BarangayRef.current.open()
-                        }
-                    }, 1000 );
+    const MunicipalitySheet = () => (
+        <MunicipalityPicker
+            onSelect={( municipality: MunicpalityType ) => {
+                MunicipalityRef.current.close()
+                setCode( municipality.code )
+                setMunicpality( municipality.name )
+                setTimeout( () => {
+                    if ( choice === LocationChoices[ 1 ] ) {
+                        YearRef.current.open()
+                    }
+                    if ( choice === LocationChoices[ 2 ] ) {
+                        BarangayRef.current.open()
+                    }
+                }, 1000 );
 
-                }}
-                blur={() => MunicipalityRef.current.close()}
-            />
-        )
-    }
+            }}
+            blur={() => MunicipalityRef.current.close()}
+        />
+    )
 
     const BarangayRef: any = React.useRef();
-    const BarangaySheet = () => {
-        return (
-            <BarangayPicker
-                code={code}
-                onSelect={( name: number ) => {
-                    setBarangay( name )
-                    BarangayRef.current.close()
-                    setTimeout( () => {
-                        YearRef.current.open()
-                    }, 600 );
-                }}
-                blur={() => BarangayRef.current.close()}
-            />
-        )
-    }
+    const BarangaySheet = () => (
+        <BarangayPicker
+            code={code}
+            onSelect={( name: number ) => {
+                setBarangay( name )
+                BarangayRef.current.close()
+                setTimeout( () => {
+                    YearRef.current.open()
+                }, 600 );
+            }}
+            blur={() => BarangayRef.current.close()}
+        />
+    )
 
     return (
         <>

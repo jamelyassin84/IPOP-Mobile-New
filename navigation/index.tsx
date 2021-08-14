@@ -66,6 +66,9 @@ import EmployemntStatus from '../modules/rpfp/pmoc/EmployemntStatus';
 import FamilyPlanning from '../modules/rpfp/pmoc/FamilyPlanning';
 import CivilStatus from '../modules/rpfp/pmoc/CivilStatus';
 import MonthlyIncome from '../modules/rpfp/pmoc/MonthlyIncome';
+import MPCFDCData from '../modules/rpfp/mpc-fdc/MPCFDCData';
+import MPCFDCTeam from '../modules/rpfp/mpc-fdc/MPCFDCTeam';
+import MPCFDCPersonnelIncharge from '../modules/rpfp/mpc-fdc/MPCFDCPersonnelIncharge';
 
 export default function Navigation( { colorScheme }: { colorScheme: ColorSchemeName } ) {
     return (
@@ -147,6 +150,10 @@ const RootNavigator = () => {
             <Stack.Screen name="FamilyPlanning" component={FamilyPlanning} />
             <Stack.Screen name="CivilStatus" component={CivilStatus} />
             <Stack.Screen name="MonthlyIncome" component={MonthlyIncome} />
+
+            <Stack.Screen name="MPCFDCData" component={MPCFDCData} />
+            <Stack.Screen name="MPCFDCTeam" component={MPCFDCTeam} />
+            <Stack.Screen name="MPCFDCPersonnelIncharge" component={MPCFDCPersonnelIncharge} />
 
 
         </Stack.Navigator>

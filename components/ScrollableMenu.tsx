@@ -25,7 +25,7 @@ const ScrollableMenu: FC<Props> = ( props ) => {
         <View style={style.bottomSheetContainer}>
             <View style={[ style.choicesContainer, { backgroundColor: Colors[ colorScheme ].background, } ]}>
                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                    <Text style={style.title}>Select {props.title}</Text>
+                    <Text style={[ style.title, { color: Colors[ colorScheme ].text } ]}>Select {props.title}</Text>
                     <TouchableOpacity onPress={() => props.blur()}>
                         <AntDesign style={{ marginRight: 6 }} name="close" size={24} color="black" />
                     </TouchableOpacity>

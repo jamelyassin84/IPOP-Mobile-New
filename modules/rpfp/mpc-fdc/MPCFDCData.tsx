@@ -8,7 +8,7 @@ import useColorScheme from '../../../hooks/useColorScheme';
 
 type Props = {};
 
-const MPCFDCPersonnelIncharge: FC<Props> = ( { route }: any ) => {
+const MPCFDCData: FC<Props> = ( { route }: any ) => {
     const colorScheme = useColorScheme();
 
     const [ isLoading, setLoading ] = React.useState( false )
@@ -32,4 +32,4 @@ const MPCFDCPersonnelIncharge: FC<Props> = ( { route }: any ) => {
     );
 };
 
-export default MPCFDCPersonnelIncharge;
+export default MPCFDCData;
