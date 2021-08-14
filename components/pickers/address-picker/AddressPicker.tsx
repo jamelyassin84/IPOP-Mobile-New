@@ -1,6 +1,6 @@
 
 import React, { FC } from 'react';
-import { TouchableOpacity, View, StyleSheet, Dimensions } from 'react-native';
+import { TouchableOpacity, View, StyleSheet, Dimensions, Text } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import useColorScheme from '../../../hooks/useColorScheme';
 import Colors from '../../../constants/Colors';
@@ -19,7 +19,7 @@ type Props = {
     choice: Function
 };
 
-type MunicpalityType = {
+type municipalityType = {
     code: number,
     name: string
 };
@@ -46,8 +46,16 @@ const AddressPicker: FC<Props> = ( props ) => {
 
     const [ year, setYear ] = React.useState( new Date( Date.now() ).getFullYear() )
     const [ code, setCode ]: any = React.useState( null )
-    const [ municpality, setMunicpality ]: any = React.useState( null )
+    const [ municipality, setmunicipality ]: any = React.useState( null )
     const [ barangay, setBarangay ]: any = React.useState( null )
+
+    React.useEffect( () => {
+        props.location( {
+            year: year,
+            barangay: barangay,
+            municipality: municipality
+        } )
+    }, [] )
 
     const TabRef: any = React.useRef();
     const TabSheet = () => (
@@ -67,7 +75,7 @@ const AddressPicker: FC<Props> = ( props ) => {
     const setChoice = ( choice: string ) => {
         setYear( new Date( Date.now() ).getFullYear() )
         setCode( null )
-        setMunicpality( null )
+        setmunicipality( null )
         setBarangay( null )
         if ( choice === LocationChoices[ 0 ] ) {
             YearRef.current.open()
@@ -91,7 +99,7 @@ const AddressPicker: FC<Props> = ( props ) => {
                 props.location( {
                     year: year,
                     barangay: barangay,
-                    municpality: municpality
+                    municipality: municipality
                 } )
             }}
             blur={() => TabRef.current.close()}
@@ -102,10 +110,10 @@ const AddressPicker: FC<Props> = ( props ) => {
     const MunicipalityRef: any = React.useRef();
     const MunicipalitySheet = () => (
         <MunicipalityPicker
-            onSelect={( municipality: MunicpalityType ) => {
+            onSelect={( municipality: municipalityType ) => {
                 MunicipalityRef.current.close()
                 setCode( municipality.code )
-                setMunicpality( municipality.name )
+                setmunicipality( municipality.name )
                 setTimeout( () => {
                     if ( choice === LocationChoices[ 1 ] ) {
                         YearRef.current.open()
@@ -137,7 +145,9 @@ const AddressPicker: FC<Props> = ( props ) => {
 
     return (
         <>
+            <Text style={style.title}>{municipality === null && barangay === null ? 'Province' : ''} {barangay === null ? '' : municipality} {year}</Text>
             <View style={style.container}>
+
                 <TouchableOpacity onPress={() => TabRef.current.open()}
                     style={[ style.iconHolder, { backgroundColor: Colors[ colorScheme ].background } ]}>
                     <AntDesign name="search1" size={24} color={Colors[ colorScheme ].text} />
@@ -174,7 +184,7 @@ const AddressPicker: FC<Props> = ( props ) => {
             </View>
             <Map location={{
                 year: year,
-                municpality: municpality,
+                municipality: municipality,
                 barangay: barangay
             }} />
         </>
@@ -192,8 +202,23 @@ const style = StyleSheet.create( {
     iconHolder: {
         borderRadius: 50,
         padding: 10,
-        marginRight: 16
+        marginRight: 16,
+        shadowColor: "rgba(150,150,150,.9)",
+        shadowOffset: {
+            width: 0,
+            height: 4,
+        },
+        shadowOpacity: 0.30,
+        shadowRadius: 4.65,
+        elevation: 8,
 
-    }
+    },
+    title: {
+        width: Dimensions.get( 'screen' ).width,
+        padding: 16,
+        backgroundColor: '#1049A2',
+        color: 'white',
+        fontWeight: 'bold'
+    },
 } )
 export default AddressPicker;

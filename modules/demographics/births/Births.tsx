@@ -3,6 +3,7 @@ import { useNavigation } from '@react-navigation/native';
 import React, { FC } from 'react';
 import CommonHeader from '../../../components/headers/CommonHeader';
 import AddressPicker from '../../../components/pickers/address-picker/AddressPicker';
+import { PYramidType } from '../../../components/Pyramid';
 import Colors from '../../../constants/Colors';
 import Container from '../../../constants/Layout';
 import useColorScheme from '../../../hooks/useColorScheme';
@@ -32,8 +33,9 @@ const Births: FC<Props> = ( props ) => {
                 choice={( choice: string ) => {
                     navigation.navigate( route[ menus.indexOf( choice ) ], Object.assign( {
                         title: choice,
-                        type: 'Birth',
-                        location
+                        type: PYramidType.Birth,
+                        location: location,
+                        colors: [ '#3DB98D', '#73B436' ] //Male, Female
                     } ) )
                 }}
                 location={( location: any ) => {

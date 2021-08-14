@@ -2,6 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import React, { FC } from 'react';
 import CommonHeader from '../../../components/headers/CommonHeader';
 import AddressPicker from '../../../components/pickers/address-picker/AddressPicker';
+import { PYramidType } from '../../../components/Pyramid';
 import Colors from '../../../constants/Colors';
 import Container from '../../../constants/Layout';
 import useColorScheme from '../../../hooks/useColorScheme';
@@ -32,8 +33,9 @@ const Marraiges: FC<Props> = ( props ) => {
                 choice={( choice: string ) => {
                     navigation.navigate( route[ menus.indexOf( choice ) ], Object.assign( {
                         title: choice,
-                        type: 'Marriage',
-                        location
+                        type: PYramidType.Marriage,
+                        location: location,
+                        colors: [ '#282C34', '#CD1125' ] //Male, Female
                     } ) )
                 }}
                 location={( location: any ) => {
@@ -46,7 +48,6 @@ const Marraiges: FC<Props> = ( props ) => {
 
 const menus: string[] = [
     'Summary (Province of Iloilo)',
-    'Marriage  Pyramid',
     'Marriage  by Age Group and Sex',
     'Marriage by Month of Wedding',
     'Local Marriage  Data',
@@ -57,7 +58,6 @@ const menus: string[] = [
 
 const route: string[] = [
     'MarriageSummary',
-    'Pyramid',
     'AgeDistributionTable',
     'MonthChart',
     'MarriageData',

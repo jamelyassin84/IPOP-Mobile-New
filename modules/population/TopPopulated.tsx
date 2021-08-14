@@ -9,13 +9,16 @@ import useColorScheme from '../../hooks/useColorScheme';
 import { AntDesign } from '@expo/vector-icons';
 import { BaseService } from '../../environments/base.service';
 import { Population_API } from '../../environments/Enums';
+import LocationTitle from '../../components/LocationTitle';
+import { DataParams } from '../../components/Pyramid';
 
 type Props = {};
 
 const TopPopulated: FC<Props> = ( { route }: any ) => {
 
-    const colorScheme = useColorScheme();
+    const data: DataParams = route.params
 
+    const colorScheme = useColorScheme();
     const [ isLoading, setLoading ] = React.useState( false )
     const [ municipalities, setMunicipalities ] = React.useState( [] )
 
@@ -32,7 +35,6 @@ const TopPopulated: FC<Props> = ( { route }: any ) => {
         setLoading( true )
         setMunicipalities( [] )
         new BaseService( Population_API.TopPopulated ).fetch().then( ( municipalities: any ) => {
-            console.log( municipalities )
             setMunicipalities( municipalities )
             setLoading( false )
         } )
@@ -41,6 +43,7 @@ const TopPopulated: FC<Props> = ( { route }: any ) => {
     return (
         <Container>
             <CommonHeader title={route.params.title} backgroundColor={Colors[ colorScheme ].background} />
+            <LocationTitle location={data.location} />
             <WithRefreshComponent onRefresh={() => onRefresh} loading={isLoading} backgroundColor={Colors[ colorScheme ].background}>
                 {
                     municipalities.map( ( municipality: any, index: number ) => (
