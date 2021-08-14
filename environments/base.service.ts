@@ -9,17 +9,23 @@ export class BaseService<T> {
 	}
 
 	async fetch(params?: string) {
-		const { data } = await axios.get<T[]>(this.resolveURL(params))
+		const { data } = await axios.get<T[]>(`${environment.api}${this.url}`)
 		return data
 	}
 
 	async fetchOne(id: number, params?: string) {
-		const { data } = await axios.get<T[]>(`${environment.api}${this.url}/${id}?${params}`)
+		const { data } = await axios.get<T[]>(`${environment.api}${this.url}/${id}${params !== undefined ? '?' + params : ''}`)
+		return data
+	}
+
+	async fetchWidthParams(params?: string) {
+		const { data } = await axios.get<T[]>(this.resolveURL(params))
 		return data
 	}
 
 	protected resolveURL(params?: string) {
-		return `${environment.api}${this.url}?${params}`
+		console.log(params)
+		return `${environment.api}${this.url}?${params !== '' ? '?' + params : ''}`
 	}
 }
 

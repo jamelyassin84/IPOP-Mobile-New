@@ -7,6 +7,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 type Props = {
     onRefresh: Function,
     loading: boolean,
+    backgroundColor?: string
 };
 
 const WithRefreshComponent: FC<Props> = ( props ) => {
@@ -14,7 +15,8 @@ const WithRefreshComponent: FC<Props> = ( props ) => {
         <ScrollView
             style={{
                 height: Dimensions.get( 'screen' ).height,
-                width: Dimensions.get( 'screen' ).width
+                width: Dimensions.get( 'screen' ).width,
+                backgroundColor: props.backgroundColor
             }}
             showsVerticalScrollIndicator={false}
             refreshControl={

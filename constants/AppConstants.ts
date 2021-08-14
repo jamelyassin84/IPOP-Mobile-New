@@ -7,3 +7,5 @@ export function years() {
 	}
 	return tempYear
 }
+
+export const LocationChoices = ['Province', 'Municipality', 'Barangay']
