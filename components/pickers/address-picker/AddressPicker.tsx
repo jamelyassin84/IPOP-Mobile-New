@@ -1,32 +1,32 @@
 
-import React, { FC } from 'react';
-import { TouchableOpacity, View, StyleSheet, Dimensions, Text } from 'react-native';
-import { AntDesign } from '@expo/vector-icons';
-import useColorScheme from '../../../hooks/useColorScheme';
-import Colors from '../../../constants/Colors';
-import BottomSheetScreen from 'react-native-animated-bottom-sheet';
+import React, { FC } from 'react'
+import { TouchableOpacity, View, StyleSheet, Dimensions, Text } from 'react-native'
+import { AntDesign } from '@expo/vector-icons'
+import useColorScheme from '../../../hooks/useColorScheme'
+import Colors from '../../../constants/Colors'
+import BottomSheetScreen from 'react-native-animated-bottom-sheet'
 import Menu from '../../Menu'
-import { LocationChoices, years } from '../../../constants/AppConstants';
-import ScrollableMenu from '../../ScrollableMenu';
-import MunicipalityPicker from '../MunicipalityPicker';
-import BarangayPicker from '../BarangayPicker';
-import Map from '../../../components/Map';
-import { MaterialIcons } from '@expo/vector-icons';
+import { LocationChoices, years } from '../../../constants/AppConstants'
+import ScrollableMenu from '../../ScrollableMenu'
+import MunicipalityPicker from '../MunicipalityPicker'
+import BarangayPicker from '../BarangayPicker'
+import Map from '../../../components/Map'
+import { MaterialIcons } from '@expo/vector-icons'
 
 type Props = {
     location: Function
     menu: any[],
     choice: Function
-};
+}
 
 type municipalityType = {
     code: number,
     name: string
-};
+}
 
 const AddressPicker: FC<Props> = ( props ) => {
 
-    const MenuRef: any = React.useRef();
+    const MenuRef: any = React.useRef()
     const MenuSheet = () => (
         <ScrollableMenu
             title="what to view"
@@ -40,10 +40,8 @@ const AddressPicker: FC<Props> = ( props ) => {
         />
     )
 
-    const colorScheme = useColorScheme();
-
+    const colorScheme = useColorScheme()
     const [ choice, setCurrentChoice ] = React.useState( LocationChoices[ 0 ] )
-
     const [ year, setYear ] = React.useState( new Date( Date.now() ).getFullYear() )
     const [ code, setCode ]: any = React.useState( null )
     const [ municipality, setmunicipality ]: any = React.useState( null )
@@ -57,7 +55,7 @@ const AddressPicker: FC<Props> = ( props ) => {
         } )
     }, [] )
 
-    const TabRef: any = React.useRef();
+    const TabRef: any = React.useRef()
     const TabSheet = () => (
         <Menu
             choices={LocationChoices}
@@ -65,7 +63,7 @@ const AddressPicker: FC<Props> = ( props ) => {
                 setCurrentChoice( choice )
                 setTimeout( () => {
                     setChoice( choice )
-                }, 600 );
+                }, 600 )
                 TabRef.current.close()
             }}
             blur={() => TabRef.current.close()}
@@ -74,21 +72,13 @@ const AddressPicker: FC<Props> = ( props ) => {
 
     const setChoice = ( choice: string ) => {
         setYear( new Date( Date.now() ).getFullYear() )
-        setCode( null )
-        setmunicipality( null )
-        setBarangay( null )
-        if ( choice === LocationChoices[ 0 ] ) {
-            YearRef.current.open()
-        }
-        if ( choice === LocationChoices[ 1 ] ) {
-            MunicipalityRef.current.open()
-        }
-        if ( choice === LocationChoices[ 2 ] ) {
-            MunicipalityRef.current.open()
-        }
+        setCode( null ); setmunicipality( null ); setBarangay( null )
+        if ( choice === LocationChoices[ 0 ] ) YearRef.current.open()
+        if ( choice === LocationChoices[ 1 ] ) MunicipalityRef.current.open()
+        if ( choice === LocationChoices[ 2 ] ) MunicipalityRef.current.open()
     }
 
-    const YearRef: any = React.useRef();
+    const YearRef: any = React.useRef()
     const YearSheet = () => (
         <ScrollableMenu
             title="Year"
@@ -107,7 +97,7 @@ const AddressPicker: FC<Props> = ( props ) => {
         />
     )
 
-    const MunicipalityRef: any = React.useRef();
+    const MunicipalityRef: any = React.useRef()
     const MunicipalitySheet = () => (
         <MunicipalityPicker
             onSelect={( municipality: municipalityType ) => {
@@ -115,20 +105,15 @@ const AddressPicker: FC<Props> = ( props ) => {
                 setCode( municipality.code )
                 setmunicipality( municipality.name )
                 setTimeout( () => {
-                    if ( choice === LocationChoices[ 1 ] ) {
-                        YearRef.current.open()
-                    }
-                    if ( choice === LocationChoices[ 2 ] ) {
-                        BarangayRef.current.open()
-                    }
-                }, 1000 );
-
+                    if ( choice === LocationChoices[ 1 ] ) YearRef.current.open()
+                    if ( choice === LocationChoices[ 2 ] ) BarangayRef.current.open()
+                }, 1000 )
             }}
             blur={() => MunicipalityRef.current.close()}
         />
     )
 
-    const BarangayRef: any = React.useRef();
+    const BarangayRef: any = React.useRef()
     const BarangaySheet = () => (
         <BarangayPicker
             code={code}
@@ -137,7 +122,7 @@ const AddressPicker: FC<Props> = ( props ) => {
                 BarangayRef.current.close()
                 setTimeout( () => {
                     YearRef.current.open()
-                }, 600 );
+                }, 600 )
             }}
             blur={() => BarangayRef.current.close()}
         />
@@ -156,6 +141,7 @@ const AddressPicker: FC<Props> = ( props ) => {
                 <TouchableOpacity onPress={() => MenuRef.current.open()} style={[ style.iconHolder, { backgroundColor: Colors[ colorScheme ].background } ]}>
                     <MaterialIcons name="expand-more" size={24} color={Colors[ colorScheme ].text} />
                 </TouchableOpacity>
+
                 <BottomSheetScreen
                     ref={TabRef}
                     renderContent={TabSheet}
@@ -188,8 +174,8 @@ const AddressPicker: FC<Props> = ( props ) => {
                 barangay: barangay
             }} />
         </>
-    );
-};
+    )
+}
 
 const style = StyleSheet.create( {
     container: {
@@ -211,7 +197,6 @@ const style = StyleSheet.create( {
         shadowOpacity: 0.30,
         shadowRadius: 4.65,
         elevation: 8,
-
     },
     title: {
         width: Dimensions.get( 'screen' ).width,
@@ -221,4 +206,5 @@ const style = StyleSheet.create( {
         fontWeight: 'bold'
     },
 } )
-export default AddressPicker;
+
+export default AddressPicker

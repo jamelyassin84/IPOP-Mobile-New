@@ -1,23 +1,23 @@
-import React, { FC } from 'react';
-import { TouchableOpacity, View, StyleSheet, Dimensions } from 'react-native';
-import { AntDesign } from '@expo/vector-icons';
-import useColorScheme from '../../hooks/useColorScheme';
-import Colors from '../../constants/Colors';
-import BottomSheetScreen from 'react-native-animated-bottom-sheet';
-import { districts } from '../../constants/AppConstants';
-import ScrollableMenu from '../ScrollableMenu';
-import Map from '../../components/Map';
-import { MaterialIcons } from '@expo/vector-icons';
+import React, { FC } from 'react'
+import { TouchableOpacity, View, StyleSheet, Dimensions } from 'react-native'
+import { AntDesign } from '@expo/vector-icons'
+import useColorScheme from '../../hooks/useColorScheme'
+import Colors from '../../constants/Colors'
+import BottomSheetScreen from 'react-native-animated-bottom-sheet'
+import { districts } from '../../constants/AppConstants'
+import ScrollableMenu from '../ScrollableMenu'
+import Map from '../../components/Map'
+import { MaterialIcons } from '@expo/vector-icons'
 
 type Props = {
     location: Function
     menu: any[],
     choice: Function
-};
+}
 
 const DistrictPicker: FC<Props> = ( props ) => {
 
-    const MenuRef: any = React.useRef();
+    const MenuRef: any = React.useRef()
     const MenuSheet = () => {
         return (
             <ScrollableMenu
@@ -33,7 +33,7 @@ const DistrictPicker: FC<Props> = ( props ) => {
         )
     }
 
-    const DistrictRef: any = React.useRef();
+    const DistrictRef: any = React.useRef()
     const DistrictSheet = () => (
         <ScrollableMenu
             title="District"
@@ -41,16 +41,14 @@ const DistrictPicker: FC<Props> = ( props ) => {
             calback={( choice: number ) => {
                 DistrictRef.current.close()
                 setDistrict( choice )
-                props.location( {
-                    district: district,
-                } )
+                props.location( { district: district } )
             }}
             blur={() => DistrictRef.current.close()}
             icon={<AntDesign name="calendar" size={24} color="#1049A2" />}
         />
     )
 
-    const colorScheme = useColorScheme();
+    const colorScheme = useColorScheme()
     const [ district, setDistrict ]: any = React.useState( null )
 
     return (
@@ -81,8 +79,8 @@ const DistrictPicker: FC<Props> = ( props ) => {
                 barangay: null
             }} />
         </>
-    );
-};
+    )
+}
 
 const style = StyleSheet.create( {
     container: {
@@ -96,8 +94,7 @@ const style = StyleSheet.create( {
         borderRadius: 50,
         padding: 10,
         marginRight: 16
-
     }
 } )
 
-export default DistrictPicker;
+export default DistrictPicker

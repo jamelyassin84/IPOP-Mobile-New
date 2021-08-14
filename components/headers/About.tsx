@@ -8,9 +8,7 @@ import style from '../../styles/header/about.style'
 type Props = {};
 
 const AboutHeader: FC<Props> = ( props ) => {
-
     const colorScheme = useColorScheme();
-
     return (
         <View style={style.header}>
             <Image
@@ -22,12 +20,8 @@ const AboutHeader: FC<Props> = ( props ) => {
                 source={require( '../../assets/logo/ipo-logo.png' )}
             />
             <View>
-                <Text style={{ color: Colors[ colorScheme ].text }}>
-                    Republic of the Philippines
-                </Text>
-                <Text style={{ color: Colors[ colorScheme ].text }}>
-                    Province of Iloilo
-                </Text>
+                <Text style={{ color: Colors[ colorScheme ].text }}>Republic of the Philippines</Text>
+                <Text style={{ color: Colors[ colorScheme ].text }}>Province of Iloilo</Text>
                 <Text style={style.title}>Provincial Population Office</Text>
             </View>
         </View>

@@ -16,7 +16,6 @@ type Props = {
 const ActivitiesComponent: FC<Props> = ( props ) => {
 
     const colorScheme = useColorScheme();
-
     const [ images, setImages ] = React.useState( [] )
 
     React.useEffect( () => {

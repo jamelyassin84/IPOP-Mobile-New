@@ -14,9 +14,7 @@ type Props = {
 const ArticleDatePicker: FC<Props> = ( props ) => {
     return (
         <View>
-            <View
-                style={style.container}
-            >
+            <View style={style.container}>
                 <TouchableOpacity
                     onPress={() => props.default()}
                     style={[ style.button, props.menu === 'All' ? style.active : {} ]}

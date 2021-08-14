@@ -11,7 +11,6 @@ type Props = {
 };
 
 const HomeHeader: FC<Props> = ( props ) => {
-
     const colorScheme = useColorScheme();
     return (
         <View>

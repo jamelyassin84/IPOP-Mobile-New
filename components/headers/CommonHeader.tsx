@@ -13,10 +13,8 @@ type Props = {
 };
 
 const CommonHeader: FC<Props> = ( props ) => {
-
     const colorScheme = useColorScheme();
     const navigation = useNavigation();
-
     return (
         <View style={[ style.header, { backgroundColor: props.backgroundColor } ]}>
             <TouchableOpacity onPress={() => navigation.goBack()}>

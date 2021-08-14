@@ -14,13 +14,10 @@ export function stringifyLocation(location: any) {
 	if (location.barangay !== null && location.municipality !== null) {
 		return `${location.barangay || ''} ${location.municipality || ''}, Iloilo Philippines`
 	}
-	if (location.municipality === null && location.barangay === null) {
-		return 'Iloilo Philippines'
-	}
 	if (location.barangay === null && location.municipality !== null) {
 		return `${location.municipality || ''}, Iloilo Philippines`
 	}
-	return 'Iloilo'
+	return 'Iloilo Philippines'
 }
 
 export function paramifyLocation(location: any) {

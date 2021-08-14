@@ -1,25 +1,22 @@
 
-import React, { FC } from 'react';
-import MapView, { Marker } from 'react-native-maps';
-import { StyleSheet, View, Dimensions } from 'react-native';
-import useColorScheme from '../hooks/useColorScheme';
-import axios from 'axios';
-import * as Location from 'expo-location';
-import { stringifyLocation } from '../constants/AppConstants';
+import React, { FC } from 'react'
+import MapView, { Marker } from 'react-native-maps'
+import { StyleSheet, View, Dimensions } from 'react-native'
+import axios from 'axios'
+import * as Location from 'expo-location'
+import { stringifyLocation } from '../constants/AppConstants'
 
 type Props = {
     location: any
-};
+}
 
 const Map: FC<Props> = ( props ) => {
-
-    const colorScheme = useColorScheme();
 
     const [ location, setLocation ] = React.useState( {
         coords: { latitude: 0, longitude: 0 },
         longitude: 0,
         latitudeDelta: 0,
-    } );
+    } )
 
     const [ data, setData ]: any = React.useState( [
         {
@@ -27,22 +24,22 @@ const Map: FC<Props> = ( props ) => {
             lon: 122.5373,
             display_name: 'Iloilo Province',
         }
-    ] );
+    ] )
 
     React.useEffect( () => {
         ( async () => {
-            let { status } = await Location.requestForegroundPermissionsAsync();
+            let { status } = await Location.requestForegroundPermissionsAsync()
             if ( status !== 'granted' ) {
-                alert( 'Permission to access location was denied' );
-                return;
+                alert( 'Permission to access location was denied' )
+                return
             }
 
-            let location: any = await Location.getCurrentPositionAsync( {} );
-            setLocation( location );
-        } )();
+            let location: any = await Location.getCurrentPositionAsync( {} )
+            setLocation( location )
+        } )()
         changeMap()
 
-    }, [ props.location ] );
+    }, [ props.location ] )
 
     const changeMap = () => {
         if ( props.location.barangay !== null && props.location.municipality !== null ) {
@@ -61,8 +58,7 @@ const Map: FC<Props> = ( props ) => {
                     longitude: data[ 0 ].lon,
                     latitudeDelta: 0.922,
                     longitudeDelta: 0.421,
-                }}
-            >
+                }}>
                 <Marker
                     coordinate={{
                         latitude: location.coords.latitude,
@@ -71,7 +67,6 @@ const Map: FC<Props> = ( props ) => {
                     pinColor={"#1ED760"}
                     title={"You are here"}
                 />
-
                 <Marker
                     coordinate={{
                         latitude: data[ 0 ].lat,
@@ -82,8 +77,8 @@ const Map: FC<Props> = ( props ) => {
                 />
             </MapView>
         </View>
-    );
-};
+    )
+}
 
 const styles = StyleSheet.create( {
     container: {
@@ -100,5 +95,6 @@ const styles = StyleSheet.create( {
         width: Dimensions.get( 'window' ).width,
         height: Dimensions.get( 'window' ).height,
     },
-} );
-export default Map;
+} )
+
+export default Map

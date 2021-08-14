@@ -44,7 +44,6 @@ const style = StyleSheet.create( {
         flex: 1,
         marginLeft: 26
     },
-
 } )
 
 export default PersonnelDirectoryCard;

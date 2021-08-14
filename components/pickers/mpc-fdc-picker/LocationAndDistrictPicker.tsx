@@ -1,32 +1,30 @@
 
-import React, { FC } from 'react';
-import { TouchableOpacity, View, StyleSheet, Dimensions } from 'react-native';
-import { AntDesign } from '@expo/vector-icons';
-import useColorScheme from '../../../hooks/useColorScheme';
-import Colors from '../../../constants/Colors';
-import BottomSheetScreen from 'react-native-animated-bottom-sheet';
-import Menu from '../../Menu'
-import { districts, LocationChoices, years } from '../../../constants/AppConstants';
-import ScrollableMenu from '../../ScrollableMenu';
-import MunicipalityPicker from '../MunicipalityPicker';
-import BarangayPicker from '../BarangayPicker';
-import Map from '../../../components/Map';
-import { MaterialIcons } from '@expo/vector-icons';
+import React, { FC } from 'react'
+import { TouchableOpacity, View, StyleSheet, Dimensions } from 'react-native'
+import { AntDesign } from '@expo/vector-icons'
+import useColorScheme from '../../../hooks/useColorScheme'
+import Colors from '../../../constants/Colors'
+import BottomSheetScreen from 'react-native-animated-bottom-sheet'
+import { districts } from '../../../constants/AppConstants'
+import ScrollableMenu from '../../ScrollableMenu'
+import MunicipalityPicker from '../MunicipalityPicker'
+import Map from '../../../components/Map'
+import { MaterialIcons } from '@expo/vector-icons'
 
 type Props = {
     location: Function
     menu: any[],
     choice: Function
-};
+}
 
 type MunicpalityType = {
     code: number,
     name: string
-};
+}
 
 const LocationAndDistrictPicker: FC<Props> = ( props ) => {
 
-    const MenuRef: any = React.useRef();
+    const MenuRef: any = React.useRef()
     const MenuSheet = () => {
         return (
             <ScrollableMenu
@@ -42,11 +40,11 @@ const LocationAndDistrictPicker: FC<Props> = ( props ) => {
         )
     }
 
-    const colorScheme = useColorScheme();
+    const colorScheme = useColorScheme()
     const [ district, setDistrict ]: any = React.useState( null )
     const [ municpality, setMunicpality ]: any = React.useState( null )
 
-    const DistrictRef: any = React.useRef();
+    const DistrictRef: any = React.useRef()
     const DistrictSheet = () => (
         <ScrollableMenu
             title="District"
@@ -56,14 +54,14 @@ const LocationAndDistrictPicker: FC<Props> = ( props ) => {
                 setDistrict( choice )
                 setTimeout( () => {
                     MunicipalityRef.current.open()
-                }, 600 );
+                }, 600 )
             }}
             blur={() => DistrictRef.current.close()}
             icon={<AntDesign name="calendar" size={24} color="#1049A2" />}
         />
     )
 
-    const MunicipalityRef: any = React.useRef();
+    const MunicipalityRef: any = React.useRef()
     const MunicipalitySheet = () => (
         <MunicipalityPicker
             onSelect={( municipality: MunicpalityType ) => {
@@ -77,7 +75,6 @@ const LocationAndDistrictPicker: FC<Props> = ( props ) => {
             blur={() => MunicipalityRef.current.close()}
         />
     )
-
 
     return (
         <>
@@ -112,7 +109,7 @@ const LocationAndDistrictPicker: FC<Props> = ( props ) => {
                 barangay: null
             }} />
         </>
-    );
+    )
 }
 
 const style = StyleSheet.create( {
@@ -130,4 +127,4 @@ const style = StyleSheet.create( {
 
     }
 } )
-export default LocationAndDistrictPicker;
+export default LocationAndDistrictPicker

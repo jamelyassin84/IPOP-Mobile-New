@@ -34,13 +34,9 @@ const Pyramid: FC<Props> = ( { route }: any ) => {
     };
 
     const getData = () => {
-        setLoading( false )
-        setMale( [] )
-        setFemale( [] )
+        setLoading( false ); setMale( [] ); setFemale( [] )
         new BaseService( Population_API.PopulationPyramid ).fetchWithParams( `${ paramifyLocation( data.location ) }&type=${ data.type }` ).then( ( data: any ) => {
-            let malesArray = []
-            let femalesArray = []
-            let keysArray = []
+            let malesArray = []; let femalesArray = []; let keysArray = [];
             if ( data.length != 0 ) {
                 data = data[ 0 ]
                 for ( let key in data.data.male ) {
@@ -52,9 +48,7 @@ const Pyramid: FC<Props> = ( { route }: any ) => {
                 for ( let key in data.data.female ) {
                     femalesArray.push( data.data.female[ key ] );
                 }
-                setKeys( keysArray.join( ` ${ '\n' }` ) )
-                setMale( malesArray )
-                setFemale( femalesArray )
+                setLoading( false ); setKeys( keysArray.join( ` ${ '\n' }` ) ); setMale( malesArray ); setFemale( femalesArray );
                 return
             }
             alert( `${ route.params.title } on this location is not yet set` )
@@ -74,8 +68,7 @@ const Pyramid: FC<Props> = ( { route }: any ) => {
                     svg={{ fill: data.colors[ 0 ] }}
                     horizontal={true}
                     spacingInner={.15}
-                    spacingOuter={.15}
-                >
+                    spacingOuter={.15}>
                     <Grid />
                 </BarChart>
                 <BarChart
@@ -84,8 +77,7 @@ const Pyramid: FC<Props> = ( { route }: any ) => {
                     svg={{ fill: data.colors[ 1 ] }}
                     horizontal={true}
                     spacingInner={.15}
-                    spacingOuter={.15}
-                >
+                    spacingOuter={.15}>
                     <Grid />
                 </BarChart>
                 <Text style={{
@@ -106,6 +98,7 @@ export type DataParams = {
     type?: string,
     colors: any[],
 }
+
 export type LocationType = {
     municipality?: string | null,
     year?: any | null,

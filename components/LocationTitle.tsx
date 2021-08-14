@@ -5,10 +5,10 @@ type Props = {
     location: any
 };
 
-
 const LocationTitle: FC<Props> = ( props ) => {
     return <Text style={style.title}>{props.location.municipality === null && props.location.barangay === null ? 'Province' : ''} {props.location.barangay === null ? '' : props.location.municipality} {props.location.year}</Text>
 };
+
 const style = StyleSheet.create( {
     title: {
         width: Dimensions.get( 'screen' ).width,
@@ -18,6 +18,7 @@ const style = StyleSheet.create( {
         fontWeight: 'bold'
     },
 } )
+
 export default LocationTitle;
 
 

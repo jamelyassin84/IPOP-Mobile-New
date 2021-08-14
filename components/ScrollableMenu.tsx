@@ -18,9 +18,7 @@ type Props = {
 };
 
 const ScrollableMenu: FC<Props> = ( props ) => {
-
     const colorScheme = useColorScheme();
-
     return (
         <View style={style.bottomSheetContainer}>
             <View style={[ style.choicesContainer, { backgroundColor: Colors[ colorScheme ].background, } ]}>
