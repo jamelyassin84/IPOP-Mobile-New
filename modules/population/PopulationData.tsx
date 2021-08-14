@@ -31,6 +31,7 @@ const PopulationData: FC<Props> = ( props ) => {
                 menu={menus}
                 choice={( choice: string ) => {
                     navigation.navigate( route[ menus.indexOf( choice ) ], Object.assign( {
+                        title: choice,
                         type: 'Population',
                         location
                     } ) )

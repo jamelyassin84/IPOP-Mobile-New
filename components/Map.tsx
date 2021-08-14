@@ -40,16 +40,13 @@ const Map: FC<Props> = ( props ) => {
             let location: any = await Location.getCurrentPositionAsync( {} );
             setLocation( location );
         } )();
-        console.log( 'ari' )
         changeMap()
 
     }, [ props.location ] );
 
     const changeMap = () => {
         if ( props.location.year !== null ) {
-            console.log( props.location )
             const url = `https://us1.locationiq.com/v1/search.php?key=pk.ca7d72d67098fe33153685abf70e35a9&q=${ stringifyLocation( props.location ) }&format=json`
-            console.log( url )
             axios.get( url ).then( ( response ) => {
                 setData( response.data )
             } ).catch( ( error ) => {
