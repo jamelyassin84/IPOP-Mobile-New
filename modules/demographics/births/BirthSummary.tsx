@@ -1,13 +1,13 @@
 import React, { FC } from 'react';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
-import CommonHeader from '../../components/headers/CommonHeader';
-import WithRefreshComponent from '../../components/utils/WithRefreshComponent';
-import Container from '../../constants/Layout';
-import useColorScheme from '../../hooks/useColorScheme';
+import CommonHeader from '../../../components/headers/CommonHeader';
+import WithRefreshComponent from '../../../components/utils/WithRefreshComponent';
+import Container from '../../../constants/Layout';
+import useColorScheme from '../../../hooks/useColorScheme';
 
 type Props = {};
 
-const Incidence: FC<Props> = ( props ) => {
+const BirthSummary: FC<Props> = ( props ) => {
     const colorScheme = useColorScheme();
 
     const [ isLoading, setLoading ] = React.useState( false )
@@ -23,7 +23,7 @@ const Incidence: FC<Props> = ( props ) => {
 
     return (
         <Container>
-            <CommonHeader title="Chart" backgroundColor={Colors[ colorScheme ].background} />
+            <CommonHeader title="Summary (Province of Iloilo)" backgroundColor={Colors[ colorScheme ].background} />
             <WithRefreshComponent onRefresh={() => onRefresh} loading={isLoading} backgroundColor={Colors[ colorScheme ].background}>
 
             </WithRefreshComponent>
@@ -31,4 +31,4 @@ const Incidence: FC<Props> = ( props ) => {
     );
 };
 
-export default Incidence;
+export default BirthSummary;

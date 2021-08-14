@@ -3,7 +3,6 @@ import { useNavigation } from '@react-navigation/native';
 import React, { FC } from 'react';
 import CommonHeader from '../../components/headers/CommonHeader';
 import AddressPicker from '../../components/pickers/address-picker/AddressPicker';
-import WithRefreshComponent from '../../components/utils/WithRefreshComponent';
 import Colors from '../../constants/Colors';
 import Container from '../../constants/Layout';
 import useColorScheme from '../../hooks/useColorScheme';

@@ -46,6 +46,11 @@ import AgeDistributionTable from '../components/AgeDistributionTable';
 import Pyramid from '../components/Pyramid';
 import TopPopulated from '../modules/population/TopPopulated';
 import PopulationProfileByMuncipality from '../modules/population/PopulationProfileByMuncipality';
+import ByMunicipalityTable from '../components/demographics/ByMunicipalityTable';
+import Incidence from '../components/demographics/Incidence';
+import BirthData from '../modules/demographics/births/BirthData';
+import MonthChart from '../components/demographics/MonthChart';
+import BirthSummary from '../modules/demographics/births/BirthSummary';
 
 export default function Navigation( { colorScheme }: { colorScheme: ColorSchemeName } ) {
     return (
@@ -100,6 +105,12 @@ const RootNavigator = () => {
             <Stack.Screen name="AgeDependecy" component={AgeDependecy} />
             <Stack.Screen name="AgeDistributionAndAgeDependencyRatioByMunicipality" component={AgeDistributionAndAgeDependencyRatioByMunicipality} />
             <Stack.Screen name="TechnicalNotes" component={TechnicalNotes} />
+
+            <Stack.Screen name="BirthSummary" component={BirthSummary} />
+            <Stack.Screen name="MonthChart" component={MonthChart} />
+            <Stack.Screen name="BirthData" component={BirthData} />
+            <Stack.Screen name="Incidence" component={Incidence} />
+            <Stack.Screen name="ByMunicipalityTable" component={ByMunicipalityTable} />
 
         </Stack.Navigator>
     );

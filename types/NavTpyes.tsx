@@ -19,7 +19,6 @@ export type NavParamList = {
 
     IssuesAndConcerns: undefined;
     TeenCenter: undefined;
-    Births: undefined;
     Deaths: undefined;
     Marraiges: undefined;
     Migrations: undefined;
@@ -28,7 +27,6 @@ export type NavParamList = {
     PMOC: undefined;
 
     Activities: undefined
-
 
     PopulationData: undefined;
     TopPopulated: undefined;
@@ -40,6 +38,15 @@ export type NavParamList = {
     AgeDependecy: undefined;
     AgeDistributionAndAgeDependencyRatioByMunicipality: undefined;
     TechnicalNotes: undefined;
+
+    Births: undefined;
+    BirthSummary: undefined;
+    MonthChart: undefined;
+    BirthData: undefined;
+    Incidence: undefined;
+    ByMunicipalityTable: undefined;
+
+
 
 };
 
