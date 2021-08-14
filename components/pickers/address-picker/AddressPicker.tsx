@@ -9,9 +9,9 @@ import BottomSheetScreen from 'react-native-animated-bottom-sheet';
 import Menu from '../../Menu'
 import { LocationChoices, years } from '../../../constants/AppConstants';
 import ScrollableMenu from '../../ScrollableMenu';
-import { FontAwesome } from '@expo/vector-icons';
 import MunicipalityPicker from '../MunicipalityPicker';
 import BarangayPicker from '../BarangayPicker';
+import Map from '../../../components/Map';
 
 type Props = {
     location: Function
@@ -128,36 +128,43 @@ const AddressPicker: FC<Props> = ( props ) => {
     }
 
     return (
-        <View style={style.container}>
-            <TouchableOpacity onPress={() => TabRef.current.open()}
-                style={[ style.iconHolder, { backgroundColor: Colors[ colorScheme ].background } ]}>
-                <AntDesign name="search1" size={24} color={Colors[ colorScheme ].text} />
-            </TouchableOpacity>
+        <>
+            <View style={style.container}>
+                <TouchableOpacity onPress={() => TabRef.current.open()}
+                    style={[ style.iconHolder, { backgroundColor: Colors[ colorScheme ].background } ]}>
+                    <AntDesign name="search1" size={24} color={Colors[ colorScheme ].text} />
+                </TouchableOpacity>
 
-            <TouchableOpacity style={[ style.iconHolder, { backgroundColor: Colors[ colorScheme ].background } ]}>
-                <MaterialIcons name="expand-more" size={24} color={Colors[ colorScheme ].text} />
-            </TouchableOpacity>
-            <BottomSheetScreen
-                ref={TabRef}
-                renderContent={TabSheet}
-                visibleHeight={Dimensions.get( 'window' ).height / 2}
-            />
-            <BottomSheetScreen
-                ref={YearRef}
-                renderContent={YearSheet}
-                visibleHeight={Dimensions.get( 'window' ).height - 150}
-            />
-            <BottomSheetScreen
-                ref={MunicipalityRef}
-                renderContent={MunicipalitySheet}
-                visibleHeight={Dimensions.get( 'window' ).height - 150}
-            />
-            <BottomSheetScreen
-                ref={BarangayRef}
-                renderContent={BarangaySheet}
-                visibleHeight={Dimensions.get( 'window' ).height - 150}
-            />
-        </View>
+                <TouchableOpacity style={[ style.iconHolder, { backgroundColor: Colors[ colorScheme ].background } ]}>
+                    <MaterialIcons name="expand-more" size={24} color={Colors[ colorScheme ].text} />
+                </TouchableOpacity>
+                <BottomSheetScreen
+                    ref={TabRef}
+                    renderContent={TabSheet}
+                    visibleHeight={Dimensions.get( 'window' ).height / 2}
+                />
+                <BottomSheetScreen
+                    ref={YearRef}
+                    renderContent={YearSheet}
+                    visibleHeight={Dimensions.get( 'window' ).height - 150}
+                />
+                <BottomSheetScreen
+                    ref={MunicipalityRef}
+                    renderContent={MunicipalitySheet}
+                    visibleHeight={Dimensions.get( 'window' ).height - 150}
+                />
+                <BottomSheetScreen
+                    ref={BarangayRef}
+                    renderContent={BarangaySheet}
+                    visibleHeight={Dimensions.get( 'window' ).height - 150}
+                />
+            </View>
+            <Map location={{
+                year: year,
+                municpality: municpality,
+                barangay: barangay
+            }} />
+        </>
     );
 };
 

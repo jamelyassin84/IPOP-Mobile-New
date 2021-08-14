@@ -1,14 +1,91 @@
 
 import React, { FC } from 'react';
-import MapView from 'react-native-maps';
+import MapView, { Marker } from 'react-native-maps';
 import { StyleSheet, View, Dimensions } from 'react-native';
+import useColorScheme from '../hooks/useColorScheme';
+import axios from 'axios';
+import * as Location from 'expo-location';
+import { stringifyLocation } from '../constants/AppConstants';
 
-type Props = {};
+type Props = {
+    location: any
+};
 
 const Map: FC<Props> = ( props ) => {
+
+    const colorScheme = useColorScheme();
+
+    const [ location, setLocation ] = React.useState( {
+        coords: { latitude: 0, longitude: 0 },
+        longitude: 0,
+        latitudeDelta: 0,
+    } );
+
+    const [ data, setData ]: any = React.useState( [
+        {
+            lat: 11.0050,
+            lon: 122.5373,
+            display_name: 'Iloilo Province',
+        }
+    ] );
+
+    React.useEffect( () => {
+        ( async () => {
+            let { status } = await Location.requestForegroundPermissionsAsync();
+            if ( status !== 'granted' ) {
+                alert( 'Permission to access location was denied' );
+                return;
+            }
+
+            let location: any = await Location.getCurrentPositionAsync( {} );
+            setLocation( location );
+        } )();
+        console.log( 'ari' )
+        changeMap()
+
+    }, [ props.location ] );
+
+    const changeMap = () => {
+        if ( props.location.year !== null ) {
+            console.log( props.location )
+            const url = `https://us1.locationiq.com/v1/search.php?key=pk.ca7d72d67098fe33153685abf70e35a9&q=${ stringifyLocation( props.location ) }&format=json`
+            console.log( url )
+            axios.get( url ).then( ( response ) => {
+                setData( response.data )
+            } ).catch( ( error ) => {
+                console.error( error )
+            } );
+        }
+    }
+
     return (
         <View style={styles.container}>
-            <MapView style={styles.map} />
+            <MapView style={styles.map}
+                region={{
+                    latitude: data[ 0 ].lat,
+                    longitude: data[ 0 ].lon,
+                    latitudeDelta: 0.922,
+                    longitudeDelta: 0.421,
+                }}
+            >
+                <Marker
+                    coordinate={{
+                        latitude: location.coords.latitude,
+                        longitude: location.coords.longitude,
+                    }}
+                    pinColor={"#1ED760"}
+                    title={"You are here"}
+                />
+
+                <Marker
+                    coordinate={{
+                        latitude: data[ 0 ].lat,
+                        longitude: data[ 0 ].lon
+                    }}
+                    pinColor={"#1049A2"}
+                    title={data[ 0 ].display_name}
+                />
+            </MapView>
         </View>
     );
 };

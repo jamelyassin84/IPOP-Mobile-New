@@ -1,7 +1,6 @@
 
 import React, { FC } from 'react';
 import CommonHeader from '../../components/headers/CommonHeader';
-import Map from '../../components/Map';
 import AddressPicker from '../../components/pickers/address-picker/AddressPicker';
 import WithRefreshComponent from '../../components/utils/WithRefreshComponent';
 import Colors from '../../constants/Colors';
