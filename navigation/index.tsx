@@ -37,6 +37,15 @@ import PopulationData from '../modules/population/PopulationData';
 import MPFCFDC from '../modules/rpfp/mpc-fdc/MPFCFDC';
 import PMOC from '../modules/rpfp/pmoc/PMOC';
 import Activities from '../modules/programs/Activities';
+import TechnicalNotes from '../components/TechnicalNotes';
+import AgeDistributionAndAgeDependencyRatioByMunicipality from '../modules/population/AgeDistributionAndAgeDependencyRatioByMunicipality';
+import AgeDependecy from '../modules/population/AgeDependecy';
+import AgeDistribution from '../modules/population/AgeDistribution';
+import PopulationProfile from '../modules/population/PopulationProfile';
+import AgeDistributionTable from '../components/AgeDistributionTable';
+import Pyramid from '../components/Pyramid';
+import TopPopulated from '../modules/population/TopPopulated';
+import PopulationProfileByMuncipality from '../modules/population/PopulationProfileByMuncipality';
 
 export default function Navigation( { colorScheme }: { colorScheme: ColorSchemeName } ) {
     return (
@@ -81,6 +90,17 @@ const RootNavigator = () => {
             <Stack.Screen name="PMOC" component={PMOC} />
 
             <Stack.Screen name="Activities" component={Activities} />
+
+            <Stack.Screen name="TopPopulated" component={TopPopulated} />
+            <Stack.Screen name="Pyramid" component={Pyramid} />
+            <Stack.Screen name="AgeDistributionTable" component={AgeDistributionTable} />
+            <Stack.Screen name="PopulationProfile" component={PopulationProfile} />
+            <Stack.Screen name="PopulationProfileByMuncipality" component={PopulationProfileByMuncipality} />
+            <Stack.Screen name="AgeDistribution" component={AgeDistribution} />
+            <Stack.Screen name="AgeDependecy" component={AgeDependecy} />
+            <Stack.Screen name="AgeDistributionAndAgeDependencyRatioByMunicipality" component={AgeDistributionAndAgeDependencyRatioByMunicipality} />
+            <Stack.Screen name="TechnicalNotes" component={TechnicalNotes} />
+
         </Stack.Navigator>
     );
 }

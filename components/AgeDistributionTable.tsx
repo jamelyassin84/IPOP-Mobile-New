@@ -5,12 +5,12 @@ import Container from '../constants/Layout';
 
 type Props = {};
 
-const AgeDistributionAndAgeDependencyRatio: FC<Props> = ( props ) => {
+const AgeDistributionTable: FC<Props> = ( props ) => {
     return (
         <Container>
-            <Text>AgeDistributionAndAgeDependencyRatio</Text>
+            <Text>AgeDistributionTable</Text>
         </Container>
     );
 };
 
-export default AgeDistributionAndAgeDependencyRatio;
+export default AgeDistributionTable;

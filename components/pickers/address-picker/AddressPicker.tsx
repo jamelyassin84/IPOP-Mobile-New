@@ -2,7 +2,6 @@
 import React, { FC } from 'react';
 import { TouchableOpacity, View, StyleSheet, Dimensions } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
-import { MaterialIcons } from '@expo/vector-icons';
 import useColorScheme from '../../../hooks/useColorScheme';
 import Colors from '../../../constants/Colors';
 import BottomSheetScreen from 'react-native-animated-bottom-sheet';
@@ -12,9 +11,12 @@ import ScrollableMenu from '../../ScrollableMenu';
 import MunicipalityPicker from '../MunicipalityPicker';
 import BarangayPicker from '../BarangayPicker';
 import Map from '../../../components/Map';
+import { MaterialIcons } from '@expo/vector-icons';
 
 type Props = {
     location: Function
+    menu: any[],
+    choice: Function
 };
 
 type MunicpalityType = {
@@ -23,6 +25,24 @@ type MunicpalityType = {
 };
 
 const AddressPicker: FC<Props> = ( props ) => {
+
+    const MenuRef: any = React.useRef();
+    const MenuSheet = () => {
+        return (
+            <ScrollableMenu
+                title="what to view"
+                choices={props.menu}
+                calback={( choice: number ) => {
+                    props.choice( choice )
+                    MenuRef.current.close()
+                }}
+                blur={() => MenuRef.current.close()}
+                icon={<MaterialIcons name="menu-open" size={24} color="#ccc" />}
+            />
+        )
+    }
+
+
 
     const colorScheme = useColorScheme();
 
@@ -135,7 +155,7 @@ const AddressPicker: FC<Props> = ( props ) => {
                     <AntDesign name="search1" size={24} color={Colors[ colorScheme ].text} />
                 </TouchableOpacity>
 
-                <TouchableOpacity style={[ style.iconHolder, { backgroundColor: Colors[ colorScheme ].background } ]}>
+                <TouchableOpacity onPress={() => MenuRef.current.open()} style={[ style.iconHolder, { backgroundColor: Colors[ colorScheme ].background } ]}>
                     <MaterialIcons name="expand-more" size={24} color={Colors[ colorScheme ].text} />
                 </TouchableOpacity>
                 <BottomSheetScreen
@@ -156,6 +176,11 @@ const AddressPicker: FC<Props> = ( props ) => {
                 <BottomSheetScreen
                     ref={BarangayRef}
                     renderContent={BarangaySheet}
+                    visibleHeight={Dimensions.get( 'window' ).height - 150}
+                />
+                <BottomSheetScreen
+                    ref={MenuRef}
+                    renderContent={MenuSheet}
                     visibleHeight={Dimensions.get( 'window' ).height - 150}
                 />
             </View>

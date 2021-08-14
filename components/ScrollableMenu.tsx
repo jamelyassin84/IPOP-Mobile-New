@@ -76,12 +76,13 @@ const style = StyleSheet.create( {
     choicesText: {
         fontSize: 16,
         fontWeight: '300',
-        marginLeft: 16
+        marginLeft: 16,
+        paddingRight: 25
     },
     title: {
         textAlign: 'center',
         padding: 16,
-        flex: 1
+        flex: 1,
     }
 } )
 

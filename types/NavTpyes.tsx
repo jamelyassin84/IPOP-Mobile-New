@@ -24,11 +24,23 @@ export type NavParamList = {
     Marraiges: undefined;
     Migrations: undefined;
     KeyFiles: undefined;
-    PopulationData: undefined;
     MPFCFDC: undefined;
     PMOC: undefined;
 
     Activities: undefined
+
+
+    PopulationData: undefined;
+    TopPopulated: undefined;
+    Pyramid: undefined;
+    AgeDistributionTable: undefined;
+    PopulationProfile: undefined;
+    PopulationProfileByMuncipality: undefined;
+    AgeDistribution: undefined;
+    AgeDependecy: undefined;
+    AgeDistributionAndAgeDependencyRatioByMunicipality: undefined;
+    TechnicalNotes: undefined;
+
 };
 
 export type BottomTabParamList = {
