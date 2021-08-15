@@ -136,7 +136,6 @@ const RootNavigator = () => {
             <Stack.Screen name="DeathSummary" component={DeathSummary} />
             <Stack.Screen name="DeathData" component={DeathData} />
 
-
             <Stack.Screen name="MarriageSummary" component={MarriageSummary} />
             <Stack.Screen name="MarriageData" component={MarriageData} />
             <Stack.Screen name="TypeofWeddings" component={TypeofWeddings} />
@@ -144,7 +143,6 @@ const RootNavigator = () => {
             <Stack.Screen name="MigrationSummary" component={MigrationSummary} />
             <Stack.Screen name="MigrationData" component={MigrationData} />
             <Stack.Screen name="MigrationChart" component={MigrationChart} />
-
 
             <Stack.Screen name="NumberOfCouples" component={NumberOfCouples} />
             <Stack.Screen name="PMOCData" component={PMOCData} />

@@ -32,6 +32,13 @@ export enum Demographic_API {
 	MonthChart = 'month-charts',
 }
 
+export enum ByMuniipality_API {
+	Birth = 'birth-statistics-by-municipality',
+	Death = 'death-statistics-by-municipality',
+	Marriages = 'marriage-statistics-by-municipality',
+	Migration = 'migration-statistics-by-municipality',
+}
+
 export enum Summary_API {
 	Birth = 'birth-statistics/summary',
 	Death = 'death-statistics/summary',

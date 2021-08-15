@@ -5,10 +5,6 @@ type Props = {
     location: any
 };
 const LocationTitle: FC<Props> = ( props ) => {
-    React.useEffect( () => {
-        console.log( props.location )
-
-    }, [ props.location ] )
     return <Text style={style.title}>{props.location.municipality === null && props.location.barangay === null ? 'Province' : ''} {props.location.municipality || ''} {props.location.barangay || ''} {props.location.year}</Text>
 };
 
