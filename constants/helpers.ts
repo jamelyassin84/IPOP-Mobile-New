@@ -91,3 +91,7 @@ export function stringtoArray(text: string | any) {
 export function getPercent(value: number, basis: number) {
 	return (value * 100) / basis
 }
+
+export function total(x: string | any, y: string | any) {
+	return parseFloat(x) + parseFloat(y)
+}

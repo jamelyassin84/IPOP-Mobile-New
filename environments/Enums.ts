@@ -56,6 +56,7 @@ export enum Population_API {
 	PopulationProfile = 'statistic-profiles',
 	PopulationPyramid = 'population-pyramid',
 	TopPopulated = 'top-populations',
+	ByMunicipalities = 'statistic-profiles/by-municipality',
 }
 
 export enum ProgramAreas_API {

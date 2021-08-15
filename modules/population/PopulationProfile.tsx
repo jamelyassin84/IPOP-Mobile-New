@@ -18,7 +18,6 @@ const PopulationProfile: FC<Props> = ( { route }: any ) => {
 
     const data: DataParams = route.params
     const navigation = useNavigation()
-
     const colorScheme = useColorScheme();
 
     const [ isLoading, setLoading ] = React.useState( false )
@@ -39,7 +38,11 @@ const PopulationProfile: FC<Props> = ( { route }: any ) => {
             if ( data.length !== 0 ) {
                 setPopulationProfile( data[ 0 ] )
                 setLoading( false )
+                return
             }
+            alert( `${ route.params.title } on this location is not yet set` )
+            navigation.goBack()
+            setLoading( false )
         } )
     }
 
