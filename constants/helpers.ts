@@ -95,3 +95,7 @@ export function getPercent(value: number, basis: number) {
 export function total(x: string | any, y: string | any) {
 	return parseFloat(x) + parseFloat(y)
 }
+
+export function isOdd(num: number) {
+	return num % 2
+}

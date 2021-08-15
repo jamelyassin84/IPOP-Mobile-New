@@ -39,6 +39,11 @@ const PopulationProfileByMuncipality: FC<Props> = ( { route }: any ) => {
         new BaseService( Population_API.ByMunicipalities ).fetchWithParams( `year=${ data.location[ 'year' ] }` ).then( ( data: any ) => {
             setPopulationByMuncipality( data )
             setLoading( false )
+            if ( data.length === 0 ) {
+                alert( `${ route.params.title } on this location is not yet set` )
+                navigation.goBack()
+                setLoading( false )
+            }
         } )
     }
 
