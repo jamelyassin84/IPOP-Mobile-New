@@ -87,3 +87,7 @@ export function stringtoArray(text: string | any) {
 	}
 	return text.split(', ')
 }
+
+export function getPercent(value: number, basis: number) {
+	return (value * 100) / basis
+}

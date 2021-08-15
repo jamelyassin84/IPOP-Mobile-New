@@ -37,7 +37,7 @@ const Pyramid: FC<Props> = ( { route }: any ) => {
         setLoading( false ); setMale( [] ); setFemale( [] )
         new BaseService( Population_API.PopulationPyramid ).fetchWithParams( `${ paramifyLocation( data.location ) }&type=${ data.type }` ).then( ( data: any ) => {
             let malesArray = []; let femalesArray = []; let keysArray = [];
-            if ( data.length != 0 ) {
+            if ( data.length !== 0 ) {
                 data = data[ 0 ]
                 for ( let key in data.data.male ) {
                     malesArray.push( data.data.male[ key ] );

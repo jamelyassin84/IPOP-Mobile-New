@@ -48,7 +48,6 @@ const Marraiges: FC<Props> = ( props ) => {
 
 const menus: string[] = [
     'Summary (Province of Iloilo)',
-    'Marriage  by Age Group and Sex',
     'Marriage by Month of Wedding',
     'Local Marriage  Data',
     'Type of Weddings',
@@ -58,7 +57,6 @@ const menus: string[] = [
 
 const route: string[] = [
     'MarriageSummary',
-    'AgeDistributionTable',
     'MonthChart',
     'MarriageData',
     'TypeofWeddings',

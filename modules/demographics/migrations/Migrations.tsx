@@ -44,7 +44,6 @@ const Migrations: FC<Props> = ( props ) => {
 
 const menus: string[] = [
     'Summary (Province of Iloilo)',
-    'Migration  by Age Group and Sex',
     'Migration Statistics',
     'Local Migrations Data',
     'Migrations Chart',
@@ -54,7 +53,6 @@ const menus: string[] = [
 
 const route: string[] = [
     'MigrationSummary',
-    'AgeDistributionTable',
     'MonthChart',
     'MigrationData',
     'MigrationChart',

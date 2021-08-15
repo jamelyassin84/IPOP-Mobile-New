@@ -9,7 +9,7 @@ import { useNavigation } from '@react-navigation/native';
 
 type Props = {
     backgroundColor: string
-    title: string
+    title: string | any
 };
 
 const CommonHeader: FC<Props> = ( props ) => {
