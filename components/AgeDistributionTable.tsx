@@ -13,6 +13,7 @@ import Container from '../constants/Layout';
 import { BaseService } from '../environments/base.service';
 import { Population_API } from '../environments/Enums';
 import useColorScheme from '../hooks/useColorScheme';
+import LocationTitle from './LocationTitle';
 import { DataParams } from './Pyramid';
 type Props = {};
 
@@ -35,10 +36,11 @@ const AgeDistributionTable: FC<Props> = ( { route }: any ) => {
     };
 
     const getData = () => {
-        setLoading( false );
+        setLoading( true );
         setPopulationbyAgeGroupandSex( [] );
         new BaseService( Population_API.PopulationPyramid ).fetchWithParams( `${ paramifyLocation( data.location ) }&type=${ data.type }` ).then( ( data: any ) => {
             if ( data.length !== 0 ) {
+                setLoading( false )
                 let temp: any = []
                 const male = data[ 0 ][ 'data' ][ 'male' ]
                 const female = data[ 0 ][ 'data' ][ 'female' ]
@@ -148,6 +150,7 @@ const AgeDistributionTable: FC<Props> = ( { route }: any ) => {
     return (
         <Container>
             <CommonHeader title={data.title} backgroundColor={Colors[ colorScheme ].background} />
+            <LocationTitle location={data.location} />
             <WithRefreshComponent onRefresh={() => onRefresh} loading={isLoading} backgroundColor={Colors[ colorScheme ].background}>
                 <View>
                     <View style={style.row}>
