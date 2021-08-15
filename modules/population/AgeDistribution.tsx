@@ -1,11 +1,11 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { FC } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
 import CommonHeader from '../../components/headers/CommonHeader';
 import LocationTitle from '../../components/LocationTitle';
 import { DataParams } from '../../components/Pyramid';
 import WithRefreshComponent from '../../components/utils/WithRefreshComponent';
+import Colors from '../../constants/Colors';
 import { getPercent, isOdd } from '../../constants/helpers';
 import Container from '../../constants/Layout';
 import { BaseService } from '../../environments/base.service';
