@@ -68,7 +68,6 @@ const MonthChart: FC<Props> = ( { route }: any ) => {
             datasets: [ { data: [] } ]
         }
         new BaseService( Demographic_API.MonthChart ).fetchWithParams( `${ paramifyLocation( data.location ) }&type=${ data.type }` ).then( ( data: any ) => {
-            console.log( data )
             if ( data.length !== 0 ) {
                 for ( let key of data ) {
                     chartdataTotalTemp.datasets[ 0 ].data.push( key[ 'total' ] );

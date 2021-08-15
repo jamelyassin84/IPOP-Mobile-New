@@ -37,7 +37,6 @@ const MigrationSummary: FC<Props> = ( { route }: any ) => {
         setLoading( true )
         new BaseService( Summary_API.Migration ).fetchWithParams( `year=${ data.location[ 'year' ] }` ).then( ( data: any ) => {
             setSummaries( data )
-            console.log( data )
             setLoading( false )
             if ( data.length === 0 ) {
                 alert( `${ route.params.title } on this location is not yet set` )
