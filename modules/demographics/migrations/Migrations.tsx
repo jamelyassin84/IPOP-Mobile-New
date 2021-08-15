@@ -31,7 +31,8 @@ const Migrations: FC<Props> = ( props ) => {
                     navigation.navigate( route[ menus.indexOf( choice ) ], Object.assign( {
                         title: choice,
                         type: 'Migration',
-                        location
+                        location: location,
+                        colors: [ '#D66000', '#003CA3', '#FFB300' ] //Male, Female, Total
                     } ) )
                 }}
                 location={( location: any ) => {

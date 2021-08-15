@@ -35,7 +35,7 @@ const Births: FC<Props> = ( props ) => {
                         title: choice,
                         type: PYramidType.Birth,
                         location: location,
-                        colors: [ '#3DB98D', '#73B436' ] //Male, Female
+                        colors: [ '#3DB98D', '#73B436', '#0CB056' ] //Male, Female, Total
                     } ) )
                 }}
                 location={( location: any ) => {

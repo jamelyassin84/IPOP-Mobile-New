@@ -35,7 +35,7 @@ const Deaths: FC<Props> = ( props ) => {
                         title: choice,
                         type: PYramidType.Death,
                         location: location,
-                        colors: [ '#282C34', '#CD1125' ] //Male, Female
+                        colors: [ '#282C34', '#CD1125','#A90E1E'] //Male, Female
                     } ) )
                 }}
                 location={( location: any ) => {

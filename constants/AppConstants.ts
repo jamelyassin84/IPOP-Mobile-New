@@ -23,3 +23,8 @@ export function stringifyLocation(location: any) {
 export function paramifyLocation(location: any) {
 	return `barangay=${location.barangay}&municipality=${location.municipality}&year=${location.year}`
 }
+
+export const dummy = {
+	labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+	data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+}
