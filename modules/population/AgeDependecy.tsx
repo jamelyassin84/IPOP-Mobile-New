@@ -3,9 +3,10 @@ import React, { FC } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import CommonHeader from '../../components/headers/CommonHeader';
+import LocationTitle from '../../components/LocationTitle';
 import { DataParams } from '../../components/Pyramid';
 import WithRefreshComponent from '../../components/utils/WithRefreshComponent';
-import { getPercent, isOdd } from '../../constants/helpers';
+import { isOdd } from '../../constants/helpers';
 import Container from '../../constants/Layout';
 import { BaseService } from '../../environments/base.service';
 import { Population_API } from '../../environments/Enums';
@@ -45,7 +46,8 @@ const AgeDependecy: FC<Props> = ( { route }: any ) => {
 
     return (
         <Container>
-            <CommonHeader title="Age Dependency (Province of Iloilo)" backgroundColor={Colors[ colorScheme ].background} />
+            <CommonHeader title={data.title} backgroundColor={Colors[ colorScheme ].background} />
+            <LocationTitle location={data.location} />
             <WithRefreshComponent onRefresh={() => onRefresh} loading={isLoading} backgroundColor={Colors[ colorScheme ].background}>
                 <View>
                     <View style={style.row}>
