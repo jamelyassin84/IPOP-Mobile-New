@@ -12,6 +12,7 @@ import MunicipalityPicker from '../MunicipalityPicker'
 import BarangayPicker from '../BarangayPicker'
 import Map from '../../../components/Map'
 import { MaterialIcons } from '@expo/vector-icons'
+import LocationTitle from '../../LocationTitle'
 
 type Props = {
     location: Function
@@ -130,7 +131,11 @@ const AddressPicker: FC<Props> = ( props ) => {
 
     return (
         <>
-            <Text style={style.title}>{municipality === null && barangay === null ? 'Province' : ''} {barangay === null ? '' : municipality} {year}</Text>
+            <LocationTitle location={{
+                municipality: municipality,
+                barangay: barangay,
+                year: year,
+            }} />
             <View style={style.container}>
 
                 <TouchableOpacity onPress={() => TabRef.current.open()}
