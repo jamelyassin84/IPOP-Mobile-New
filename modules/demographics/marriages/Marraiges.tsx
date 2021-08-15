@@ -47,7 +47,7 @@ const Marraiges: FC<Props> = ( props ) => {
 };
 
 const menus: string[] = [
-    'Summary (Province of Iloilo)',
+    'Marriage Summary (Province of Iloilo)',
     'Marriage by Month of Wedding',
     'Local Marriage  Data',
     'Type of Weddings',

@@ -47,7 +47,7 @@ const Births: FC<Props> = ( props ) => {
 };
 
 const menus: any = [
-    'Summary (Province of Iloilo)',
+    'Birth Summary (Province of Iloilo)',
     'Birth Pyramid',
     'Birth by Age Group and Sex',
     'Birth Statistics (Births by Months)',

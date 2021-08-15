@@ -43,7 +43,7 @@ const Migrations: FC<Props> = ( props ) => {
 };
 
 const menus: string[] = [
-    'Summary (Province of Iloilo)',
+    'Migration Summary (Province of Iloilo)',
     'Migration Statistics (Migrations by Months)',
     'Local Migrations Data',
     'Migrations Chart',

@@ -3,6 +3,7 @@ import { useNavigation } from '@react-navigation/native';
 import React, { FC } from 'react';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import CommonHeader from '../../../components/headers/CommonHeader';
+import LocationTitle from '../../../components/LocationTitle';
 import { DataParams } from '../../../components/Pyramid';
 import Summaries from '../../../components/summaries/Summaries';
 import SummariesWithPercent from '../../../components/summaries/SummariesWithPercent';
@@ -49,28 +50,29 @@ const BirthSummary: FC<Props> = ( { route }: any ) => {
 
     return (
         <Container>
-            <CommonHeader title="Summary (Province of Iloilo)" backgroundColor={Colors[ colorScheme ].background} />
+            <CommonHeader title={data.title} backgroundColor={Colors[ colorScheme ].background} />
+            <LocationTitle location={data.location} />
             <WithRefreshComponent onRefresh={() => onRefresh} loading={isLoading} backgroundColor={Colors[ colorScheme ].background}>
 
                 <Summaries
                     title="Total Population"
                     value={summaries?.summary?.total_population || 0}
-                    backgroundColor={'#0039A9'}
-                    icon={<AntDesign name="user" size={24} color="white" />}
+                    backgroundColor={'rgba(33, 150, 245,.2)'}
+                    icon={<AntDesign name="user" size={24} color="#2196F5" />}
                 />
 
                 <Summaries
                     title="Total Live Births"
                     value={summaries?.summary?.total_live_births || 0}
-                    backgroundColor={'#3AC48C'}
-                    icon={<Ionicons name="pulse" size={24} color="white" />}
+                    backgroundColor='rgba(58, 196, 140,.2)'
+                    icon={<Ionicons name="pulse" size={24} color='rgba(58, 196, 140,1)' />}
                 />
 
                 <Summaries
                     title="Crude Birth Rate"
                     value={summaries?.summary?.crude_birth_rate || 0}
-                    backgroundColor={'#3AC48C'}
-                    icon={<Ionicons name="pulse" size={24} color="white" />}
+                    backgroundColor='rgba(58, 196, 140,.2)'
+                    icon={<Ionicons name="pulse" size={24} color='rgba(58, 196, 140,1)' />}
                 />
 
                 <SummariesWithPercent
@@ -80,8 +82,8 @@ const BirthSummary: FC<Props> = ( { route }: any ) => {
                         summaries?.teenage?.value || 0,
                         summaries?.summary?.total_live_births || 0
                     )}
-                    backgroundColor={'orange'}
-                    icon={<Ionicons name="pulse" size={24} color="white" />}
+                    backgroundColor='rgba(251, 187, 37,.2)'
+                    icon={<Ionicons name="pulse" size={24} color='rgba(251, 187, 37,1)' />}
                 />
 
                 <SummariesWithPercent
@@ -91,8 +93,8 @@ const BirthSummary: FC<Props> = ( { route }: any ) => {
                         summaries?.illegitimate?.value || 0,
                         summaries?.summary?.total_live_births || 0
                     )}
-                    backgroundColor={'red'}
-                    icon={<Ionicons name="pulse" size={24} color="white" />}
+                    backgroundColor='rgba(244, 67, 54,.2)'
+                    icon={<Ionicons name="pulse" size={24} color="rgba(244, 67, 54,1)" />}
                 />
 
             </WithRefreshComponent>

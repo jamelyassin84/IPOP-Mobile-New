@@ -48,7 +48,7 @@ const Deaths: FC<Props> = ( props ) => {
 
 
 const menus: string[] = [
-    'Summary (Province of Iloilo)',
+    'Death Summary (Province of Iloilo)',
     'Death Pyramid',
     'Death by Age Group and Sex',
     'Death Statistics (Deaths by Months)',
