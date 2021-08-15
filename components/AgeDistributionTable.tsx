@@ -205,6 +205,29 @@ const AgeDistributionTable: FC<Props> = ( { route }: any ) => {
                             </View>
                         )
                     }
+                    <View style={style.row}>
+                        <View style={style.column} >
+                            <Text style={[ style.center, { color: Colors[ colorScheme ].text, fontWeight: 'bold' } ]}>{populationbyAgeGroupandSexTotal.ageGroup}</Text>
+                        </View>
+                        <View style={style.column} >
+                            <Text style={[ style.center, { color: Colors[ colorScheme ].text, fontWeight: 'bold' } ]}>{populationbyAgeGroupandSexTotal.male}</Text>
+                        </View>
+                        <View style={style.column} >
+                            <Text style={[ style.center, { color: Colors[ colorScheme ].text, fontWeight: 'bold' } ]}>{populationbyAgeGroupandSexTotal.percent_male}</Text>
+                        </View>
+                        <View style={style.column} >
+                            <Text style={[ style.center, { color: Colors[ colorScheme ].text, fontWeight: 'bold' } ]}>{populationbyAgeGroupandSexTotal.female}</Text>
+                        </View>
+                        <View style={style.column} >
+                            <Text style={[ style.center, { color: Colors[ colorScheme ].text, fontWeight: 'bold' } ]}>{populationbyAgeGroupandSexTotal.percent_female}</Text>
+                        </View>
+                        <View style={style.column} >
+                            <Text style={[ style.center, { color: Colors[ colorScheme ].text, fontWeight: 'bold' } ]}>{populationbyAgeGroupandSexTotal.total}</Text>
+                        </View>
+                        <View style={style.column} >
+                            <Text style={[ style.center, { color: Colors[ colorScheme ].text, fontWeight: 'bold' } ]}>{populationbyAgeGroupandSexTotal.percent_total}</Text>
+                        </View>
+                    </View>
                 </View>
             </WithRefreshComponent>
         </Container>
