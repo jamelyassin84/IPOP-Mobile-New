@@ -84,7 +84,6 @@ const BirthSummary: FC<Props> = ( { route }: any ) => {
                     icon={<Ionicons name="pulse" size={24} color="white" />}
                 />
 
-
                 <SummariesWithPercent
                     title="Illegitimate  Births"
                     value={summaries?.summary?.illegitimate || 0}
