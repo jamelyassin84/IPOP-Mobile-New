@@ -96,10 +96,6 @@ const BirthSummary: FC<Props> = ( { route }: any ) => {
                     icon={<Ionicons name="pulse" size={24} color="white" />}
                 />
 
-
-
-
-
             </WithRefreshComponent>
         </Container>
     );
