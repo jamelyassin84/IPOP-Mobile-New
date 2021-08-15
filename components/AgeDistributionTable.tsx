@@ -69,7 +69,7 @@ const AgeDistributionTable: FC<Props> = ( { route }: any ) => {
                     } )
                 }
                 setPopulationbyAgeGroupandSex( temp.reverse() )
-                sumOfRows( temp.reverse(), data )
+                // sumOfRows( temp.reverse(), data )
                 return
             }
             alert( `${ route.params.title } on this location is not yet set` )
@@ -205,7 +205,7 @@ const AgeDistributionTable: FC<Props> = ( { route }: any ) => {
                             </View>
                         )
                     }
-                    <View style={style.row}>
+                    {/* <View style={style.row}>
                         <View style={style.column} >
                             <Text style={[ style.center, { color: Colors[ colorScheme ].text, fontWeight: 'bold' } ]}>{populationbyAgeGroupandSexTotal.ageGroup}</Text>
                         </View>
@@ -227,7 +227,7 @@ const AgeDistributionTable: FC<Props> = ( { route }: any ) => {
                         <View style={style.column} >
                             <Text style={[ style.center, { color: Colors[ colorScheme ].text, fontWeight: 'bold' } ]}>{populationbyAgeGroupandSexTotal.percent_total}</Text>
                         </View>
-                    </View>
+                    </View> */}
                 </View>
             </WithRefreshComponent>
         </Container>

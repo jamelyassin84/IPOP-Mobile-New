@@ -50,7 +50,7 @@ const menus: any = [
     'Summary (Province of Iloilo)',
     'Birth Pyramid',
     'Birth by Age Group and Sex',
-    'Birth Statistics',
+    'Birth Statistics (Births by Months)',
     'Local Birth Data',
     'Incidence of Teenage Births',
     'Incidence of Illegitimate Births',

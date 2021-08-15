@@ -1,8 +1,11 @@
-Population
-route title
+Births 
+Deaths
+Migration
+Marriages
 
+
+Age Group Bug
 splash
-bottom native
 no data component
 header listen and hide
 interceptor

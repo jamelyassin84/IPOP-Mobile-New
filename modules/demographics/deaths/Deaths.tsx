@@ -51,7 +51,7 @@ const menus: string[] = [
     'Summary (Province of Iloilo)',
     'Death Pyramid',
     'Death by Age Group and Sex',
-    'Death Statistics',
+    'Death Statistics (Deaths by Months)',
     'Local Death Data',
     'Crude Death Rate',
     'Death by Municipality',
