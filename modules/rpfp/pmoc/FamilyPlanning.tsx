@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import CommonHeader from '../../../components/headers/CommonHeader';
-import LocationTitle from '../../../components/LocationTitle';
+import LocationTitle from '../../../components/top-titles/LocationTitle';
 import { DataParams } from '../../../components/Pyramid';
 import Container from '../../../constants/Layout';
 import { PMOC_API } from '../../../environments/Enums';

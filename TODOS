@@ -8,6 +8,7 @@ header listen and hide
 interceptor
 progress
 Redux
+colors
 
 
 https://www.npmjs.com/package/react-native-collapsible

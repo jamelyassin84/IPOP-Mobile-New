@@ -11,7 +11,7 @@ import { Population_API } from '../environments/Enums';
 import { paramifyLocation } from '../constants/AppConstants';
 import { useNavigation } from '@react-navigation/native';
 import { Dimensions, StyleSheet, Text } from 'react-native';
-import LocationTitle from './LocationTitle';
+import LocationTitle from './top-titles/LocationTitle';
 
 type Props = {};
 

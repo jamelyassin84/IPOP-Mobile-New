@@ -14,7 +14,7 @@ import useColorScheme from '../../../hooks/useColorScheme';
 import * as process from './Processes'
 import { BarChart, LineChart, } from 'react-native-chart-kit';
 import chartConfig from '../../../components/demographics/ChartConfig';
-import LocationTitle from '../../../components/LocationTitle';
+import LocationTitle from '../../../components/top-titles/LocationTitle';
 import style from '../../../styles/charts/Chart'
 
 type Props = {};

@@ -5,7 +5,7 @@ import { View } from 'react-native';
 import { StyleSheet } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import CommonHeader from '../../components/headers/CommonHeader';
-import LocationTitle from '../../components/LocationTitle';
+import LocationTitle from '../../components/top-titles/LocationTitle';
 import { DataParams } from '../../components/Pyramid';
 import WithRefreshComponent from '../../components/utils/WithRefreshComponent';
 import { total } from '../../constants/helpers';

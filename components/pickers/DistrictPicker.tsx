@@ -5,7 +5,7 @@ import useColorScheme from '../../hooks/useColorScheme'
 import Colors from '../../constants/Colors'
 import BottomSheetScreen from 'react-native-animated-bottom-sheet'
 import { districts } from '../../constants/AppConstants'
-import ScrollableMenu from '../ScrollableMenu'
+import ScrollableMenu from '../bottom-sheets/ScrollableMenu'
 import Map from '../../components/Map'
 import { MaterialIcons } from '@expo/vector-icons'
 

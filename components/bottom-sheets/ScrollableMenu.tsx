@@ -6,9 +6,9 @@ import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { Dimensions } from 'react-native';
 import { Text } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import Colors from '../constants/Colors';
-import useColorScheme from '../hooks/useColorScheme';
-import BottomSheetTopStyle from './extras/BottomSheetTopStyle';
+import Colors from '../../constants/Colors';
+import useColorScheme from '../../hooks/useColorScheme';
+import BottomSheetTopStyle from '../extras/BottomSheetTopStyle';
 
 type Props = {
     choices: any

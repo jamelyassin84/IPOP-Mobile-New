@@ -4,7 +4,7 @@ import CommonHeader from '../../components/headers/CommonHeader';
 import WithRefreshComponent from '../../components/utils/WithRefreshComponent';
 import Container from '../../constants/Layout';
 import useColorScheme from '../../hooks/useColorScheme';
-import LocationTitle from '../LocationTitle';
+import LocationTitle from '../top-titles/LocationTitle';
 import { DataParams, PYramidType } from '../Pyramid';
 import { BarChart, } from 'react-native-chart-kit';
 import { Dimensions, StyleSheet, View } from 'react-native';

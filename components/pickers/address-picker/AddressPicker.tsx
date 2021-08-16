@@ -5,14 +5,14 @@ import { AntDesign } from '@expo/vector-icons'
 import useColorScheme from '../../../hooks/useColorScheme'
 import Colors from '../../../constants/Colors'
 import BottomSheetScreen from 'react-native-animated-bottom-sheet'
-import Menu from '../../Menu'
+import Menu from '../../bottom-sheets/Menu'
 import { LocationChoices, years } from '../../../constants/AppConstants'
-import ScrollableMenu from '../../ScrollableMenu'
+import ScrollableMenu from '../../bottom-sheets/ScrollableMenu'
 import MunicipalityPicker from '../MunicipalityPicker'
 import BarangayPicker from '../BarangayPicker'
 import Map from '../../../components/Map'
 import { MaterialIcons } from '@expo/vector-icons'
-import LocationTitle from '../../LocationTitle'
+import LocationTitle from '../../top-titles/LocationTitle'
 
 type Props = {
     location: Function

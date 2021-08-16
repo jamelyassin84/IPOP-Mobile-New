@@ -13,7 +13,7 @@ import Container from '../constants/Layout';
 import { BaseService } from '../environments/base.service';
 import { Population_API } from '../environments/Enums';
 import useColorScheme from '../hooks/useColorScheme';
-import LocationTitle from './LocationTitle';
+import LocationTitle from './top-titles/LocationTitle';
 import { DataParams } from './Pyramid';
 type Props = {};
 

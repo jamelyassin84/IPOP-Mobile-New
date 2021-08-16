@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import CommonHeader from '../../components/headers/CommonHeader';
-import LocationTitle from '../../components/LocationTitle';
+import LocationTitle from '../../components/top-titles/LocationTitle';
 import { DataParams } from '../../components/Pyramid';
 import WithRefreshComponent from '../../components/utils/WithRefreshComponent';
 import { paramifyLocation } from '../../constants/AppConstants';

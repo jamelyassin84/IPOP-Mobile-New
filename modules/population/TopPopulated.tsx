@@ -9,7 +9,7 @@ import useColorScheme from '../../hooks/useColorScheme';
 import { AntDesign } from '@expo/vector-icons';
 import { BaseService } from '../../environments/base.service';
 import { Population_API } from '../../environments/Enums';
-import LocationTitle from '../../components/LocationTitle';
+import LocationTitle from '../../components/top-titles/LocationTitle';
 import { DataParams } from '../../components/Pyramid';
 
 type Props = {};
