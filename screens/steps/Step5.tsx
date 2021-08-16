@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import StepContainer from '../../components/steps/StepContainer';
 import { useNavigation } from '@react-navigation/native';
-import { Fontisto } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import StepDescription from '../../components/steps/StepDescription';
 import { View } from 'react-native';
 import style from '../../styles/steps/step.style'
@@ -16,7 +16,7 @@ const Step5: FC<Props> = ( props ) => {
         <StepContainer callback={() => {
             navigation.navigate( 'home' )
         }}>
-            <Fontisto name="genderless"
+            <MaterialCommunityIcons name="format-list-checks"
                 style={style.icon}
                 size={170}
             />

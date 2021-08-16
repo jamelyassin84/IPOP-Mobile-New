@@ -8,6 +8,7 @@ import { districts } from '../../constants/AppConstants'
 import ScrollableMenu from '../bottom-sheets/ScrollableMenu'
 import Map from '../../components/Map'
 import { MaterialIcons } from '@expo/vector-icons'
+import DistrictWithMunicipalityTitle from '../top-titles/DistrictWithMunicipalityTitle'
 
 type Props = {
     location: Function

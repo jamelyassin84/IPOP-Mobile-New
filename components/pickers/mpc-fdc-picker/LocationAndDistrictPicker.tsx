@@ -10,6 +10,7 @@ import ScrollableMenu from '../../bottom-sheets/ScrollableMenu'
 import MunicipalityPicker from '../MunicipalityPicker'
 import Map from '../../../components/Map'
 import { MaterialIcons } from '@expo/vector-icons'
+import DistrictWithMunicipalityTitle from '../../top-titles/DistrictWithMunicipalityTitle'
 
 type Props = {
     location: Function
@@ -42,7 +43,7 @@ const LocationAndDistrictPicker: FC<Props> = ( props ) => {
 
     const colorScheme = useColorScheme()
     const [ district, setDistrict ]: any = React.useState( null )
-    const [ municpality, setMunicpality ]: any = React.useState( null )
+    const [ municipality, setMunicpality ]: any = React.useState( null )
 
     const DistrictRef: any = React.useRef()
     const DistrictSheet = () => (
@@ -68,7 +69,7 @@ const LocationAndDistrictPicker: FC<Props> = ( props ) => {
                 MunicipalityRef.current.close()
                 setMunicpality( municipality.name )
                 props.location( {
-                    municpality: municpality,
+                    municipality: municipality.name,
                     district: district,
                 } )
             }}
@@ -78,6 +79,7 @@ const LocationAndDistrictPicker: FC<Props> = ( props ) => {
 
     return (
         <>
+            <DistrictWithMunicipalityTitle location={{ district: district, municipality: municipality }} />
             <View style={style.container}>
                 <TouchableOpacity onPress={() => DistrictRef.current.open()}
                     style={[ style.iconHolder, { backgroundColor: Colors[ colorScheme ].background } ]}>
@@ -105,7 +107,7 @@ const LocationAndDistrictPicker: FC<Props> = ( props ) => {
             </View>
             <Map location={{
                 year: null,
-                municpality: municpality,
+                municpality: municipality,
                 barangay: null
             }} />
         </>

@@ -64,6 +64,7 @@ export type NavParamList = {
     MonthlyIncome: undefined;
 
     MPFCFDC: undefined;
+    MPCFDCDetails: undefined;
     MPCFDCData: undefined;
     MPCFDCTeam: undefined;
     MPCFDCPersonnelIncharge: undefined;

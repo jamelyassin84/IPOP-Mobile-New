@@ -31,12 +31,13 @@ const MPFCFDC: FC<Props> = ( props ) => {
                 choice={( choice: string ) => {
                     navigation.navigate( route[ menus.indexOf( choice ) ], Object.assign( {
                         title: choice,
-                        type: 'Population',
-                        location
+                        type: 'MPFCFDC',
+                        location: location
                     } ) )
                 }}
                 location={( location: any ) => {
                     setLocation( location )
+                    console.log( location )
                     getData( location )
                 }} />
         </Container>
@@ -46,13 +47,11 @@ const MPFCFDC: FC<Props> = ( props ) => {
 const menus = [
     'Multi-purpose Counseling and Family Development Centers',
     'Multi-purpose Counseling and Family Development Team',
-    'Personnels Incharge'
 ]
 
 const route = [
     'MPCFDCData',
     'MPCFDCTeam',
-    'MPCFDCPersonnelIncharge',
 ]
 
 export default MPFCFDC;
