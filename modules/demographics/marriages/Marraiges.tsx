@@ -35,7 +35,7 @@ const Marraiges: FC<Props> = ( props ) => {
                         title: choice,
                         type: PYramidType.Marriage,
                         location: location,
-                        colors: [ '#FDEADB', '#FDEADB', '#FDEADB' ] //Male, Female
+                        colors: [ '#FFD1AD', '#E59448', '#C79500', '#BE7C19' ] //Male, Female
                     } ) )
                 }}
                 location={( location: any ) => {

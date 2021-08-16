@@ -111,6 +111,7 @@ export enum PYramidType {
     Birth = 'Birth',
     Death = 'Death',
     Marriage = 'Marriage',
+    Migration = 'Migration',
 }
 
 export default Pyramid;
