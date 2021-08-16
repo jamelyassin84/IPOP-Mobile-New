@@ -108,6 +108,7 @@ const MonthChart: FC<Props> = ( { route }: any ) => {
                         withOuterLines={true}
                         withVerticalLines={true}
                         withHorizontalLines={false}
+                        showValuesOnTopOfBars={true}
                     />
                 </View>
                 <View style={[ style.chartContainer, data.type === PYramidType.Marriage ? { position: 'absolute', left: -500 } : {} ]}>
@@ -126,6 +127,7 @@ const MonthChart: FC<Props> = ( { route }: any ) => {
                         withOuterLines={true}
                         withVerticalLines={true}
                         withHorizontalLines={false}
+                        showValuesOnTopOfBars={true}
                     />
                 </View>
                 <View style={style.chartContainer}>
@@ -147,6 +149,7 @@ const MonthChart: FC<Props> = ( { route }: any ) => {
                         withOuterLines={true}
                         withVerticalLines={true}
                         withHorizontalLines={false}
+                        showValuesOnTopOfBars={true}
                     />
                 </View>
             </WithRefreshComponent>

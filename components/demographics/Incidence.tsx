@@ -99,7 +99,7 @@ const Incidence: FC<Props> = ( { route }: any ) => {
                             <LineChart
                                 data={chartdata}
                                 chartConfig={chartConfig( color )}
-                                bezier
+                                bezier={true}
                                 width={width + 100}
                                 height={200}
                                 fromZero={true}

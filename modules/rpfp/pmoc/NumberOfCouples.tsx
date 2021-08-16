@@ -12,7 +12,7 @@ import { BaseService } from '../../../environments/base.service';
 import { PMOC_API } from '../../../environments/Enums';
 import useColorScheme from '../../../hooks/useColorScheme';
 import * as process from './Processes'
-import { BarChart, } from 'react-native-chart-kit';
+import { BarChart, LineChart, } from 'react-native-chart-kit';
 import chartConfig from '../../../components/demographics/ChartConfig';
 import LocationTitle from '../../../components/LocationTitle';
 import style from '../../../styles/charts/Chart'
@@ -67,13 +67,12 @@ const NumberOfCouples: FC<Props> = ( { route }: any ) => {
             <LocationTitle location={data.location} />
             <WithRefreshComponent onRefresh={() => onRefresh} loading={isLoading} backgroundColor={Colors[ colorScheme ].background}>
                 <View style={style.chartContainer}>
-                    <BarChart
+                    <LineChart
                         data={chartdataMale}
                         width={width}
                         height={500}
                         chartConfig={chartConfig( PMOCColors.total )}
                         fromZero={true}
-                        showBarTops={true}
                         withHorizontalLabels={true}
                         withInnerLines={false}
                         withDots={true}
@@ -81,7 +80,7 @@ const NumberOfCouples: FC<Props> = ( { route }: any ) => {
                         withOuterLines={true}
                         withVerticalLines={true}
                         withHorizontalLines={false}
-                        showValuesOnTopOfBars={true}
+                        bezier={true}
                     />
                 </View>
             </WithRefreshComponent>

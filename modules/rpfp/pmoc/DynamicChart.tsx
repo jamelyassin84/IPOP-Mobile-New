@@ -102,6 +102,7 @@ const DynamicChart: FC<Props> = ( props ) => {
                         withOuterLines={true}
                         withVerticalLines={true}
                         withHorizontalLines={false}
+                        showValuesOnTopOfBars={true}
                     />
                 </View>
                 <View style={style.chartContainer}>
@@ -120,6 +121,7 @@ const DynamicChart: FC<Props> = ( props ) => {
                         withOuterLines={true}
                         withVerticalLines={true}
                         withHorizontalLines={false}
+                        showValuesOnTopOfBars={true}
                     />
                 </View>
                 <View style={style.chartContainer}>
@@ -138,6 +140,7 @@ const DynamicChart: FC<Props> = ( props ) => {
                         withOuterLines={true}
                         withVerticalLines={true}
                         withHorizontalLines={false}
+                        showValuesOnTopOfBars={true}
                     />
                 </View>
             </WithRefreshComponent>
