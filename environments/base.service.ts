@@ -1,5 +1,5 @@
-import { environment } from './environtment'
 import axios from 'axios'
+import { environment } from './environment.prod'
 
 export class BaseService<T> {
 	protected url: string

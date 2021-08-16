@@ -1,4 +1,4 @@
 export const environment = {
 	production: true,
-	api: '//ipop-test.tk/api/',
+	api: 'https://ipop-test.tk/api/',
 }
