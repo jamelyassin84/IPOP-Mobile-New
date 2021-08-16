@@ -36,12 +36,14 @@ const menus: any = [
     'Teen Centers',
     'Focal Persons',
     'Adolscent Health and Youth Development Team',
+    'Technical Notes'
 ]
 
 const route: any = [
     'TeenCenterData',
     'TCFocalPerson',
     'AHYDTeam',
+    'TechnicalNotes'
 ]
 
 export default TeenCenter;
