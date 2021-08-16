@@ -80,7 +80,6 @@ const BirthData: FC<Props> = ( { route }: any ) => {
                     icon={<Ionicons name="pulse" size={24} color='rgba(233, 30, 99,1)' />}
                 />
 
-
             </WithRefreshComponent>
         </Container>
     );

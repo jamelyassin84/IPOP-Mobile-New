@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { FC } from 'react';
-import { Dimensions, StyleSheet, Text } from 'react-native';
+import { Dimensions } from 'react-native';
 import { View } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import CommonHeader from '../../../components/headers/CommonHeader';
@@ -11,11 +11,11 @@ import Container from '../../../constants/Layout';
 import { BaseService } from '../../../environments/base.service';
 import { PMOC_API } from '../../../environments/Enums';
 import useColorScheme from '../../../hooks/useColorScheme';
-import { PMOCChart } from './ChartEnum';
 import * as process from './Processes'
 import { BarChart, } from 'react-native-chart-kit';
 import chartConfig from '../../../components/demographics/ChartConfig';
 import LocationTitle from '../../../components/LocationTitle';
+import style from '../../../styles/charts/Chart'
 
 type Props = {};
 
@@ -94,60 +94,5 @@ export enum PMOCColors {
     female = '#A30010',
     total = '#C79500',
 }
-
-const style = StyleSheet.create( {
-    chartContainer: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: 10,
-        paddingBottom: 0,
-        paddingHorizontal: 10,
-        marginTop: 50,
-        marginLeft: -20
-    },
-    chartTitle: {
-        fontSize: 20,
-        alignSelf: 'flex-start',
-        marginBottom: 40,
-        marginLeft: 20,
-        fontWeight: '500'
-    },
-
-    nav: {
-        flexDirection: 'row',
-        margin: 20,
-        backgroundColor: 'rgba(113,111,139,.1)',
-        borderRadius: 20,
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: 7,
-        marginTop: 20
-    },
-    navButtons: {
-        marginRight: 20,
-        flex: 1,
-        alignItems: 'center',
-        padding: 10,
-        borderRadius: 20,
-    },
-    avtiveButton: {
-        backgroundColor: '#426FC3',
-        shadowColor: "rgba(113,111,139,1)",
-        shadowOffset: {
-            width: 0,
-            height: 3,
-        },
-        shadowOpacity: 0.57,
-        shadowRadius: 4.65,
-        elevation: 6,
-    },
-    InactiveText: {
-        color: 'gray'
-    },
-    activeText: {
-        color: 'white',
-        fontWeight: 'bold'
-    }
-} )
 
 export default NumberOfCouples;

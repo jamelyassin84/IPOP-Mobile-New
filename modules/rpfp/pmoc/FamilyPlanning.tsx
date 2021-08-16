@@ -1,34 +1,26 @@
 import React, { FC } from 'react';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import CommonHeader from '../../../components/headers/CommonHeader';
-import WithRefreshComponent from '../../../components/utils/WithRefreshComponent';
+import LocationTitle from '../../../components/LocationTitle';
+import { DataParams } from '../../../components/Pyramid';
 import Container from '../../../constants/Layout';
+import { PMOC_API } from '../../../environments/Enums';
 import useColorScheme from '../../../hooks/useColorScheme';
 import { PMOCChart } from './ChartEnum';
-
+import DynamicChart from './DynamicChart';
 
 type Props = {};
 
-const FamilyPlanning: FC<Props> = ( props ) => {
+const FamilyPlanning: FC<Props> = ( { route }: any ) => {
+
+    const data: DataParams = route.params
     const colorScheme = useColorScheme();
-
-    const [ isLoading, setLoading ] = React.useState( false )
-
-
-    React.useEffect( () => {
-
-    }, [] )
-
-    const onRefresh = () => {
-
-    };
 
     return (
         <Container>
-            <CommonHeader title={PMOCChart.FamilyPlanning} backgroundColor={Colors[ colorScheme ].background} />
-            <WithRefreshComponent onRefresh={() => onRefresh} loading={isLoading} backgroundColor={Colors[ colorScheme ].background}>
-
-            </WithRefreshComponent>
+            <CommonHeader title={data.title} backgroundColor={Colors[ colorScheme ].background} />
+            <LocationTitle location={data.location} />
+            <DynamicChart api={PMOC_API.KnowledgeOnFp} type={PMOCChart.FamilyPlanning} location={data.location} />
         </Container>
     );
 };

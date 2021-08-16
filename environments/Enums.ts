@@ -78,7 +78,7 @@ export enum MPCFDC_API {
 }
 
 export enum PMOC_API {
-	AgeGroup = 'mpcfdcs',
+	AgeGroup = 'pmc-age-group',
 	AverageMonthlyIncome = 'pmc-amis',
 	CivilStatus = 'pmc-ccs',
 	EmploymentStatus = 'pmc-ess',
