@@ -1,5 +1,4 @@
 
-import { useNavigation } from '@react-navigation/native';
 import React, { FC } from 'react';
 import { Text } from 'react-native';
 import CommonHeader from '../../../components/headers/CommonHeader';
@@ -45,7 +44,7 @@ const MPCFDCDetails: FC<Props> = ( { route }: any ) => {
             <Text style={{ color: Colors[ colorScheme ].text, padding: 16, fontSize: 16, fontWeight: 'bold', marginTop: 50 }}>Personnels Incharge</Text>
             {
                 personnels.map( ( personnel: any, index: number ) => (
-                    <MPCFDCPersonnelIncharge personnel={personnel} />
+                    <MPCFDCPersonnelIncharge personnel={personnel} key={index} />
                 ) )
             }
         </Container>
