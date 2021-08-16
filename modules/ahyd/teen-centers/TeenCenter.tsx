@@ -10,20 +10,9 @@ import useColorScheme from '../../../hooks/useColorScheme';
 type Props = {};
 
 const TeenCenter: FC<Props> = ( props ) => {
-
     const colorScheme = useColorScheme();
     const navigation = useNavigation();
-
     const [ location, setLocation ] = React.useState( {} )
-
-    React.useEffect( () => {
-
-    }, [] )
-
-    const getData = ( location?: any ) => {
-
-    }
-
     return (
         <Container>
             <CommonHeader title="Teen Centers" backgroundColor={Colors[ colorScheme ].background} />
@@ -33,12 +22,11 @@ const TeenCenter: FC<Props> = ( props ) => {
                     navigation.navigate( route[ menus.indexOf( choice ) ], Object.assign( {
                         title: choice,
                         type: 'TeenCenter',
-                        location
+                        location: location
                     } ) )
                 }}
                 location={( location: any ) => {
                     setLocation( location )
-                    getData( location )
                 }} />
         </Container>
     )

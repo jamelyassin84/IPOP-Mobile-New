@@ -8,7 +8,7 @@ import { districts } from '../../constants/AppConstants'
 import ScrollableMenu from '../bottom-sheets/ScrollableMenu'
 import Map from '../../components/Map'
 import { MaterialIcons } from '@expo/vector-icons'
-import DistrictWithMunicipalityTitle from '../top-titles/DistrictWithMunicipalityTitle'
+import DistrictTile from '../top-titles/DistrictTile'
 
 type Props = {
     location: Function
@@ -54,6 +54,7 @@ const DistrictPicker: FC<Props> = ( props ) => {
 
     return (
         <>
+            <DistrictTile location={{ district: district }} />
             <View style={style.container}>
                 <TouchableOpacity onPress={() => DistrictRef.current.open()}
                     style={[ style.iconHolder, { backgroundColor: Colors[ colorScheme ].background } ]}>

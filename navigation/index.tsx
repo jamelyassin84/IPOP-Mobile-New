@@ -73,6 +73,7 @@ import TeenCenterData from '../modules/ahyd/teen-centers/TeenCenterData';
 import TCFocalPerson from '../modules/ahyd/teen-centers/TCFocalPerson';
 import AHYDTeam from '../modules/ahyd/teen-centers/AHYDTeam';
 import MPCFDCDetails from '../modules/rpfp/mpc-fdc/MPCFDCDetails';
+import TeenCenterDetails from '../modules/ahyd/teen-centers/TeenCenterDetails';
 
 export default function Navigation( { colorScheme }: { colorScheme: ColorSchemeName } ) {
     return (
@@ -159,6 +160,7 @@ const RootNavigator = () => {
             <Stack.Screen name="MPCFDCPersonnelIncharge" component={MPCFDCPersonnelIncharge} />
 
             <Stack.Screen name="TeenCenterData" component={TeenCenterData} />
+            <Stack.Screen name="TeenCenterDetails" component={TeenCenterDetails} />
             <Stack.Screen name="TCFocalPerson" component={TCFocalPerson} />
             <Stack.Screen name="AHYDTeam" component={AHYDTeam} />
 

@@ -70,6 +70,7 @@ export type NavParamList = {
     MPCFDCPersonnelIncharge: undefined;
 
     TeenCenter: undefined;
+    TeenCenterDetails: undefined
     TeenCenterData: undefined;
     TCFocalPerson: undefined;
     AHYDTeam: undefined;
