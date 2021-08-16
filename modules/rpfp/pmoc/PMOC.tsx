@@ -14,16 +14,7 @@ type Props = {};
 const PMOC: FC<Props> = ( props ) => {
     const colorScheme = useColorScheme();
     const navigation = useNavigation();
-
     const [ location, setLocation ] = React.useState( {} )
-
-    React.useEffect( () => {
-
-    }, [] )
-
-    const getData = ( location?: any ) => {
-
-    }
 
     return (
         <Container>
@@ -32,13 +23,14 @@ const PMOC: FC<Props> = ( props ) => {
                 menu={menus}
                 choice={( choice: string ) => {
                     navigation.navigate( route[ menus.indexOf( choice ) ], Object.assign( {
-                        type: 'Population',
-                        location
+                        title: choice,
+                        type: 'PMOC',
+                        location: location,
+                        colors: [ '#0039A9', '#CD1125', 'C79500' ] //Male, Female
                     } ) )
                 }}
                 location={( location: any ) => {
                     setLocation( location )
-                    getData( location )
                 }} />
         </Container>
     );

@@ -24,7 +24,7 @@ const NumberOfCouples: FC<Props> = ( { route }: any ) => {
     const data: DataParams = route.params
     const navigation = useNavigation()
     const colorScheme = useColorScheme();
-    const { width, height } = Dimensions.get( 'screen' );
+    const { width } = Dimensions.get( 'screen' );
 
     const dummy = {
         labels: [ 0, 0, 0, 0, 0 ],
