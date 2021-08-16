@@ -25,7 +25,15 @@ const AgeDistributionTable: FC<Props> = ( { route }: any ) => {
 
     const [ isLoading, setLoading ] = React.useState( false )
     const [ populationbyAgeGroupandSex, setPopulationbyAgeGroupandSex ]: any = React.useState( [] )
-    const [ populationbyAgeGroupandSexTotal, setPopulationbyAgeGroupandSexTotal ]: any = React.useState()
+    const [ populationbyAgeGroupandSexTotal, setPopulationbyAgeGroupandSexTotal ]: any = React.useState( {
+        ageGroup: 'Total',
+        male: 0,
+        percent_male: 0,
+        female: 0,
+        percent_female: 0,
+        total: 0,
+        percent_total: 0,
+    } )
 
     React.useEffect( () => {
         getData()
@@ -38,10 +46,19 @@ const AgeDistributionTable: FC<Props> = ( { route }: any ) => {
     const getData = () => {
         setLoading( true );
         setPopulationbyAgeGroupandSex( [] );
+        setPopulationbyAgeGroupandSexTotal( {
+            ageGroup: 'Total',
+            male: 0,
+            percent_male: 0,
+            female: 0,
+            percent_female: 0,
+            total: 0,
+            percent_total: 0,
+        } )
         new BaseService( Population_API.PopulationPyramid ).fetchWithParams( `${ paramifyLocation( data.location ) }&type=${ data.type }` ).then( ( data: any ) => {
             if ( data.length !== 0 ) {
                 setLoading( false )
-                let temp: any = []
+                let temp: any[] = []
                 const male = data[ 0 ][ 'data' ][ 'male' ]
                 const female = data[ 0 ][ 'data' ][ 'female' ]
                 for ( let key in female ) {
@@ -59,17 +76,17 @@ const AgeDistributionTable: FC<Props> = ( { route }: any ) => {
                                 ? newText
                                 : key,
                         male: male[ key ],
-                        percent_male: getPercent( male[ key ], total ),
+                        percent_male: twoDecimals( getPercent( male[ key ], total ) ),
                         female: female[ key ],
-                        percent_female: getPercent( female[ key ], total ),
+                        percent_female: twoDecimals( getPercent( female[ key ], total ) ),
                         total: total,
                         percent_total:
-                            getPercent( female[ key ], total ) +
-                            getPercent( male[ key ], total ),
+                            twoDecimals( getPercent( female[ key ], total ) ) +
+                            twoDecimals( getPercent( male[ key ], total ) ),
                     } )
                 }
-                setPopulationbyAgeGroupandSex( temp.reverse() )
-                // sumOfRows( temp.reverse(), data )
+                temp = temp.reverse()
+                sumOfRows( temp, data )
                 return
             }
             alert( `${ route.params.title } on this location is not yet set` )
@@ -96,11 +113,11 @@ const AgeDistributionTable: FC<Props> = ( { route }: any ) => {
             }
         }
         setPopulationbyAgeGroupandSexTotal( object )
-        reAlterpopulationbyAgeGroupandSexTable( originalData )
+        reAlterpopulationbyAgeGroupandSexTable( originalData, object.total, object )
     }
 
-    const reAlterpopulationbyAgeGroupandSexTable = ( data: any ) => {
-        const totalPopulation = populationbyAgeGroupandSexTotal.total
+    const reAlterpopulationbyAgeGroupandSexTable = ( data: any, total: number, objectData: any ) => {
+        const totalPopulation = total
         let temp: any = []
         const male = data[ 0 ][ 'data' ][ 'male' ]
         const female = data[ 0 ][ 'data' ][ 'female' ]
@@ -113,6 +130,7 @@ const AgeDistributionTable: FC<Props> = ( { route }: any ) => {
                 newText = 'Below 1 Year Old'
             }
             let total = parseFloat( male[ key ] ) + parseFloat( female[ key ] )
+            console.log( totalPopulation )
             temp.push( {
                 ageGroup:
                     key === 'eighty_and_above' || key === 'below_1_year_old'
@@ -128,24 +146,33 @@ const AgeDistributionTable: FC<Props> = ( { route }: any ) => {
                     getPercent( male[ key ], totalPopulation ),
             } )
         }
-        setPopulationbyAgeGroupandSexTotal( {
-            percent_male: 0,
-            percent_female: 0,
-            percent_total: 0
-        } )
-        let object = populationbyAgeGroupandSexTotal
+        let object = objectData
+        object.percent_male = 0
+        object.percent_female = 0
+        object.percent_total = 0
         const disregards = [ 'ageGroup', 'male', 'female', 'total' ]
         for ( let index of temp ) {
             for ( let key in index ) {
                 if ( !disregards.includes( key ) ) {
-                    object[ key ] += index[ key ]
+                    object[ key ] += parseFloat( index[ key ] )
+                    index[ key ] = twoDecimals( index[ key ] )
                 }
             }
         }
+        for ( let key in object ) {
+            if ( !disregards.includes( key ) ) {
+                object[ key ] = twoDecimals( object[ key ] )
+            }
+        }
         setPopulationbyAgeGroupandSexTotal( object )
+        setPopulationbyAgeGroupandSex( temp.reverse() )
     }
 
     const isOdd = ( num: number ) => ( num % 2 )
+
+    const twoDecimals = ( num: number ) => {
+        return ( Math.round( num * 100 ) / 100 ).toFixed( 1 );
+    }
 
     return (
         <Container>
@@ -205,7 +232,7 @@ const AgeDistributionTable: FC<Props> = ( { route }: any ) => {
                             </View>
                         )
                     }
-                    {/* <View style={style.row}>
+                    <View style={style.row}>
                         <View style={style.column} >
                             <Text style={[ style.center, { color: Colors[ colorScheme ].text, fontWeight: 'bold' } ]}>{populationbyAgeGroupandSexTotal.ageGroup}</Text>
                         </View>
@@ -227,7 +254,7 @@ const AgeDistributionTable: FC<Props> = ( { route }: any ) => {
                         <View style={style.column} >
                             <Text style={[ style.center, { color: Colors[ colorScheme ].text, fontWeight: 'bold' } ]}>{populationbyAgeGroupandSexTotal.percent_total}</Text>
                         </View>
-                    </View> */}
+                    </View>
                 </View>
             </WithRefreshComponent>
         </Container>
