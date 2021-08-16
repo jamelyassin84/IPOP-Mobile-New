@@ -8,6 +8,7 @@ import { Location_API } from '../../environments/Enums';
 import useColorScheme from '../../hooks/useColorScheme';
 import WithRefreshComponent from '../utils/WithRefreshComponent';
 import { AntDesign } from '@expo/vector-icons';
+import BottomSheetTopStyle from '../extras/BottomSheetTopStyle';
 
 type Props = {
     onSelect: Function
@@ -38,35 +39,38 @@ const BarangayPicker: FC<Props> = ( props ) => {
     }
 
     return (
-        <View style={[ style.bottomSheetContainer, { backgroundColor: Colors[ colorScheme ].background, } ]}>
-            <View style={[ style.choicesContainer, { backgroundColor: Colors[ colorScheme ].background, } ]}>
-                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                    <Text style={style.title}>Select a Barangay</Text>
-                    <TouchableOpacity onPress={() => props.blur()}>
-                        <AntDesign style={{ marginRight: 6 }} name="close" size={24} color="black" />
-                    </TouchableOpacity>
+        <>
+            <BottomSheetTopStyle />
+            <View style={[ style.bottomSheetContainer, { backgroundColor: Colors[ colorScheme ].background, } ]}>
+                <View style={[ style.choicesContainer, { backgroundColor: Colors[ colorScheme ].background, } ]}>
+                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                        <Text style={style.title}>Select a Barangay</Text>
+                        <TouchableOpacity onPress={() => props.blur()}>
+                            <AntDesign style={{ marginRight: 6 }} name="close" size={24} color="black" />
+                        </TouchableOpacity>
+                    </View>
+                    <WithRefreshComponent onRefresh={() => onRefresh} loading={isLoading} backgroundColor={Colors[ colorScheme ].background}>
+                        {
+                            barangays.map( ( barangay: any, index: any ) => {
+                                return (
+                                    <TouchableOpacity
+                                        key={index}
+                                        onPress={() => {
+                                            props.onSelect( barangay.name )
+                                        }}
+                                        style={[ style.choicesButton, { borderTopColor: 'rgba(150,150,150,.3)', backgroundColor: Colors[ colorScheme ].background } ]}
+                                    >
+                                        <FontAwesome name="map-signs" size={24} color="#1049A2" />
+                                        <Text style={[ style.choicesText, { color: Colors[ colorScheme ].text } ]}>{barangay.name}</Text>
+                                    </TouchableOpacity>
+                                )
+                            } )
+                        }
+                    </WithRefreshComponent>
+                    <View style={{ height: 150 }} />
                 </View>
-                <WithRefreshComponent onRefresh={() => onRefresh} loading={isLoading} backgroundColor={Colors[ colorScheme ].background}>
-                    {
-                        barangays.map( ( barangay: any, index: any ) => {
-                            return (
-                                <TouchableOpacity
-                                    key={index}
-                                    onPress={() => {
-                                        props.onSelect( barangay.name )
-                                    }}
-                                    style={[ style.choicesButton, { borderTopColor: 'rgba(150,150,150,.3)', backgroundColor: Colors[ colorScheme ].background } ]}
-                                >
-                                    <FontAwesome name="map-signs" size={24} color="#1049A2" />
-                                    <Text style={[ style.choicesText, { color: Colors[ colorScheme ].text } ]}>{barangay.name}</Text>
-                                </TouchableOpacity>
-                            )
-                        } )
-                    }
-                </WithRefreshComponent>
-                <View style={{ height: 150 }} />
             </View>
-        </View>
+        </>
     );
 };
 

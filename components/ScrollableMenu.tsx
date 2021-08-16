@@ -8,6 +8,7 @@ import { Text } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
+import BottomSheetTopStyle from './extras/BottomSheetTopStyle';
 
 type Props = {
     choices: any
@@ -21,6 +22,7 @@ const ScrollableMenu: FC<Props> = ( props ) => {
     const colorScheme = useColorScheme();
     return (
         <View style={style.bottomSheetContainer}>
+            <BottomSheetTopStyle />
             <View style={[ style.choicesContainer, { backgroundColor: Colors[ colorScheme ].background, } ]}>
                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                     <Text style={[ style.title, { color: Colors[ colorScheme ].text } ]}>Select {props.title}</Text>
@@ -55,7 +57,6 @@ const ScrollableMenu: FC<Props> = ( props ) => {
 const style = StyleSheet.create( {
     bottomSheetContainer: {
         height: '100%',
-        padding: 10,
         width: Dimensions.get( 'screen' ).width
     },
     choicesContainer: {

@@ -22,7 +22,7 @@ const Menu: FC<Props> = ( props ) => {
                 onPress={() => {
                     props.blur( true )
                 }}>
-                <Text style={[ style.cancelButtonText, { color: Colors[ colorScheme ].text } ]}>Cancel</Text>
+                <Text style={[ style.cancelButtonText, { color: 'red' } ]}>Cancel</Text>
             </TouchableOpacity>
 
             <View style={[ style.choicesContainer, { backgroundColor: Colors[ colorScheme ].background, } ]}>
@@ -48,11 +48,10 @@ const Menu: FC<Props> = ( props ) => {
 
 const style = StyleSheet.create( {
     bottomSheetContainer: {
-        padding: 10,
         flexDirection: 'column-reverse',
         width: Dimensions.get( 'screen' ).width,
         position: 'absolute',
-        bottom: Dimensions.get( 'screen' ).height / 1.9
+        bottom: Dimensions.get( 'screen' ).height / 2
     },
     cancelButton: {
         borderRadius: 10,

@@ -1,8 +1,6 @@
 
 import React, { FC } from 'react';
 import { TouchableOpacity } from 'react-native';
-import Colors from '../../constants/Colors';
-import useColorScheme from '../../hooks/useColorScheme';
 import style from '../../styles/steps/step.style'
 
 type Props = {
@@ -10,10 +8,10 @@ type Props = {
 };
 
 const StepContainer: FC<Props> = ( props ) => {
-    const colorScheme = useColorScheme();
 
     return (
         <TouchableOpacity
+            activeOpacity={1}
             style={[ style.container ]}
             onPress={() => props.callback()}>
             {props.children}

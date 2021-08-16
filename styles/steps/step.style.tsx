@@ -1,9 +1,10 @@
-import { StyleSheet } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
 export default StyleSheet.create( {
     container: {
         flex: 1, position: 'relative',
         zIndex: 99,
-        backgroundColor: '#1049A2'
+        backgroundColor: '#1049A2',
+        height: Dimensions.get( 'screen' ).height
     },
     dot: {
         width: 10,
