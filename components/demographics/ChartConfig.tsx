@@ -11,7 +11,7 @@ export default function chartConfig( color: any ) {
         fillShadowGradientOpacity: 1,
         labelColor: () => Colors[ colorScheme ].text,
         color: () => color,
-        barPercentage: .2,
+        barPercentage: .5,
         barRadius: 3,
     };
 }

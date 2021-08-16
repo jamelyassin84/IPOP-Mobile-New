@@ -4,5 +4,5 @@ export enum PMOCChart {
 	EmployemntStatus = 'PMC Applicants by Employment Status and Sex',
 	FamilyPlanning = 'Knowledge on Family Planning among PMC Applicants',
 	MonthlyIncome = 'PMC Applicants by Average Monthly Income and Sex',
-	NumberOfCouples = 'Number of Couples',
+	NumberOfCouples = 'Number of Couples (Couples by Month)',
 }

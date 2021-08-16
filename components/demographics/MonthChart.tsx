@@ -97,7 +97,7 @@ const MonthChart: FC<Props> = ( { route }: any ) => {
                     <BarChart
                         data={chartdataFemale}
                         width={width - 20}
-                        height={200}
+                        height={500}
                         chartConfig={chartConfig( data.colors[ 0 ] )}
                         fromZero={true}
                         showBarTops={false}
@@ -115,7 +115,7 @@ const MonthChart: FC<Props> = ( { route }: any ) => {
                     <BarChart
                         data={chartdataMale}
                         width={width - 20}
-                        height={200}
+                        height={500}
                         chartConfig={chartConfig( data.colors[ 1 ] )}
                         fromZero={true}
                         showBarTops={false}
@@ -136,7 +136,7 @@ const MonthChart: FC<Props> = ( { route }: any ) => {
                     <BarChart
                         data={chartdataTotal}
                         width={width - 20}
-                        height={200}
+                        height={500}
                         chartConfig={chartConfig( data.colors[ 2 ] )}
                         fromZero={true}
                         showBarTops={false}
