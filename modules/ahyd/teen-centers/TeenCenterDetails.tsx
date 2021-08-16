@@ -35,7 +35,6 @@ const TeenCenterDetails: FC<Props> = ( { route }: any ) => {
 
     const getPersonnelIncharge = () => {
         new BaseService( AHYD_API.PersonnelInchargeOfTeenCenter ).fetchWithParams( `sbmptc_id=${ data.id }` ).then( ( data: any ) => {
-            console.log( data )
             setPersonnels( data )
         } )
     }
