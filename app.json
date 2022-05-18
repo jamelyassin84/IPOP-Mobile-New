@@ -1,36 +1,34 @@
 {
-  "expo": {
-    "name": "ipop",
-    "slug": "ipop",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/images/icon1.png",
-    "scheme": "myapp",
-    "userInterfaceStyle": "automatic",
-    "splash": {
-      "image": "./assets/images/Splash2.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.jamel123.ipop"
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/images/icon1.png",
-        "backgroundColor": "#ffffff"
-      },
-      "package": "com.jamel123.ipop"
-    },
-    "web": {
-      "favicon": "./assets/images/icon1.png"
-    }
-  }
+	"expo": {
+		"name": "ipop",
+		"slug": "ipop",
+		"version": "1.0.0",
+		"orientation": "portrait",
+		"icon": "./assets/images/icon1.png",
+		"scheme": "myapp",
+		"userInterfaceStyle": "automatic",
+		"splash": {
+			"image": "./assets/images/splash2.png",
+			"resizeMode": "contain",
+			"backgroundColor": "#ffffff"
+		},
+		"updates": {
+			"fallbackToCacheTimeout": 0
+		},
+		"assetBundlePatterns": ["**/*"],
+		"ios": {
+			"supportsTablet": true,
+			"bundleIdentifier": "com.jamel123.ipop"
+		},
+		"android": {
+			"adaptiveIcon": {
+				"foregroundImage": "./assets/images/icon1.png",
+				"backgroundColor": "#ffffff"
+			},
+			"package": "com.jamel123.ipop"
+		},
+		"web": {
+			"favicon": "./assets/images/icon1.png"
+		}
+	}
 }
