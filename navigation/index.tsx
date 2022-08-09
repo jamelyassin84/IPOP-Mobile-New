@@ -4,6 +4,8 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { ColorSchemeName } from 'react-native'
 import { NavParamList } from '../types/NavTpyes'
 import BottomTabNavigator from './bottom-navigations/BottomTabNavigator'
+import LinkingConfiguration from './bottom-navigations/LinkingConfiguration'
+
 import Step1 from '../screens/steps/Step1'
 import Step2 from '../screens/steps/Step2'
 import Step3 from '../screens/steps/Step3'
@@ -71,17 +73,16 @@ import TeenCenterDetails from '../modules/ahyd/teen-centers/TeenCenterDetails'
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
 	return (
-		<NavigationContainer theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+		<NavigationContainer linking={LinkingConfiguration} theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
 			<RootNavigator />
 		</NavigationContainer>
 	)
 }
 
 const Stack = createStackNavigator<NavParamList>()
-
 const RootNavigator = () => {
 	return (
-		<Stack.Navigator initialRouteName="Step1" screenOptions={{ headerShown: false }}>
+		<Stack.Navigator screenOptions={{ headerShown: false }}>
 			<Stack.Screen name="Step1" component={Step1} />
 			<Stack.Screen name="Step2" component={Step2} />
 			<Stack.Screen name="Step3" component={Step3} />
