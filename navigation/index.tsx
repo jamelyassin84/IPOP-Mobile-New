@@ -73,7 +73,7 @@ import TeenCenterDetails from '../modules/ahyd/teen-centers/TeenCenterDetails'
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
 	return (
-		<NavigationContainer linking={LinkingConfiguration} theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+		<NavigationContainer theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
 			<RootNavigator />
 		</NavigationContainer>
 	)
@@ -89,7 +89,7 @@ const RootNavigator = () => {
 			<Stack.Screen name="Step4" component={Step4} />
 			<Stack.Screen name="Step5" component={Step5} />
 			<Stack.Screen name="ShowArticle" component={ShowArticle} />
-			<Stack.Screen name="home" component={BottomTabNavigator} />
+			<Stack.Screen name="home" options={{ headerShown: false }} component={BottomTabNavigator} />
 
 			<Stack.Screen name="Mandate" component={Mandate} />
 			<Stack.Screen name="VMG" component={VMG} />

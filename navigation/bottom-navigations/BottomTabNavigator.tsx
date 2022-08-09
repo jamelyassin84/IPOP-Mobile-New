@@ -33,8 +33,9 @@ export default function BottomTabNavigator() {
 		>
 			<BottomTab.Screen
 				name="Home"
-				component={HomeNavigator}
+				component={HomeScreen}
 				options={{
+					headerShown: false,
 					tabBarIcon: ({ color }) => <AntDesign name="home" size={26} color={color} />,
 				}}
 			/>
@@ -42,6 +43,7 @@ export default function BottomTabNavigator() {
 				name="Program Areas"
 				component={ProgramAreaNavigator}
 				options={{
+					headerShown: false,
 					tabBarIcon: ({ color }) => <MaterialCommunityIcons name="radar" size={26} color={color} />,
 				}}
 			/>
@@ -49,6 +51,7 @@ export default function BottomTabNavigator() {
 				name="About Us"
 				component={AboutNavigator}
 				options={{
+					headerShown: false,
 					tabBarIcon: ({ color }) => <Feather name="users" size={26} color={color} />,
 				}}
 			/>
@@ -56,6 +59,7 @@ export default function BottomTabNavigator() {
 				name="Services"
 				component={ServicesNavigator}
 				options={{
+					headerShown: false,
 					tabBarIcon: ({ color }) => <SimpleLineIcons name="notebook" size={26} color={color} />,
 				}}
 			/>
@@ -63,6 +67,7 @@ export default function BottomTabNavigator() {
 				name="More"
 				component={MenuNavigator}
 				options={{
+					headerShown: false,
 					tabBarIcon: ({ color }) => <SimpleLineIcons name="menu" size={26} color={color} />,
 				}}
 			/>
@@ -74,7 +79,7 @@ const Home = createStackNavigator<any>()
 export function HomeNavigator() {
 	return (
 		<Home.Navigator>
-			<Home.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+			<Home.Screen name="Home" />
 		</Home.Navigator>
 	)
 }
