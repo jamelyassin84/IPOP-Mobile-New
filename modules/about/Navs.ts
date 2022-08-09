@@ -2,7 +2,7 @@ export const AboutNavs: AboutNavType[] = [
 	{
 		title: 'Mandate',
 		route: 'Mandate',
-		icon: 'hand-right',
+		icon: 'check-circle',
 		color: '#F1CCB0',
 	},
 	{
@@ -44,7 +44,7 @@ export const AboutNavs: AboutNavType[] = [
 	{
 		title: 'Contact Us',
 		route: 'ContactUs',
-		icon: 'cellphone-iphone',
+		icon: 'phone',
 		color: 'gray',
 	},
 ]
