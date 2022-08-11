@@ -99,3 +99,34 @@ export function total(x: string | any, y: string | any) {
 export function isOdd(num: number) {
 	return num % 2
 }
+
+export function toNumber(value: string): any {
+	if (!value) {
+		return 0
+	}
+
+	return parseInt(value).toLocaleString()
+}
+export function sort_by_municipality(municipalities: any[]): any[] {
+	return municipalities
+		.sort((a: any, b: any) => {
+			return b.data.total - a.data.total
+		})
+		.slice(0, 10)
+}
+
+export function get_percentage(municipalities: any[], value: string): number {
+	let totalValue = 0
+
+	for (let municipality of municipalities) {
+		totalValue += municipality.data.total
+	}
+
+	const partialValue = municipalities.find((data) => data.data.name === value).data.total
+
+	if (partialValue) {
+		return (((100 * partialValue) / totalValue) as any).toFixed(2)
+	}
+
+	return 0
+}

@@ -37,6 +37,7 @@ export default StyleSheet.create({
 	},
 	buttonText: {
 		color: 'gray',
+		fontSize: 11,
 	},
 	activeText: {
 		color: 'white',
