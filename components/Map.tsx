@@ -1,9 +1,10 @@
 import React, { FC } from 'react'
-import MapView, { Marker } from 'react-native-maps'
+import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps'
 import { StyleSheet, View, Dimensions } from 'react-native'
 import axios from 'axios'
 import * as Location from 'expo-location'
 import { stringifyLocation } from '../constants/AppConstants'
+import { CAREEM_MAP_STYLE } from '../constants/map.style'
 
 type Props = {
 	location: any
@@ -51,6 +52,8 @@ const Map: FC<Props> = (props) => {
 		<View style={styles.container}>
 			<MapView
 				style={styles.map}
+				provider={PROVIDER_GOOGLE}
+				customMapStyle={CAREEM_MAP_STYLE}
 				region={{
 					latitude: data[0].lat,
 					longitude: data[0].lon,
