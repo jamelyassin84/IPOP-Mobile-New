@@ -1,6 +1,6 @@
 import React, { FC, useMemo } from 'react'
 import { TouchableOpacity, View, StyleSheet, Dimensions, Text } from 'react-native'
-import { AntDesign } from '@expo/vector-icons'
+import { AntDesign, Foundation } from '@expo/vector-icons'
 import useColorScheme from '../../../hooks/useColorScheme'
 import Colors from '../../../constants/Colors'
 // import BottomSheet from 'react-native-animated-bottom-sheet'
@@ -36,7 +36,7 @@ const AddressPicker: FC<Props> = (props) => {
 				MenuRef?.current.close()
 			}}
 			blur={() => MenuRef?.current.close()}
-			icon={<MaterialIcons name="menu-open" size={24} color="#ccc" />}
+			icon={<Foundation name="graph-bar" size={24} color="#0D47A1" />}
 		/>
 	)
 
@@ -95,7 +95,7 @@ const AddressPicker: FC<Props> = (props) => {
 				})
 			}}
 			blur={() => TabRef?.current.close()}
-			icon={<AntDesign name="calendar" size={24} color="#1049A2" />}
+			icon={<Foundation name="graph-bar" size={24} color="#0D47A1" />}
 		/>
 	)
 
@@ -108,6 +108,7 @@ const AddressPicker: FC<Props> = (props) => {
 				setmunicipality(municipality.name)
 				setTimeout(() => {
 					if (choice === LocationChoices[1]) YearRef?.current.snapToIndex(1)
+
 					if (choice === LocationChoices[2]) BarangayRef?.current.snapToIndex(1)
 				}, 1000)
 			}}
@@ -167,7 +168,7 @@ const AddressPicker: FC<Props> = (props) => {
 				<TabSheet />
 			</BottomSheet>
 
-			<BottomSheet enablePanDownToClose={true} ref={YearSheet} snapPoints={snapPoints}>
+			<BottomSheet enablePanDownToClose={true} ref={YearRef} snapPoints={snapPoints}>
 				<YearSheet />
 			</BottomSheet>
 

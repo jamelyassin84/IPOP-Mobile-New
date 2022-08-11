@@ -10,6 +10,7 @@ import Map from '../../components/Map'
 import { MaterialIcons } from '@expo/vector-icons'
 import DistrictTile from '../top-titles/DistrictTile'
 import BottomSheet from '@gorhom/bottom-sheet'
+import { Foundation } from '@expo/vector-icons'
 
 type Props = {
 	location: Function
@@ -29,7 +30,7 @@ const DistrictPicker: FC<Props> = (props) => {
 					MenuRef?.current.close()
 				}}
 				blur={() => MenuRef?.current.close()}
-				icon={<MaterialIcons name="menu-open" size={24} color="#ccc" />}
+				icon={<Foundation name="graph-bar" size={24} color="#0D47A1" />}
 			/>
 		)
 	}
@@ -45,7 +46,7 @@ const DistrictPicker: FC<Props> = (props) => {
 				props.location({ district: district })
 			}}
 			blur={() => DistrictRef?.current.close()}
-			icon={<AntDesign name="calendar" size={24} color="#1049A2" />}
+			icon={<Foundation name="graph-bar" size={24} color="#0D47A1" />}
 		/>
 	)
 

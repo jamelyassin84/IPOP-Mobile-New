@@ -43,7 +43,7 @@ const ScrollableMenu: FC<Props> = (props) => {
 								]}
 							>
 								{props.icon}
-								<Text style={[style.choicesText, { color: Colors[colorScheme].text }]}>{choice}</Text>
+								<Text style={[style.choicesText]}>{choice}</Text>
 							</TouchableOpacity>
 						)
 					})}
@@ -70,7 +70,7 @@ const style = StyleSheet.create({
 	choicesButton: {
 		borderRadius: 10,
 		width: '100%',
-		padding: 10,
+		padding: 16,
 		borderTopWidth: 1,
 		flexDirection: 'row',
 		alignItems: 'center',
@@ -80,6 +80,7 @@ const style = StyleSheet.create({
 		fontWeight: '300',
 		marginLeft: 16,
 		paddingRight: 25,
+		color: 'gray',
 	},
 	title: {
 		textAlign: 'center',

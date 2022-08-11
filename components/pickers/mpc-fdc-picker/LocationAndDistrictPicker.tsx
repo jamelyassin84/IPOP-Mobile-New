@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { TouchableOpacity, View, StyleSheet, Dimensions } from 'react-native'
-import { AntDesign } from '@expo/vector-icons'
+import { AntDesign, Foundation } from '@expo/vector-icons'
 import useColorScheme from '../../../hooks/useColorScheme'
 import Colors from '../../../constants/Colors'
 // import BottomSheetScreen from 'react-native-animated-bottom-sheet'
@@ -37,7 +37,7 @@ const LocationAndDistrictPicker: FC<Props> = (props) => {
 					MenuRef?.current.close()
 				}}
 				blur={() => MenuRef?.current.close()}
-				icon={<MaterialIcons name="menu-open" size={24} color="#ccc" />}
+				icon={<Foundation name="graph-bar" size={24} color="#0D47A1" />}
 			/>
 		)
 	}
@@ -55,7 +55,7 @@ const LocationAndDistrictPicker: FC<Props> = (props) => {
 				DistrictRef?.current.close()
 				setDistrict(choice)
 				setTimeout(() => {
-					MunicipalityRef.snapToIndex(1)
+					MunicipalityRef.current.snapToIndex(1)
 				}, 600)
 			}}
 			blur={() => DistrictRef?.current.close()}
@@ -82,11 +82,11 @@ const LocationAndDistrictPicker: FC<Props> = (props) => {
 		<>
 			<DistrictWithMunicipalityTitle location={{ district: district, municipality: municipality }} />
 			<View style={style.container}>
-				<TouchableOpacity onPress={() => DistrictRef.snapToIndex(1)} style={[style.iconHolder, { backgroundColor: Colors[colorScheme].background }]}>
+				<TouchableOpacity onPress={() => DistrictRef.current.snapToIndex(1)} style={[style.iconHolder, { backgroundColor: Colors[colorScheme].background }]}>
 					<AntDesign name="search1" size={24} color={Colors[colorScheme].text} />
 				</TouchableOpacity>
 
-				<TouchableOpacity onPress={() => MenuRef.snapToIndex(1)} style={[style.iconHolder, { backgroundColor: Colors[colorScheme].background }]}>
+				<TouchableOpacity onPress={() => MenuRef.current.snapToIndex(1)} style={[style.iconHolder, { backgroundColor: Colors[colorScheme].background }]}>
 					<MaterialIcons name="expand-more" size={24} color={Colors[colorScheme].text} />
 				</TouchableOpacity>
 
